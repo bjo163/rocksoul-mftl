@@ -4,7 +4,9 @@
 
 ## FROM MYTH FADES TO LEGEND
 
-### **TRACE THE STORY · FIND THE SOURCE · WEIGH THE EVIDENCE**
+### **TRACE THE STORY.**
+
+#### FIND THE SOURCE · WEIGH THE EVIDENCE
 
 A provenance-first **Narrative & Belief Intelligence Corpus** for mythology, folklore, supernatural claims, historical ritual traditions, information integrity, deviation, and explainable comparative analysis.
 
@@ -52,6 +54,13 @@ LEGEND     → CANONICAL EVENT / HISTORICAL CORE
 SUPERHERO  → PERSON / HUMAN AGENCY
 RGBL       → TEXT / SCRIPTURE / REVELATION-REFERENCE
 ```
+
+| Repository | Domain | Question | Mantra |
+|---|---|---|---|
+| **rocksoul-mftl** | Narrative Intelligence | What was told? | TRACE THE STORY. |
+| **rocksoul-legend** | Historical & Event Intelligence | What happened? | TRACE THE EVENT. |
+| **rocksoul-superhero** | Actor & Transmission Intelligence | Who was involved? | TRACE THE PERSON. |
+| **rocksoul-rgbl** | Scripture & Revelation Reference | What does the exact text say? | TRACE THE TEXT. |
 
 MFTL may describe **event reports, event claims, or events as narrated**, but canonical historical-event ownership belongs to LEGEND. Human actor/transmission ownership belongs to SUPERHERO. Exact scripture/text passages and their corpus provenance belong to RGBL.
 
