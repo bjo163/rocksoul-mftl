@@ -1,0 +1,38 @@
+{
+  "schema_version": "candidate.v0.1",
+  "candidate_id": "CAND-MES-INANNA-DESCENT-000001",
+  "name": "Inana's Descent to the Netherworld",
+  "aliases": ["Inanna's Descent to the Underworld", "Descent of Inanna", "Inana's descent to the nether world"],
+  "region": "Middle East / Mesopotamia / Sumer",
+  "country": "Iraq",
+  "tradition": "Sumerian literary and religious tradition",
+  "candidate_type": "underworld narrative / deity tradition / cuneiform literary text",
+  "discovery": {
+    "summary": "The Electronic Text Corpus of Sumerian Literature preserves a scholarly translation of a Sumerian composition in which Inana leaves the upper world and descends to the netherworld, passing through gates where regalia are removed. ORACC's Ancient Mesopotamian Gods and Goddesses project independently describes Inana/Ištar as a major Mesopotamian deity and notes her mythological descent to and return from the underworld. Source basis: ETCSL, 'Inana's descent to the nether world'; ORACC/University of Pennsylvania, 'Inana/Ištar (goddess)'.",
+    "why_relevant": "This is a strong provenance-first candidate because the narrative is available through an academic cuneiform text corpus and can later be modeled at claim, manuscript-variant, deity, underworld-motif, and transmission levels without treating the mythic narrative itself as an empirical historical claim.",
+    "discovered_at": "2026-09-07T14:39:24Z",
+    "search_terms": ["Inana descent netherworld", "Inanna underworld Sumerian", "Inana Ishtar ORACC", "ETCSL 1.4.1"]
+  },
+  "sources": [
+    {
+      "title": "Inana's descent to the nether world: translation",
+      "locator": "https://etcsl.orinst.ox.ac.uk/section1/tr141.htm",
+      "source_type": "academic text corpus / scholarly translation",
+      "authority": "academic",
+      "notes": "Primary source basis for the narrative wording as represented in ETCSL; the page also marks manuscript variation in multiple passages."
+    },
+    {
+      "title": "Ancient Mesopotamian Gods and Goddesses — Inana/Ištar (goddess)",
+      "locator": "https://oracc.museum.upenn.edu/amgg/listofdeities/inanaitar/",
+      "source_type": "university research reference",
+      "authority": "academic",
+      "notes": "University of Pennsylvania-hosted ORACC reference supporting Inana/Ištar's identity, functions, spellings, and association with descent/return from the underworld."
+    }
+  ],
+  "duplicate_check": {
+    "checked": true,
+    "possible_matches": []
+  },
+  "status": "ready_for_record",
+  "notes": "Canonicalization should preserve the distinction between the Sumerian Inana composition and related Akkadian Ištar descent traditions rather than collapsing them into one text. No theological assessment has been made."
+}
