@@ -57,6 +57,29 @@ CANONICAL HISTORICAL EVENT
 
 If a LEGEND `EVT-*` object exists, MFTL should link to it instead of creating a competing historical-event truth record.
 
+### Cross-repository family boundaries
+
+The 18 families are an MFTL research taxonomy, not exclusive ownership of every underlying real-world object.
+
+```text
+F02 narrative entity        → MFTL
+historical actor agency     → SUPERHERO
+scripture-corpus person     → RGBL
+
+F06 narrative/text drift    → MFTL
+exact scripture passage     → RGBL
+human transmission actor    → SUPERHERO
+
+F09 narrative symbolism     → MFTL
+event material evidence     → LEGEND
+textual/manuscript artifact → RGBL
+
+F10 event as told/claimed   → MFTL
+canonical historical event → LEGEND
+```
+
+If the same referent appears in multiple repositories, keep domain records separate and reconcile them explicitly rather than silently merging IDs.
+
 ## Particularly valuable additions
 
 ### Prophecy and prediction

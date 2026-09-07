@@ -80,3 +80,38 @@ Repository-local CI validates local schema and graph integrity. Cross-repository
 ## Non-goals
 
 Do not create a shared database or shared monorepo simply to unify IDs. RGBL is the existing corpus/text reference layer; it is not a generic dumping ground for every MFTL/LEGEND/SUPERHERO source object. Stable ownership + explicit references are sufficient for v0.1.
+
+
+## Same referent, different domain records
+
+Rocksoul ownership is **functional**, not a claim that one real-world referent may exist in only one repository.
+
+For example, a named historical/scriptural person may appear as:
+
+```text
+MFTL ENTITY-*          narrative portrayal / motif context
+SUPERHERO PER-*        human agency / transmission analysis
+RGBL mw:person:*       corpus referent + scoped scriptural/religious assertions
+```
+
+These IDs MUST NOT be auto-merged from name similarity.
+
+A crosswalk such as:
+
+```text
+superhero:PER-...
+↔
+rgbl:mw:person:...
+```
+
+requires explicit reconciliation evidence. The same rule applies to places, artifacts, and textual sources that appear in more than one domain for different analytical purposes.
+
+## Family boundaries
+
+MFTL families remain broad research categories, but their ownership meaning is now:
+
+- **F02 Entity** — narrative/cultural entity representation. Historical human agency belongs to SUPERHERO; scripture-corpus person identity may exist in RGBL.
+- **F06 Text / Transmission** — narrative version, textual drift, quotation, or transmission as an object of narrative research. Exact scripture work/expression/edition/passage/content belongs to RGBL; human transmitter agency belongs to SUPERHERO.
+- **F09 Place / Object / Artifact** — symbolic/narrative meaning of a place or object. Historical-event material evidence normally belongs to LEGEND; textual/manuscript supply-chain artifacts normally belong to RGBL.
+- **F10 Event Report / Event Claim** — event as narrated or claimed. Canonical historical event belongs to LEGEND.
+- **F16 Source / Evidence** — MFTL research evidence remains local when it supports narrative analysis. Exact scripture editions/passages need not be duplicated when RGBL already owns them.
