@@ -1,0 +1,53 @@
+{
+  "schema_version": "candidate.v0.1",
+  "candidate_id": "CAND-PHL-HUDHUD-IFUGAO-000001",
+  "name": "Hudhud chants of the Ifugao",
+  "aliases": [
+    "Hudhud",
+    "Hudhud ni Aliguyon"
+  ],
+  "region": "Southeast Asia / Philippines / Ifugao",
+  "country": "Philippines",
+  "tradition": "Ifugao oral narrative-chant and ritual-performance tradition",
+  "candidate_type": "oral narrative chant / ritual-performance tradition / ancestral-hero folklore",
+  "discovery": {
+    "summary": "The Hudhud is an Ifugao oral narrative-chant tradition performed in contexts including rice cultivation cycles and funeral or mortuary observances. UNESCO describes the chants as orally transmitted narratives involving ancestral heroes, customary law, traditional practices and religious beliefs [S1]. The Philippine National Commission for Culture and the Arts independently documents Hudhud performance in agricultural and mortuary contexts and describes leader/chorus performance and heroic narrative content [S2].",
+    "why_relevant": "Hudhud is valuable for MFTL because it combines oral narrative, ritual setting, agricultural practice, cultural law and ancestral-hero material. The candidate should be modeled as a living heritage tradition with internal linguistic and regional variation, not as a single frozen myth text or as evidence for supernatural claims.",
+    "discovered_at": "2026-09-07T17:47:00Z",
+    "search_terms": [
+      "Hudhud chants Ifugao",
+      "Hudhud ritual harvest funeral",
+      "NCCA Hudhud Ifugao",
+      "UNESCO Hudhud"
+    ]
+  },
+  "sources": [
+    {
+      "title": "Safeguarding and Transmission of the Hudhud Chants of the Ifugao",
+      "locator": "https://f5vip11.unesco.org/en/projects/safeguarding-and-transmission-of-the-hudhud-chants-of-the-ifugao-00004",
+      "source_type": "UNESCO safeguarding-program documentation",
+      "authority": "institutional",
+      "notes": "[S1] Supports performance during agricultural and funeral contexts, oral transmission, ancestral-hero narratives, customary law, traditional practices, religious-belief content and safeguarding efforts."
+    },
+    {
+      "title": "Intangible Heritage — Hudhud Chants of the Ifugao",
+      "locator": "https://ncca.gov.ph/about-culture-and-arts/culture-profile/intangible-heritage/",
+      "source_type": "Philippine National Commission for Culture and the Arts heritage overview",
+      "authority": "institutional",
+      "notes": "[S2] Supports Ifugao provenance, agricultural and mortuary performance contexts, leader/chorus performance, heroic narrative content and current safeguarding concerns. Specific antiquity estimates on the page are not adopted as established fact in this candidate."
+    },
+    {
+      "title": "Teaching guide for students: Hudhud schools for living tradition",
+      "locator": "https://ich.unesco.org/en/documents/teaching-guide-for-students-hudhud-schools-for-living-tradition-47012",
+      "source_type": "UNESCO-hosted NCCA educational resource metadata",
+      "authority": "institutional",
+      "notes": "[S3] Supports documented variation across Ifugao areas/languages and the existence of sample chants, cultural-context instruction and intergenerational transmission programs."
+    }
+  ],
+  "duplicate_check": {
+    "checked": true,
+    "possible_matches": []
+  },
+  "status": "ready_for_record",
+  "notes": "No theological assessment has been made. Before canonicalization, distinguish Hudhud variants by culture area/language and separate performance context, narrative content and religious-belief references. Material claims are keyed to [S1]–[S3] because candidate.v0.1 has no dedicated source_basis field."
+}
