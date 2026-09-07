@@ -1,8 +1,8 @@
 {
   "schema_version": "coverage.v0.2",
-  "generated_at": "2026-09-07T18:26:10Z",
+  "generated_at": "2026-09-07T18:40:49Z",
   "canonical_records": 1,
-  "candidates": 15,
+  "candidates": 16,
   "merged_candidates": 1,
   "regions": {
     "Polynesia / Hawaiʻi": 1,
@@ -20,7 +20,8 @@
     "Europe / Finland and Karelia": 1,
     "Central Asia / Kyrgyzstan": 1,
     "North Asia / Sakha Republic (Yakutia)": 1,
-    "Southeast Asia / Philippines / Ifugao": 1
+    "Southeast Asia / Philippines / Ifugao": 1,
+    "South America / Colombia / Muisca highlands": 1
   },
   "canonical_regions": {
     "Middle East / Mesopotamia / Sumer": 1
@@ -41,7 +42,8 @@
     "oral-literary epic / folk-poetry compilation / mythic narrative tradition": 1,
     "oral heroic epic / historical-memory tradition / performed folklore": 1,
     "oral heroic epic / mythic narrative cycle / performed folklore": 1,
-    "oral narrative chant / ritual-performance tradition / ancestral-hero folklore": 1
+    "oral narrative chant / ritual-performance tradition / ancestral-hero folklore": 1,
+    "historical ritual practice / votive offering tradition / colonial-contact legend": 1
   },
   "traditions": {
     "Native Hawaiian moʻolelo": 1,
@@ -59,7 +61,8 @@
     "Karelian, Finnish, and Ingrian oral-poetry traditions / 19th-century oral-literary epic": 1,
     "Kyrgyz oral epic and Manaschi storytelling tradition": 1,
     "Sakha (Yakut) oral heroic-epic tradition": 1,
-    "Ifugao oral narrative-chant and ritual-performance tradition": 1
+    "Ifugao oral narrative-chant and ritual-performance tradition": 1,
+    "Muisca ritual, offering, and colonial-contact narrative tradition": 1
   },
-  "notes": "Coverage combines 15 active discovery candidates with 1 reviewed canonical record. The Inana candidate is retained with status merged for discovery provenance and is not counted as active. Regional labels describe provenance/coverage and do not imply uniform traditions."
+  "notes": "Coverage combines 16 active discovery candidates with 1 reviewed canonical record. The Inana candidate is retained with status merged for discovery provenance and is not counted as active. South America is now represented by the staged Muisca Guatavita/El Dorado candidate. Regional labels describe provenance/coverage and do not imply uniform traditions."
 }
