@@ -1,0 +1,21 @@
+{
+  "id": "CLAIM-MES-INANA-002",
+  "subject": "ENTITY-MES-INANA",
+  "predicate": "passes_through",
+  "object": "seven gates where regalia are removed",
+  "claim_type": "textual_attestation",
+  "source_basis": [
+    "SOURCE-ETCSL-INANA-DESCENT"
+  ],
+  "evidence_ids": [
+    "EVIDENCE-MES-INANA-002"
+  ],
+  "epistemic_status": "supported_as_textual_attestation",
+  "confidence": 0.99,
+  "notes": "ETCSL lines 114–163 describe the seven-gate sequence and successive removal of regalia.",
+  "schema_version": "claim.v0.1",
+  "metadata": {
+    "created_at": "2026-09-07T18:26:10Z",
+    "updated_at": "2026-09-07T18:26:10Z"
+  }
+}
