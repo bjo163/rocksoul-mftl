@@ -87,11 +87,18 @@ Every derived conclusion must remain traceable to claims, sources, evidence, unc
 
 ## Corpus snapshot
 
-> Generated corpus state is published to `apps/web/public/data/corpus-index.json`.
+> Live counts are generated from `apps/web/public/data/corpus-index.json` on `main`.
 
-| Canonical | Active Candidates | Entities | Atomic Claims | Sources | Evidence Edges | Record Families |
-|---:|---:|---:|---:|---:|---:|---:|
-| **1** | **16** | **5** | **5** | **3** | **6** | **18** |
+<div align="center">
+
+![Canonical](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fbjo163%2Frocksoul-mftl%2Fmain%2Fapps%2Fweb%2Fpublic%2Fdata%2Fcorpus-index.json&query=%24.counts.canonical_records&label=canonical&color=B43A32)
+![Candidates](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fbjo163%2Frocksoul-mftl%2Fmain%2Fapps%2Fweb%2Fpublic%2Fdata%2Fcorpus-index.json&query=%24.counts.candidates&label=candidates&color=555555)
+![Entities](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fbjo163%2Frocksoul-mftl%2Fmain%2Fapps%2Fweb%2Fpublic%2Fdata%2Fcorpus-index.json&query=%24.counts.entities&label=entities&color=555555)
+![Claims](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fbjo163%2Frocksoul-mftl%2Fmain%2Fapps%2Fweb%2Fpublic%2Fdata%2Fcorpus-index.json&query=%24.counts.claims&label=claims&color=555555)
+![Sources](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fbjo163%2Frocksoul-mftl%2Fmain%2Fapps%2Fweb%2Fpublic%2Fdata%2Fcorpus-index.json&query=%24.counts.sources&label=sources&color=555555)
+![Evidence](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fbjo163%2Frocksoul-mftl%2Fmain%2Fapps%2Fweb%2Fpublic%2Fdata%2Fcorpus-index.json&query=%24.counts.evidence&label=evidence_edges&color=555555)
+
+</div>
 
 ### First reviewed canonical graph
 
