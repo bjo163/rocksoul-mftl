@@ -23,6 +23,7 @@ A provenance-first **Narrative & Belief Intelligence Corpus** for mythology, fol
 
 [Explore the architecture](#the-intelligence-graph) ·
 [Browse the corpus](#corpus-snapshot) ·
+[Research queue](#research-queue) ·
 [Read the method](docs/INDEX.md) ·
 [View roadmap](docs/ROADMAP.md)
 
@@ -122,6 +123,25 @@ empirically proven supernatural event
 The original discovery candidate is preserved as `merged`, so the path from discovery → research → canonicalization stays auditable.
 
 ---
+
+## Research Queue
+
+Research discovered by **MFTL Steward** goes to GitHub Issues first. It does **not** automatically become corpus truth.
+
+```text
+BROWSE
+  ↓
+RESEARCH ISSUE
+  ↓
+REVIEW
+  ↓
+CANDIDATE / CANONICAL / MERGE / REJECT
+```
+
+**[View open research →](https://github.com/bjo163/rocksoul-mftl/issues?q=is%3Aissue+is%3Aopen+%22%5BRESEARCH%5D%22)** ·
+**[Create research issue →](https://github.com/bjo163/rocksoul-mftl/issues/new?template=research-data.md&title=%5BRESEARCH%5D+ )**
+
+A research issue should contain only six things: **topic, region/tradition, summary, sources, uncertainty, and suggested next action**.
 
 ## More than a mythology database
 
