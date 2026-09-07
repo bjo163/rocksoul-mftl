@@ -1,0 +1,211 @@
+{
+  "schema_version": "myth.v0.1",
+  "id": "MYTH-JERUSALEM-TEMPLE-DESTRUCTION-PROPHECY-000001",
+  "identity": {
+    "canonical_name": "Temple Destruction Prediction in Mark 13:2",
+    "aliases": [
+      "Mark 13:2 Temple prediction",
+      "Destruction of the Temple foretold",
+      "Temple destruction prophecy"
+    ],
+    "record_type": "prophecy_narrative"
+  },
+  "classification": {
+    "domain": "prophecy_and_historical_interpretation",
+    "tradition": "Early Christian Gospel textual tradition",
+    "myth_family": "temple_destruction_prediction",
+    "status": "canonical_textual_record"
+  },
+  "geography": {
+    "origin": {
+      "country": null,
+      "region": "Jerusalem / Roman Judaea narrative setting",
+      "locality": "Jerusalem Temple",
+      "lat": null,
+      "lon": null
+    },
+    "spread": [
+      "Christian Gospel textual and interpretive traditions"
+    ]
+  },
+  "time": {
+    "earliest_attestation": {
+      "value": "commonly dated within ca. 65–75 CE scholarly range for Mark",
+      "precision": "range",
+      "era": "Roman period"
+    },
+    "active_periods": [
+      {
+        "from": "1st century CE",
+        "to": null,
+        "precision": "approximate"
+      }
+    ]
+  },
+  "narrative": {
+    "summary": "In Mark 13:2, Jesus is portrayed as telling a disciple that the Temple's great buildings will be thrown down so completely that no stone remains upon another. Later readers compare this wording with the Roman destruction of Jerusalem and the Second Temple in 70 CE. MFTL treats the wording as textual attestation and the text–event connection as an interpretive historical comparison; it does not infer supernatural fulfillment from the historical event alone.",
+    "long_description": "RGBL supplies the exact SBLGNT and World English Bible passage identities. LEGEND owns the independently evidenced 70 CE destruction event. SUPERHERO owns human witness/recorder intelligence such as Flavius Josephus. The dating of Mark relative to 70 CE remains a scholarly question, so this record intentionally separates the existence of a prediction narrative from claims about its historical timing, authorship, or supernatural fulfillment.",
+    "motifs": [
+      "temple_destruction",
+      "prediction",
+      "war_and_siege",
+      "historical_fulfillment_interpretation",
+      "text_event_comparison"
+    ]
+  },
+  "claims": [
+    {
+      "id": "CLAIM-JERUSALEM-MARK13-001",
+      "subject": "MYTH-JERUSALEM-TEMPLE-DESTRUCTION-PROPHECY-000001",
+      "predicate": "contains_prediction",
+      "object": "the Temple's great buildings will be thrown down so that no stone remains upon another",
+      "claim_type": "textual_attestation",
+      "source_basis": [
+        "SOURCE-RGBL-SBLGNT-MARK-13-2",
+        "SOURCE-RGBL-WEB-MARK-13-2"
+      ],
+      "confidence": 0.99
+    },
+    {
+      "id": "CLAIM-JERUSALEM-MARK13-002",
+      "subject": "MYTH-JERUSALEM-TEMPLE-DESTRUCTION-PROPHECY-000001",
+      "predicate": "is_associated_with_historical_event",
+      "object": "legend:EVT-JERUSALEM-SECOND-TEMPLE-DESTRUCTION-70",
+      "claim_type": "historical_comparison",
+      "source_basis": [
+        "SOURCE-RGBL-SBLGNT-MARK-13-2",
+        "SOURCE-MET-JERUSALEM-70"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "id": "CLAIM-JERUSALEM-MARK13-003",
+      "subject": "MYTH-JERUSALEM-TEMPLE-DESTRUCTION-PROPHECY-000001",
+      "predicate": "composition_date_relative_to_70_CE",
+      "object": "scholarly dating is commonly placed around 65–75 CE, with debate over a pre- or post-destruction setting",
+      "claim_type": "chronology_claim",
+      "source_basis": [
+        "SOURCE-CAMBRIDGE-MARK-DATE"
+      ],
+      "confidence": 0.9
+    }
+  ],
+  "relations": [
+    {
+      "subject": "MYTH-JERUSALEM-TEMPLE-DESTRUCTION-PROPHECY-000001",
+      "predicate": "exact_text_available_in",
+      "object": "rgbl:mw:passage:sblgnt:v1-2:mark:13:2",
+      "confidence": 0.99,
+      "source_basis": [
+        "SOURCE-RGBL-SBLGNT-MARK-13-2"
+      ]
+    },
+    {
+      "subject": "MYTH-JERUSALEM-TEMPLE-DESTRUCTION-PROPHECY-000001",
+      "predicate": "english_text_available_in",
+      "object": "rgbl:mw:passage:web-classic:2020:mar:13:2",
+      "confidence": 0.98,
+      "source_basis": [
+        "SOURCE-RGBL-WEB-MARK-13-2"
+      ]
+    },
+    {
+      "subject": "MYTH-JERUSALEM-TEMPLE-DESTRUCTION-PROPHECY-000001",
+      "predicate": "associated_with_historical_event",
+      "object": "legend:EVT-JERUSALEM-SECOND-TEMPLE-DESTRUCTION-70",
+      "confidence": 0.95,
+      "source_basis": [
+        "SOURCE-MET-JERUSALEM-70",
+        "SOURCE-CAMBRIDGE-MARK-DATE"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "SOURCE-RGBL-SBLGNT-MARK-13-2",
+      "source_type": "primary_text",
+      "title": "RGBL SBLGNT v1.2 — Mark 13:2",
+      "author": "SBLGNT / Rocksoul RGBL",
+      "date": "SBLGNT v1.2 corpus expression",
+      "language": "Ancient Greek",
+      "primary_source": true,
+      "locator": "https://github.com/bjo163/rocksoul-rgbl/blob/main/datasets/sblgnt-v1-2/data/core/resources/sblgnt-v1-2.jsonl",
+      "accessed_at": "2026-09-07T21:28:21Z",
+      "notes": "Exact RGBL IDs: mw:passage:sblgnt:v1-2:mark:13:2 and mw:content:sblgnt:v1-2:mark:13:2."
+    },
+    {
+      "id": "SOURCE-RGBL-WEB-MARK-13-2",
+      "source_type": "primary_text",
+      "title": "RGBL World English Bible Classic 2020 — Mark 13:2",
+      "author": "World English Bible / Rocksoul RGBL",
+      "date": "2020 stable edition",
+      "language": "English",
+      "primary_source": true,
+      "locator": "https://github.com/bjo163/rocksoul-rgbl/blob/main/datasets/web-classic-2020/data/core/resources/web-classic-2020.jsonl",
+      "accessed_at": "2026-09-07T21:28:21Z",
+      "notes": "Exact RGBL IDs: mw:passage:web-classic:2020:mar:13:2 and mw:content:web-classic:2020:mar:13:2."
+    },
+    {
+      "id": "SOURCE-CAMBRIDGE-MARK-DATE",
+      "source_type": "academic_article",
+      "title": "The Date of the Markan Gospel",
+      "author": "S. G. F. Brandon",
+      "date": "1961",
+      "language": "English",
+      "primary_source": false,
+      "locator": "https://www.cambridge.org/core/journals/new-testament-studies/article/abs/date-of-the-markan-gospel/B34650230D991C2B56A96866131DC994",
+      "accessed_at": "2026-09-07T21:28:21Z",
+      "notes": "Used only to model the dating debate around the 70 CE destruction."
+    },
+    {
+      "id": "SOURCE-MET-JERUSALEM-70",
+      "source_type": "museum",
+      "title": "The World between Empires: Art and Identity in the Ancient Middle East — Judaea",
+      "author": "The Metropolitan Museum of Art",
+      "date": "2019",
+      "language": "English",
+      "primary_source": false,
+      "locator": "https://resources.metmuseum.org/resources/metpublications/pdf/The_World_between_Empires_Art_and_Identity_in_the_Ancient_Middle_East.pdf",
+      "accessed_at": "2026-09-07T21:28:21Z",
+      "notes": "Historical context; canonical event ownership remains in LEGEND."
+    }
+  ],
+  "evidence": {
+    "source_quality": 0.97,
+    "historical_attestation": 0.99,
+    "notes": "Historical attestation here primarily means the prediction narrative is securely textually attested. The 70 CE event is independently modeled by LEGEND; supernatural fulfillment is not encoded as a historical fact."
+  },
+  "historicity": {
+    "entity_historical_person": null,
+    "belief_historically_attested": null,
+    "ritual_historically_attested": null,
+    "confidence": 0.99
+  },
+  "assessments": {
+    "academic": {
+      "classification": [
+        "Gospel prophecy narrative",
+        "temple-destruction prediction",
+        "text–event comparison case",
+        "chronology-sensitive interpretation"
+      ]
+    },
+    "theological": {
+      "status": "not_assessed",
+      "framework": null,
+      "shirk_analysis": null
+    }
+  },
+  "quality": {
+    "record_status": "reviewed",
+    "confidence": 0.97,
+    "needs_review": true
+  },
+  "metadata": {
+    "created_at": "2026-09-07T21:28:21Z",
+    "updated_at": "2026-09-07T21:28:21Z",
+    "dataset": "world-myth-corpus",
+    "created_by": "Rocksoul four-way integration review",
+    "last_research_run": "2026-09-07T21:28:21Z"
+  }
+}

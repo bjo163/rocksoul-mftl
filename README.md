@@ -8,6 +8,8 @@
 
 A provenance-first **Narrative & Belief Intelligence Corpus** for mythology, folklore, supernatural claims, historical ritual traditions, information integrity, deviation, and explainable comparative analysis.
 
+**ROCKSOUL RESEARCH · STORY × EVENT × PERSON × TEXT**
+
 <br/>
 
 [![Corpus Validation](https://github.com/bjo163/rocksoul-mftl/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/bjo163/rocksoul-mftl/actions/workflows/validate.yml)
@@ -54,6 +56,24 @@ RGBL       → TEXT / SCRIPTURE / REVELATION-REFERENCE
 MFTL may describe **event reports, event claims, or events as narrated**, but canonical historical-event ownership belongs to LEGEND. Human actor/transmission ownership belongs to SUPERHERO. Exact scripture/text passages and their corpus provenance belong to RGBL.
 
 [Read the interoperability contract →](docs/INTEROP.md)
+
+## Four-way proof case
+
+### **CASE 001 — JERUSALEM 70 CE**
+
+```text
+RGBL TEXT
+   ↓
+MFTL STORY
+   ↓
+LEGEND EVENT
+   ↑
+SUPERHERO PERSON
+```
+
+Mark 13:2 supplies the exact textual prediction; MFTL owns the prediction narrative; LEGEND independently models the 70 CE destruction; SUPERHERO models Josephus as witness/recorder. **Text–event correspondence is preserved without silently becoming a supernatural-fulfillment verdict.**
+
+[Read the shared case →](docs/cases/JERUSALEM-70-TEMPLE.md)
 
 ## The intelligence graph
 

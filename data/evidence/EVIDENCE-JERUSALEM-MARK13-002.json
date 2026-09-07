@@ -1,0 +1,17 @@
+{
+  "schema_version": "evidence.v0.1",
+  "id": "EVIDENCE-JERUSALEM-MARK13-002",
+  "target_id": "CLAIM-JERUSALEM-MARK13-001",
+  "source_id": "SOURCE-RGBL-WEB-MARK-13-2",
+  "stance": "supports",
+  "evidence_type": "textual",
+  "locator": "rgbl:mw:content:web-classic:2020:mar:13:2",
+  "summary": "RGBL's World English Bible Classic 2020 expression independently exposes the same verse reference in English.",
+  "analysis": "This is a translation/expression witness, not an additional historical witness to the event.",
+  "confidence": 0.98,
+  "status": "reviewed",
+  "metadata": {
+    "created_at": "2026-09-07T21:28:21Z",
+    "updated_at": "2026-09-07T21:28:21Z"
+  }
+}
