@@ -1,10 +1,22 @@
 {
   "schema_version": "coverage.v0.1",
-  "generated_at": "2026-09-07T00:00:00Z",
+  "generated_at": "2026-09-07T12:45:45Z",
   "canonical_records": 0,
-  "candidates": 0,
-  "regions": {},
-  "record_types": {},
-  "traditions": {},
-  "notes": "Bootstrap state. Generated indexes may later be rebuilt from corpus files."
+  "candidates": 3,
+  "regions": {
+    "Polynesia / Hawaiʻi": 1,
+    "Polynesia / Aotearoa New Zealand": 1,
+    "Southeast Asia / Bali": 1
+  },
+  "record_types": {
+    "deity / volcano tradition": 1,
+    "culture hero / trickster": 1,
+    "sacred place / purification practice / historical ritual tradition": 1
+  },
+  "traditions": {
+    "Native Hawaiian moʻolelo": 1,
+    "Māori traditions": 1,
+    "Balinese Hindu sacred-water practice": 1
+  },
+  "notes": "Candidate coverage only. No canonical records have been promoted yet; canonicalization requires full myth/general-record validation and evidence review."
 }
