@@ -21,9 +21,14 @@ function read(file) {
 
 const mythFiles = jsonFiles(path.join(root,"data/records"));
 const generalFiles = jsonFiles(path.join(root,"data/objects"));
+const entityFiles = jsonFiles(path.join(root,"data/entities"));
+const claimFiles = jsonFiles(path.join(root,"data/claims"));
 const sourceFiles = jsonFiles(path.join(root,"data/sources"));
 const evidenceFiles = jsonFiles(path.join(root,"data/evidence"));
 const candidateFiles = jsonFiles(path.join(root,"data/candidates"));
+const candidates = candidateFiles.map(read);
+const activeCandidates = candidates.filter((candidate) => candidate.status !== "merged" && candidate.status !== "rejected");
+const mergedCandidates = candidates.filter((candidate) => candidate.status === "merged");
 
 const records = [];
 
@@ -55,11 +60,14 @@ for (const file of generalFiles) {
 
 const regions = new Set(records.map((record) => record.region).filter(Boolean));
 const output = {
-  schema_version:"corpus-index.v0.1",
+  schema_version:"corpus-index.v0.2",
   generated_at:new Date().toISOString(),
   counts:{
     canonical_records:records.length,
-    candidates:candidateFiles.length,
+    candidates:activeCandidates.length,
+    merged_candidates:mergedCandidates.length,
+    entities:entityFiles.length,
+    claims:claimFiles.length,
     sources:sourceFiles.length,
     evidence:evidenceFiles.length,
     families:18,
@@ -71,4 +79,4 @@ const output = {
 const outDir = path.join(root,"apps/web/public/data");
 fs.mkdirSync(outDir,{recursive:true});
 fs.writeFileSync(path.join(outDir,"corpus-index.json"),JSON.stringify(output,null,2)+"\n");
-console.log(`Generated corpus index with ${records.length} canonical record(s).`);
+console.log(`Generated corpus index: ${records.length} canonical, ${activeCandidates.length} active candidates, ${claimFiles.length} claims, ${entityFiles.length} entities.`);
