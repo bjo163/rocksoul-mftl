@@ -1,0 +1,45 @@
+{
+  "schema_version": "candidate.v0.1",
+  "candidate_id": "CAND-KGZ-MANAS-TRILOGY-000001",
+  "name": "Kyrgyz Epic Trilogy: Manas, Semetey, Seytek",
+  "aliases": [
+    "Manas trilogy",
+    "Manas, Semetey and Seytek"
+  ],
+  "region": "Central Asia / Kyrgyzstan",
+  "country": "Kyrgyzstan",
+  "tradition": "Kyrgyz oral epic and Manaschi storytelling tradition",
+  "candidate_type": "oral heroic epic / historical-memory tradition / performed folklore",
+  "discovery": {
+    "summary": "The Kyrgyz epic trilogy of Manas, Semetey and Seytek is an orally transmitted heroic-epic tradition performed by specialist storytellers. UNESCO's 2013 inscription decision describes the trilogy as social memory passed from generation to generation and transmitted orally from master to apprentice [S1]. UNESCO's audiovisual archive likewise documents performance through distinctive narration, rhythm, tone and gesture, and describes the trilogy as a vehicle for historical memory, cultural knowledge and identity [S2].",
+    "why_relevant": "This is a strong MFTL candidate for studying oral transmission, variant performance, historical memory and the boundary between epic narrative and historical claims. The record should preserve multiple performed versions rather than normalize the trilogy into one fixed text, and should separate UNESCO's cultural-heritage description from any later factual or theological assessment.",
+    "discovered_at": "2026-09-07T17:45:00Z",
+    "search_terms": [
+      "Kyrgyz epic trilogy Manas Semetey Seytek",
+      "Manaschi oral tradition",
+      "UNESCO Manas Kyrgyzstan"
+    ]
+  },
+  "sources": [
+    {
+      "title": "Decision of the Intergovernmental Committee: 8.COM 8.19 — Kyrgyz epic trilogy: Manas, Semetey, Seytek",
+      "locator": "https://ich.unesco.org/en/decisions/8.COM/8.19",
+      "source_type": "UNESCO intangible-cultural-heritage decision",
+      "authority": "institutional",
+      "notes": "[S1] Supports inscription in 2013, intergenerational oral transmission, master-to-apprentice learning, social-memory function, community participation and safeguarding context."
+    },
+    {
+      "title": "Kyrgyz Epic Trilogy: Manas, Semetey, Seytek",
+      "locator": "https://www.unesco.org/archives/multimedia/document-3512",
+      "source_type": "UNESCO multimedia archive / ethnographic heritage documentation",
+      "authority": "institutional",
+      "notes": "[S2] Supports performance by storytellers using narration, rhythm, tone and gesture and the trilogy's role in transmitting historical memory and cultural knowledge."
+    }
+  ],
+  "duplicate_check": {
+    "checked": true,
+    "possible_matches": []
+  },
+  "status": "ready_for_record",
+  "notes": "No theological assessment has been made. Before canonicalization, distinguish performed variants, named Manaschi repertoires and the trilogy's historical-memory function from independently verified historical events. Material claims are keyed to [S1] and [S2] because candidate.v0.1 has no dedicated source_basis field."
+}
