@@ -1,13 +1,26 @@
 {
-  "schema_version": "corpus-index.v0.1",
-  "generated_at": "2026-09-07T00:00:00Z",
+  "schema_version": "corpus-index.v0.2",
+  "generated_at": "2026-09-07T18:26:10Z",
   "counts": {
-    "canonical_records": 0,
-    "candidates": 0,
-    "sources": 0,
-    "evidence": 0,
+    "canonical_records": 1,
+    "candidates": 15,
+    "merged_candidates": 1,
+    "entities": 5,
+    "claims": 5,
+    "sources": 3,
+    "evidence": 6,
     "families": 18,
-    "regions": 0
+    "regions": 1
   },
-  "records": []
+  "records": [
+    {
+      "id": "MYTH-MES-INANA-DESCENT-000001",
+      "title": "Inana's Descent to the Netherworld",
+      "family": "F01",
+      "record_type": "underworld_narrative",
+      "region": "Mesopotamia / Sumer",
+      "status": "reviewed",
+      "confidence": 0.97
+    }
+  ]
 }
