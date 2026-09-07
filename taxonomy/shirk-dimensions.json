@@ -1,0 +1,132 @@
+{
+  "schema_version": "taxonomy.v0.1",
+  "title": "MFTL Shirk Pattern Dimensions",
+  "warning": "These are theological pattern labels for claims/practices, not labels for ethnicities, cultures, readers, or people.",
+  "dimensions": [
+    {
+      "code": "S01",
+      "key": "worship_other_than_god",
+      "group": "worship"
+    },
+    {
+      "code": "S02",
+      "key": "prayer_to_other_than_god",
+      "group": "worship"
+    },
+    {
+      "code": "S03",
+      "key": "sacrifice_to_other_than_god",
+      "group": "worship"
+    },
+    {
+      "code": "S04",
+      "key": "ultimate_reliance_on_other_than_god",
+      "group": "worship"
+    },
+    {
+      "code": "S05",
+      "key": "independent_divine_power",
+      "group": "divine_attributes"
+    },
+    {
+      "code": "S06",
+      "key": "creation_power",
+      "group": "divine_attributes"
+    },
+    {
+      "code": "S07",
+      "key": "control_of_nature",
+      "group": "divine_attributes"
+    },
+    {
+      "code": "S08",
+      "key": "control_of_destiny",
+      "group": "divine_attributes"
+    },
+    {
+      "code": "S09",
+      "key": "divine_knowledge_claim",
+      "group": "knowledge"
+    },
+    {
+      "code": "S10",
+      "key": "independent_unseen_knowledge",
+      "group": "knowledge"
+    },
+    {
+      "code": "S11",
+      "key": "independent_intercession_claim",
+      "group": "mediation"
+    },
+    {
+      "code": "S12",
+      "key": "divine_offspring",
+      "group": "divine_genealogy"
+    },
+    {
+      "code": "S13",
+      "key": "divine_partner",
+      "group": "divine_genealogy"
+    },
+    {
+      "code": "S14",
+      "key": "divine_family",
+      "group": "divine_genealogy"
+    },
+    {
+      "code": "S15",
+      "key": "idol_or_image_worship",
+      "group": "object_of_worship"
+    },
+    {
+      "code": "S16",
+      "key": "ancestor_worship",
+      "group": "object_of_worship"
+    },
+    {
+      "code": "S17",
+      "key": "celestial_body_worship",
+      "group": "object_of_worship"
+    },
+    {
+      "code": "S18",
+      "key": "nature_worship",
+      "group": "object_of_worship"
+    },
+    {
+      "code": "S19",
+      "key": "spirit_worship",
+      "group": "object_of_worship"
+    },
+    {
+      "code": "S20",
+      "key": "human_deification",
+      "group": "object_of_worship"
+    },
+    {
+      "code": "S21",
+      "key": "ritual_dedication",
+      "group": "ritual"
+    },
+    {
+      "code": "S22",
+      "key": "vow_to_entity",
+      "group": "ritual"
+    },
+    {
+      "code": "S23",
+      "key": "invocation_of_entity",
+      "group": "ritual"
+    },
+    {
+      "code": "S24",
+      "key": "divination_or_oracle",
+      "group": "ritual"
+    },
+    {
+      "code": "S25",
+      "key": "unknown_or_requires_context",
+      "group": "review"
+    }
+  ]
+}
