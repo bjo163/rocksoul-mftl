@@ -1,0 +1,17 @@
+{
+  "id": "EVIDENCE-MES-INANA-005",
+  "target_id": "CLAIM-MES-INANA-005",
+  "source_id": "SOURCE-ETCSL-INANA-DESCENT",
+  "stance": "supports",
+  "evidence_type": "textual",
+  "locator": "ETCSL 1.4.1, lines 282–289",
+  "summary": "The Anuna state that if Inana is to ascend from the underworld she must provide a substitute.",
+  "analysis": "Direct textual support for the substitute condition.",
+  "confidence": 0.99,
+  "status": "reviewed",
+  "schema_version": "evidence.v0.1",
+  "metadata": {
+    "created_at": "2026-09-07T18:26:10Z",
+    "updated_at": "2026-09-07T18:26:10Z"
+  }
+}
