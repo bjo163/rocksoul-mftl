@@ -4,28 +4,39 @@
 
 - [x] Provenance-first JSON model
 - [x] Canonical myth record schema
+- [x] General MFTL object schema
 - [x] Discovery candidate schema
+- [x] Reusable source registry schema
+- [x] Evidence + counterevidence schema
 - [x] Shirk-pattern taxonomy
+- [x] Narrative integrity taxonomy
+- [x] Deviation / drift taxonomy
+- [x] 18 record families
 - [x] Research and automation policy
-- [x] Corpus validator
+- [x] Multi-contract corpus validator
+- [x] Generated corpus explorer index
 - [x] GitHub Actions validation
-- [x] React/Vite public-site foundation
+- [x] React/Vite intelligence explorer foundation
 - [ ] First 25 reviewed canonical records
 - [ ] First 10 world regions represented
-- [ ] Generated search/index data
+- [ ] First 50 reusable source records
+- [ ] First counterevidence-linked case
 - [ ] Record detail pages
 - [ ] Source/evidence panels
 - [ ] Claim graph visualization
+- [ ] Timeline + geography explorer
 - [ ] Mizan assessment visualization
 
 ## v0.2 — World Graph
 
 - entity registry
-- shared source registry
+- event registry
+- claim registry
 - cross-cultural motif graph
 - equivalence/syncretism relations
 - geography and timeline indexes
-- searchable public API
+- stable public JSON API
+- search index generated from canonical corpus
 
 ## v0.3 — Comparative Engine
 
@@ -35,7 +46,18 @@
 - assessment explainability
 - confidence calibration
 - human-review queue
+- prophecy/prediction evaluation
+- narrative version diffing
+
+## v0.4 — Provenance Intelligence
+
+- source lineage graph
+- quotation/transmission chain
+- claim version history
+- supporting vs contradicting evidence balance
+- provenance health score
+- source reuse and dependency analysis
 
 ## v1.0 — From Myth Fades To Legend
 
-A public, queryable world mythology/evidence graph where every conclusion can be traced back to claims and sources.
+A public, queryable narrative and belief intelligence graph where every conclusion can be traced back to claims, sources, evidence, counterevidence, and explicit analytical rules.
