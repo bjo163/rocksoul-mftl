@@ -1,0 +1,122 @@
+{
+  "schema_version": "deviation-taxonomy.v0.1",
+  "title": "MFTL Reference Deviation / Drift Taxonomy",
+  "principle": "Deviation is relational. A record cannot be labeled deviant without an explicit baseline and evidence for the comparison.",
+  "baseline_types": [
+    "source_text",
+    "canonical_text",
+    "historical_record",
+    "stated_doctrine",
+    "documented_practice",
+    "methodological_standard",
+    "project_rule",
+    "other"
+  ],
+  "types": [
+    {
+      "code": "D01",
+      "key": "semantic_shift",
+      "group": "meaning"
+    },
+    {
+      "code": "D02",
+      "key": "addition_or_interpolation",
+      "group": "transmission"
+    },
+    {
+      "code": "D03",
+      "key": "omission",
+      "group": "transmission"
+    },
+    {
+      "code": "D04",
+      "key": "substitution",
+      "group": "transmission"
+    },
+    {
+      "code": "D05",
+      "key": "reordering",
+      "group": "transmission"
+    },
+    {
+      "code": "D06",
+      "key": "context_detachment",
+      "group": "context"
+    },
+    {
+      "code": "D07",
+      "key": "translation_drift",
+      "group": "language"
+    },
+    {
+      "code": "D08",
+      "key": "attribution_drift",
+      "group": "provenance"
+    },
+    {
+      "code": "D09",
+      "key": "historical_drift",
+      "group": "history"
+    },
+    {
+      "code": "D10",
+      "key": "doctrinal_drift",
+      "group": "doctrine",
+      "framework_relative": true
+    },
+    {
+      "code": "D11",
+      "key": "ritual_drift",
+      "group": "practice",
+      "framework_relative": true
+    },
+    {
+      "code": "D12",
+      "key": "authority_shift",
+      "group": "authority",
+      "framework_relative": true
+    },
+    {
+      "code": "D13",
+      "key": "syncretic_blending",
+      "group": "composition",
+      "framework_relative": true
+    },
+    {
+      "code": "D14",
+      "key": "methodological_deviation",
+      "group": "method"
+    },
+    {
+      "code": "D15",
+      "key": "evidence_standard_deviation",
+      "group": "method"
+    },
+    {
+      "code": "D16",
+      "key": "scope_creep",
+      "group": "method"
+    },
+    {
+      "code": "D17",
+      "key": "category_confusion",
+      "group": "reasoning"
+    },
+    {
+      "code": "D18",
+      "key": "claim_inflation",
+      "group": "reasoning"
+    },
+    {
+      "code": "D19",
+      "key": "normative_inversion",
+      "group": "normative",
+      "framework_relative": true
+    },
+    {
+      "code": "D20",
+      "key": "baseline_uncertain",
+      "group": "review"
+    }
+  ]
+}
