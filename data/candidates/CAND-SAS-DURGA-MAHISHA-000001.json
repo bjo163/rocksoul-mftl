@@ -1,0 +1,38 @@
+{
+  "schema_version": "candidate.v0.1",
+  "candidate_id": "CAND-SAS-DURGA-MAHISHA-000001",
+  "name": "Durga Mahishasuramardini",
+  "aliases": ["Durgā Mahiṣāsuramardinī", "Durga slaying Mahishasura", "Durga and the Buffalo Demon"],
+  "region": "South Asia / India",
+  "country": "India",
+  "tradition": "Hindu goddess narrative and iconographic tradition",
+  "candidate_type": "goddess battle narrative / demon-slaying motif / ritual-iconographic tradition",
+  "discovery": {
+    "summary": "The British Museum preserves multiple historical representations of Durgā killing the buffalo demon Mahisha, including an 8th-century sandstone panel from Orissa and later South Asian examples. The National Museum of Asian Art likewise identifies Durga as a major goddess associated with strength, protection, and the slaying of demons. Source basis: British Museum object 1872,0701.89; Smithsonian NMAA, 'Durga, Goddess who Slays the Buffalo Demon'.",
+    "why_relevant": "The candidate offers strong material-culture evidence across time and region and can later support separate modeling of narrative motifs, deity iconography, weapon attributes, regional variation, ritual reception, and transmission beyond India without conflating those layers.",
+    "discovered_at": "2026-09-07T14:39:24Z",
+    "search_terms": ["Durga Mahishasuramardini", "Mahisha buffalo demon", "Durga Orissa British Museum", "Durga goddess slays buffalo demon"]
+  },
+  "sources": [
+    {
+      "title": "figure — panel of Durgā killing the Buffalo Demon Mahisha",
+      "locator": "https://www.britishmuseum.org/collection/object/A_1872-0701-89",
+      "source_type": "museum collection record",
+      "authority": "institutional",
+      "notes": "British Museum record for an 8th-century sandstone panel from Orissa; supports the historical iconographic presence of the Durga-Mahisha motif and associated curatorial context."
+    },
+    {
+      "title": "Durga, Goddess who Slays the Buffalo Demon",
+      "locator": "https://asia.si.edu/education/educator-resources/encountering-religion-in-asian-art/explore-by-object/object/durga-goddess-who-slays-the-buffalo-demon/",
+      "source_type": "museum educational / collection resource",
+      "authority": "institutional",
+      "notes": "Smithsonian National Museum of Asian Art resource supporting Durga's identification and the demon-slaying iconographic narrative in a documented South Asian object context."
+    }
+  ],
+  "duplicate_check": {
+    "checked": true,
+    "possible_matches": []
+  },
+  "status": "ready_for_record",
+  "notes": "Canonicalization should distinguish textual narrative traditions from object iconography and should preserve regional differences rather than treating all Durga worship or representations as a single uniform practice. No theological assessment has been made."
+}
