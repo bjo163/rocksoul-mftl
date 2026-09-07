@@ -1,0 +1,45 @@
+{
+  "schema_version": "candidate.v0.1",
+  "candidate_id": "CAND-AUS-NGATYI-RAINBOW-SERPENT-000001",
+  "name": "Ngatyi / Rainbow Serpent traditions",
+  "aliases": ["Rainbow Serpent", "Rainbow Snake", "Ngatyi", "Ngatji", "Goorialla"],
+  "region": "Oceania / Australia / Indigenous Australia",
+  "country": "Australia",
+  "tradition": "Multiple Aboriginal Australian creation and Country traditions",
+  "candidate_type": "ancestral being / creation narrative / water-and-Country tradition",
+  "discovery": {
+    "summary": "Australian Museum material records Barkandji knowledge in which Ngatyi are ancestral creator beings associated with Country, waterways, rain, protection, and places requiring respectful avoidance; the museum also notes that Rainbow Serpent traditions occur in many parts of Australia but vary by community. National Museum of Australia material likewise documents distinct regional Rainbow Snake/Serpent traditions, including Bardi and Djawi and Kimberley examples. Source basis: Australian Museum, 'Save our Ngatyi (Rainbow Serpents)' and 'Indigenous Australians: Australia’s First Peoples'; National Museum of Australia, 'Kimberley, Western Australia'.",
+    "why_relevant": "This is a high-value provenance candidate because it demonstrates why MFTL must not collapse similarly named Indigenous traditions into a single pan-Australian myth. It can later support community-specific entities, creation claims, water-place relations, ritual restrictions, and transmission records while preserving cultural boundaries and restricted-knowledge cautions.",
+    "discovered_at": "2026-09-07T15:41:39Z",
+    "search_terms": ["Ngatyi Rainbow Serpent Barkandji", "Rainbow Serpent Australian Museum", "Rainbow Snake National Museum Australia", "Goorialla Rainbow Serpent"]
+  },
+  "sources": [
+    {
+      "title": "Save our Ngatyi (Rainbow Serpents)",
+      "locator": "https://australian.museum/learn/first-nations/barka/save-our-ngatyi/",
+      "source_type": "museum / First Nations knowledge and collection record",
+      "authority": "institutional",
+      "notes": "Australian Museum page presenting Barkandji artist and elder Badger Bates's account of Ngatyi, including creator/water associations, continuing respect, and place-specific restrictions."
+    },
+    {
+      "title": "Indigenous Australians: Australia’s First Peoples exhibition 1996-2015",
+      "locator": "https://australian.museum/about/history/exhibitions/indigenous-australians/",
+      "source_type": "museum exhibition archive",
+      "authority": "institutional",
+      "notes": "Provides broader museum context for Rainbow Serpent themes, watercourse associations, landscape-creation narratives, destructive/protective aspects, and the warning that some story aspects are restricted."
+    },
+    {
+      "title": "Kimberley, Western Australia",
+      "locator": "https://www.nma.gov.au/learn/encounters-education/community-stories/kimberley",
+      "source_type": "national museum educational collection context",
+      "authority": "institutional",
+      "notes": "Documents regional Rainbow Snake traditions and emphasizes that rainbow snakes/serpents feature in creation stories of many Australian regions rather than constituting one uniform narrative."
+    }
+  ],
+  "duplicate_check": {
+    "checked": true,
+    "possible_matches": []
+  },
+  "status": "ready_for_record",
+  "notes": "Canonicalization must be community- and source-specific. Do not treat 'Rainbow Serpent' as one universal Aboriginal Australian doctrine, and do not reproduce culturally restricted material beyond what authorized institutional/community sources make public. No theological assessment has been made."
+}
