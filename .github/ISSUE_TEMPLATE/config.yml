@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: MFTL Research Policy
+    url: https://github.com/bjo163/rocksoul-mftl/blob/main/docs/RESEARCH_POLICY.md
+    about: Read the evidence and provenance rules before proposing corpus data.
