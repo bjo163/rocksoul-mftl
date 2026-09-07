@@ -115,3 +115,19 @@ MFTL families remain broad research categories, but their ownership meaning is n
 - **F09 Place / Object / Artifact** — symbolic/narrative meaning of a place or object. Historical-event material evidence normally belongs to LEGEND; textual/manuscript supply-chain artifacts normally belong to RGBL.
 - **F10 Event Report / Event Claim** — event as narrated or claimed. Canonical historical event belongs to LEGEND.
 - **F16 Source / Evidence** — MFTL research evidence remains local when it supports narrative analysis. Exact scripture editions/passages need not be duplicated when RGBL already owns them.
+
+## RGBL assessment vs MFTL analysis
+
+RGBL may expose contextual `mw:assessment:*` records as part of its corpus when the assessment has explicit scope, method, evidence, and provenance.
+
+MFTL must not silently treat those as its own Integrity, Deviation, or Mizan result.
+
+~~~text
+RGBL assessment
+→ contextual corpus evidence
+
+MFTL assessment
+→ narrative / integrity / deviation / optional normative analysis
+~~~
+
+Likewise, the mere presence of a work or passage in RGBL does not make that source automatically authoritative for every MFTL/Mizan policy. Source admissibility belongs to the explicit downstream analytical profile.
