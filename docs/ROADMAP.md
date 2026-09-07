@@ -5,6 +5,8 @@
 - [x] Provenance-first JSON model
 - [x] Canonical myth record schema
 - [x] General MFTL object schema
+- [x] Entity registry schema
+- [x] Atomic claim registry schema
 - [x] Discovery candidate schema
 - [x] Reusable source registry schema
 - [x] Evidence + counterevidence schema
@@ -17,6 +19,7 @@
 - [x] Generated corpus explorer index
 - [x] GitHub Actions validation
 - [x] React/Vite intelligence explorer foundation
+- [x] First reviewed canonical record — Inana's Descent to the Netherworld
 - [ ] First 25 reviewed canonical records
 - [ ] First 10 world regions represented
 - [ ] First 50 reusable source records
