@@ -1,0 +1,17 @@
+{
+  "id": "EVIDENCE-MES-INANA-002",
+  "target_id": "CLAIM-MES-INANA-002",
+  "source_id": "SOURCE-ETCSL-INANA-DESCENT",
+  "stance": "supports",
+  "evidence_type": "textual",
+  "locator": "ETCSL 1.4.1, lines 114–163",
+  "summary": "Ereškigala orders seven gates controlled separately; the text then narrates removal of Inana's regalia gate by gate.",
+  "analysis": "Direct textual support with manuscript-variation markers preserved by ETCSL.",
+  "confidence": 0.99,
+  "status": "reviewed",
+  "schema_version": "evidence.v0.1",
+  "metadata": {
+    "created_at": "2026-09-07T18:26:10Z",
+    "updated_at": "2026-09-07T18:26:10Z"
+  }
+}
