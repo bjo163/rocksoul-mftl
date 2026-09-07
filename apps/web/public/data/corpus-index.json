@@ -1,0 +1,13 @@
+{
+  "schema_version": "corpus-index.v0.1",
+  "generated_at": "2026-09-07T00:00:00Z",
+  "counts": {
+    "canonical_records": 0,
+    "candidates": 0,
+    "sources": 0,
+    "evidence": 0,
+    "families": 18,
+    "regions": 0
+  },
+  "records": []
+}
