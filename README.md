@@ -139,7 +139,7 @@ CANDIDATE / CANONICAL / MERGE / REJECT
 ```
 
 **[View open research →](https://github.com/bjo163/rocksoul-mftl/issues?q=is%3Aissue+is%3Aopen+%22%5BRESEARCH%5D%22)** ·
-**[Create research issue →](https://github.com/bjo163/rocksoul-mftl/issues/new?template=research-data.md&title=%5BRESEARCH%5D+ )**
+**[Create research issue →](https://github.com/bjo163/rocksoul-mftl/issues/new?template=research-data.md&title=%5BRESEARCH%5D+)**
 
 A research issue should contain only six things: **topic, region/tradition, summary, sources, uncertainty, and suggested next action**.
 
