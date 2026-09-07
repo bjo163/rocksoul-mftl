@@ -1,0 +1,23 @@
+{
+  "id": "CLAIM-MES-INANA-001",
+  "subject": "ENTITY-MES-INANA",
+  "predicate": "descends_to",
+  "object": "underworld",
+  "claim_type": "supernatural_narrative",
+  "source_basis": [
+    "SOURCE-ETCSL-INANA-DESCENT",
+    "SOURCE-CDLI-P275004"
+  ],
+  "evidence_ids": [
+    "EVIDENCE-MES-INANA-001",
+    "EVIDENCE-MES-INANA-006"
+  ],
+  "epistemic_status": "supported_as_textual_attestation",
+  "confidence": 0.99,
+  "notes": "Confidence concerns the claim's presence in the Sumerian textual tradition, not empirical verification of an underworld journey.",
+  "schema_version": "claim.v0.1",
+  "metadata": {
+    "created_at": "2026-09-07T18:26:10Z",
+    "updated_at": "2026-09-07T18:26:10Z"
+  }
+}
