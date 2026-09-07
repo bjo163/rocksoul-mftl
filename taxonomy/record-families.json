@@ -1,0 +1,300 @@
+{
+  "schema_version": "record-families.v0.1",
+  "title": "MFTL Record Families",
+  "principle": "Store the object being investigated separately from its integrity, deviation, historicity, and theological assessments.",
+  "families": [
+    {
+      "code": "F01",
+      "key": "narrative",
+      "types": [
+        "myth",
+        "legend",
+        "folklore",
+        "urban_legend",
+        "origin_story",
+        "creation_myth",
+        "flood_myth",
+        "eschatological_narrative",
+        "heroic_cycle",
+        "rumor_narrative"
+      ]
+    },
+    {
+      "code": "F02",
+      "key": "entity",
+      "types": [
+        "deity",
+        "spirit",
+        "demon",
+        "angelic_being",
+        "hero",
+        "ancestor",
+        "sacred_human",
+        "monster",
+        "creature",
+        "collective_entity",
+        "unknown_entity"
+      ]
+    },
+    {
+      "code": "F03",
+      "key": "claim",
+      "types": [
+        "historical_claim",
+        "supernatural_claim",
+        "religious_claim",
+        "scientific_claim",
+        "genealogical_claim",
+        "authority_claim",
+        "identity_claim",
+        "causal_claim",
+        "prediction_claim",
+        "miracle_claim"
+      ]
+    },
+    {
+      "code": "F04",
+      "key": "practice",
+      "types": [
+        "ritual",
+        "prayer",
+        "sacrifice",
+        "vow",
+        "offering",
+        "festival",
+        "pilgrimage",
+        "initiation",
+        "divination",
+        "magic_practice",
+        "healing_practice",
+        "funerary_practice",
+        "taboo"
+      ]
+    },
+    {
+      "code": "F05",
+      "key": "belief_doctrine",
+      "types": [
+        "doctrine",
+        "cosmology",
+        "afterlife_model",
+        "creation_model",
+        "divine_hierarchy",
+        "salvation_claim",
+        "intercession_claim",
+        "sacred_law_claim",
+        "sectarian_teaching"
+      ]
+    },
+    {
+      "code": "F06",
+      "key": "text_transmission",
+      "types": [
+        "manuscript",
+        "scripture_claim",
+        "apocryphal_text",
+        "translation",
+        "quotation",
+        "textual_variant",
+        "interpolation_claim",
+        "omission_claim",
+        "redaction",
+        "commentary",
+        "oral_transmission"
+      ]
+    },
+    {
+      "code": "F07",
+      "key": "prophecy_prediction",
+      "types": [
+        "prophecy",
+        "omen",
+        "oracle",
+        "dream_prediction",
+        "vision",
+        "astrology",
+        "numerology",
+        "fortune_telling",
+        "end_times_prediction",
+        "date_prediction"
+      ]
+    },
+    {
+      "code": "F08",
+      "key": "paranormal_supernatural",
+      "types": [
+        "apparition",
+        "possession",
+        "haunting",
+        "curse",
+        "blessing",
+        "miracle_report",
+        "healing_report",
+        "relic_power_claim",
+        "psychic_claim",
+        "telepathy_claim",
+        "near_death_report",
+        "cryptid_report"
+      ]
+    },
+    {
+      "code": "F09",
+      "key": "place_object_artifact",
+      "types": [
+        "sacred_place",
+        "shrine",
+        "temple",
+        "tomb",
+        "relic",
+        "idol",
+        "sacred_object",
+        "artifact",
+        "inscription",
+        "archaeological_site",
+        "celestial_object",
+        "natural_feature"
+      ]
+    },
+    {
+      "code": "F10",
+      "key": "event",
+      "types": [
+        "historical_event",
+        "religious_event",
+        "disaster",
+        "battle",
+        "death",
+        "birth",
+        "disappearance",
+        "discovery",
+        "celestial_event",
+        "mass_sighting",
+        "viral_event"
+      ]
+    },
+    {
+      "code": "F11",
+      "key": "information_integrity",
+      "types": [
+        "misinformation_case",
+        "disinformation_case",
+        "hoax",
+        "fabricated_news",
+        "forged_document",
+        "false_attribution",
+        "misleading_context",
+        "propaganda_case",
+        "deepfake_case",
+        "impersonation_case"
+      ]
+    },
+    {
+      "code": "F12",
+      "key": "deviation_drift",
+      "types": [
+        "semantic_drift",
+        "translation_drift",
+        "doctrinal_drift",
+        "ritual_drift",
+        "authority_shift",
+        "historical_drift",
+        "methodological_deviation",
+        "claim_inflation",
+        "syncretic_blending"
+      ]
+    },
+    {
+      "code": "F13",
+      "key": "pseudoknowledge",
+      "types": [
+        "pseudohistory",
+        "pseudoarchaeology",
+        "pseudoscience",
+        "fake_genealogy",
+        "fabricated_chronology",
+        "unsupported_etymology",
+        "conspiracy_claim",
+        "ancient_technology_claim"
+      ]
+    },
+    {
+      "code": "F14",
+      "key": "social_movement_authority",
+      "types": [
+        "tradition",
+        "movement",
+        "sect",
+        "school",
+        "institution",
+        "priesthood",
+        "oracle_center",
+        "cultic_group",
+        "media_network",
+        "anonymous_network"
+      ]
+    },
+    {
+      "code": "F15",
+      "key": "symbol_motif",
+      "types": [
+        "symbol",
+        "motif",
+        "archetype",
+        "sacred_number",
+        "sacred_animal",
+        "sacred_tree",
+        "weapon_symbol",
+        "solar_motif",
+        "lunar_motif",
+        "flood_motif",
+        "dying_rising_motif"
+      ]
+    },
+    {
+      "code": "F16",
+      "key": "source_evidence",
+      "types": [
+        "primary_source",
+        "academic_source",
+        "museum_record",
+        "archive_record",
+        "inscription_evidence",
+        "archaeological_evidence",
+        "image_evidence",
+        "audio_evidence",
+        "video_evidence",
+        "witness_report",
+        "counterevidence",
+        "rebuttal"
+      ]
+    },
+    {
+      "code": "F17",
+      "key": "comparison",
+      "types": [
+        "parallel",
+        "contradiction",
+        "borrowing_hypothesis",
+        "syncretism_relation",
+        "equivalence_claim",
+        "shared_motif",
+        "genealogical_relation",
+        "source_dependency",
+        "chronological_relation"
+      ]
+    },
+    {
+      "code": "F18",
+      "key": "assessment",
+      "types": [
+        "historicity_assessment",
+        "integrity_assessment",
+        "deviation_assessment",
+        "academic_classification",
+        "theological_assessment",
+        "mizan_assessment",
+        "confidence_assessment"
+      ]
+    }
+  ]
+}
