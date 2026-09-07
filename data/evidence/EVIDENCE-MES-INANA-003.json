@@ -1,0 +1,17 @@
+{
+  "id": "EVIDENCE-MES-INANA-003",
+  "target_id": "CLAIM-MES-INANA-003",
+  "source_id": "SOURCE-ETCSL-INANA-DESCENT",
+  "stance": "supports",
+  "evidence_type": "textual",
+  "locator": "ETCSL 1.4.1, lines 164–172",
+  "summary": "The Anuna render judgment against Inana; the composition says she is turned into a corpse and hung on a hook.",
+  "analysis": "Direct textual support for a mythic narrative episode.",
+  "confidence": 0.99,
+  "status": "reviewed",
+  "schema_version": "evidence.v0.1",
+  "metadata": {
+    "created_at": "2026-09-07T18:26:10Z",
+    "updated_at": "2026-09-07T18:26:10Z"
+  }
+}
