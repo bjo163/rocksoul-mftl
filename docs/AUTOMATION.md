@@ -1,5 +1,7 @@
 # Hourly Research Automation
 
+> Branch policy: **main-only**.
+
 ## Intended workflow
 
 ```text
@@ -15,27 +17,44 @@ CROSS-CHECK
    ↓
 VALIDATE JSON
    ↓
-COMMIT TO dev
+COMMIT TO main
    ↓
-AUDIT
+CI
    ↓
-PROMOTE TO main
+AUDIT / CORRECT
 ```
 
 ## Rules for automated updates
 
-- Work on `dev`, never directly mutate `main`.
+- Work only on `main`.
 - Search globally but prioritize under-covered regions.
 - Prefer one high-quality record over many shallow records.
-- Search existing IDs, names, aliases, and claims before adding.
+- Search existing IDs, names, aliases, claims, candidates, and canonical records before adding.
 - Add source provenance before theological assessment.
-- Do not invent or autocomplete a citation.
+- Never invent, infer, or autocomplete a citation.
 - Preserve uncertainty and conflicting scholarship.
 - Keep theological assessment `not_assessed` unless exact evidence and rule references are available.
-- Validate all changed JSON before commit.
-- Do not delete an existing record merely because a new source disagrees; record the disagreement.
-- Commit messages should start with `data:`, `source:`, `review:`, or `fix:`.
+- Use `data/candidates/` when evidence is incomplete.
+- Validate changed JSON before committing whenever possible.
+- Do not delete an existing record merely because a new source disagrees; encode the disagreement.
+- Keep academic description separate from theological assessment.
+- Never label living people, ethnicities, nationalities, or populations with theological verdicts.
+- Commit messages should start with `data:`, `source:`, `review:`, `fix:`, `docs:`, or `web:`.
 
-## Promotion
+## Direct-to-main safety contract
 
-`main` is curated/stable. Promotion from `dev` should occur only after schema validation and evidence review.
+Because MFTL is intentionally main-only, automation must be conservative.
+
+A run may commit directly to `main` only when the change is defensible and does not knowingly leave the repository in a schema-invalid state.
+
+When evidence is incomplete, create or improve a candidate rather than pretending the record is canonical.
+
+When no defensible improvement exists, make **no repository change** and report `NO_UPDATE`.
+
+## CI response
+
+After a commit:
+
+1. inspect validation/build state when available;
+2. if the commit introduces a defect, repair it on `main` in the same research cycle when possible;
+3. never hide a failed validation by weakening schema rules without evidence that the schema itself is wrong.
