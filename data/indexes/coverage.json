@@ -1,8 +1,8 @@
 {
   "schema_version": "coverage.v0.1",
-  "generated_at": "2026-09-07T16:41:00Z",
+  "generated_at": "2026-09-07T17:48:00Z",
   "canonical_records": 0,
-  "candidates": 13,
+  "candidates": 16,
   "regions": {
     "Polynesia / Hawaiʻi": 1,
     "Polynesia / Aotearoa New Zealand": 1,
@@ -16,7 +16,10 @@
     "Oceania / Australia / Indigenous Australia": 1,
     "Arctic / Inuit regions": 1,
     "Europe / Ireland": 1,
-    "Europe / Finland and Karelia": 1
+    "Europe / Finland and Karelia": 1,
+    "Central Asia / Kyrgyzstan": 1,
+    "North Asia / Sakha Republic (Yakutia)": 1,
+    "Southeast Asia / Philippines / Ifugao": 1
   },
   "record_types": {
     "deity / volcano tradition": 1,
@@ -31,7 +34,10 @@
     "ancestral being / creation narrative / water-and-Country tradition": 1,
     "sea-being tradition / animal-origin narrative / oral tradition": 1,
     "supernatural being / death-omen folklore / oral tradition": 1,
-    "oral-literary epic / folk-poetry compilation / mythic narrative tradition": 1
+    "oral-literary epic / folk-poetry compilation / mythic narrative tradition": 1,
+    "oral heroic epic / historical-memory tradition / performed folklore": 1,
+    "oral heroic epic / mythic narrative cycle / performed folklore": 1,
+    "oral narrative chant / ritual-performance tradition / ancestral-hero folklore": 1
   },
   "traditions": {
     "Native Hawaiian moʻolelo": 1,
@@ -46,7 +52,10 @@
     "Multiple Aboriginal Australian creation and Country traditions": 1,
     "Inuit sea-woman and sea-animal origin traditions": 1,
     "Irish oral folklore and supernatural-being traditions": 1,
-    "Karelian, Finnish, and Ingrian oral-poetry traditions / 19th-century oral-literary epic": 1
+    "Karelian, Finnish, and Ingrian oral-poetry traditions / 19th-century oral-literary epic": 1,
+    "Kyrgyz oral epic and Manaschi storytelling tradition": 1,
+    "Sakha (Yakut) oral heroic-epic tradition": 1,
+    "Ifugao oral narrative-chant and ritual-performance tradition": 1
   },
   "notes": "Candidate coverage only. No canonical records have been promoted yet; canonicalization requires full myth/general-record validation and evidence review. Regional labels describe candidate provenance/coverage and do not imply a single uniform tradition within those regions."
 }
