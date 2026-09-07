@@ -1,0 +1,33 @@
+{
+  "schema_version": "taxonomy.v0.1",
+  "record_types": [
+    "deity",
+    "spirit",
+    "demon",
+    "angelic_being",
+    "hero",
+    "ancestor",
+    "sacred_human",
+    "creature",
+    "sacred_animal",
+    "sacred_object",
+    "idol",
+    "place",
+    "sacred_place",
+    "cosmology",
+    "creation_myth",
+    "flood_myth",
+    "afterlife_myth",
+    "eschatology",
+    "ritual",
+    "festival",
+    "sacrifice",
+    "prayer",
+    "divination",
+    "legend",
+    "folklore",
+    "urban_legend",
+    "religious_claim",
+    "supernatural_claim"
+  ]
+}
