@@ -232,7 +232,7 @@ flowchart LR
 
 This repository intentionally uses **`main` as the only working branch**.
 
-Automated research may write to `main` only when the change is defensible and schema-valid. When evidence is incomplete, it stays in candidate staging. When there is no defensible improvement, the correct action is **no commit**.
+Automated research is **issue-first**: MFTL Steward browses, de-duplicates, and creates or updates a `[RESEARCH]` Issue. It does not directly add or canonicalize corpus research data. Small README/docs hygiene fixes may still be committed to `main` when useful and CI-safe.
 
 ---
 
