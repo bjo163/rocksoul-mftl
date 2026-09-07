@@ -24,6 +24,8 @@ const contracts = [
   {dir:"data/records",schema:"myth-record.schema.json",label:"myth records"},
   {dir:"data/candidates",schema:"discovery-candidate.schema.json",label:"discovery candidates"},
   {dir:"data/objects",schema:"mftl-record.schema.json",label:"general MFTL objects"},
+  {dir:"data/entities",schema:"entity-record.schema.json",label:"entity records"},
+  {dir:"data/claims",schema:"claim-record.schema.json",label:"claim records"},
   {dir:"data/sources",schema:"source-record.schema.json",label:"source records"},
   {dir:"data/evidence",schema:"evidence-record.schema.json",label:"evidence records"}
 ];
