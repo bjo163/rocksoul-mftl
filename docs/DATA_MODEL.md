@@ -34,11 +34,14 @@ RECORD
 MFTL       → story / narrative
 LEGEND     → canonical event / historical core
 SUPERHERO  → person / actor / transmission
+RGBL       → text / passage / scripture-reference provenance
 ```
 
 MFTL can contain an event **as narrated, claimed, reported, predicted, remembered, or interpreted**. That does not make MFTL the owner of the canonical historical event object. When a defensible historical event is modeled in LEGEND, MFTL should reference that event rather than create a competing canonical event registry.
 
 Likewise, named human actors may appear in MFTL sources or narratives, but canonical person/transmission records belong to SUPERHERO.
+
+When MFTL compares a narrative claim with an exact sacred/scriptural text, the source-preserving work/passage/content identity should come from RGBL. MFTL owns the narrative comparison and downstream assessment; RGBL owns the exact corpus text/provenance.
 
 ## Graph compatibility
 

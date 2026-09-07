@@ -44,7 +44,7 @@
 ## v0.3 — Comparative Engine
 
 - academic comparison layer
-- revelation-reference registry
+- RGBL scripture / passage references
 - explicit rule-to-claim assessment
 - assessment explainability
 - confidence calibration

@@ -48,9 +48,10 @@ That separation is the foundation of MFTL.
 MFTL       → STORY / NARRATIVE
 LEGEND     → CANONICAL EVENT / HISTORICAL CORE
 SUPERHERO  → PERSON / HUMAN AGENCY
+RGBL       → TEXT / SCRIPTURE / REVELATION-REFERENCE
 ```
 
-MFTL may describe **event reports, event claims, or events as narrated**, but canonical historical-event ownership belongs to LEGEND. Human actor/transmission ownership belongs to SUPERHERO.
+MFTL may describe **event reports, event claims, or events as narrated**, but canonical historical-event ownership belongs to LEGEND. Human actor/transmission ownership belongs to SUPERHERO. Exact scripture/text passages and their corpus provenance belong to RGBL.
 
 [Read the interoperability contract →](docs/INTEROP.md)
 

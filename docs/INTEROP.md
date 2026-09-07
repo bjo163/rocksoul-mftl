@@ -6,6 +6,7 @@
 MFTL       STORY / NARRATIVE
 LEGEND     EVENT / HISTORICAL CORE
 SUPERHERO  PERSON / HUMAN AGENCY
+RGBL       TEXT / SCRIPTURE / REVELATION-REFERENCE
 ```
 
 Ownership is based on the primary research question:
@@ -13,6 +14,7 @@ Ownership is based on the primary research question:
 - **What was told?** → MFTL.
 - **What happened?** → LEGEND.
 - **Who acted, witnessed, recorded, translated, transmitted, interpreted, or disputed it?** → SUPERHERO.
+- **What does the exact source/scripture passage say?** → RGBL.
 
 ## MFTL event boundary
 
@@ -53,6 +55,10 @@ SRC-COL-CAMBRIDGE-GUATAVITA-2024
 SUPERHERO
 PER-COL-JUAN-RODRIGUEZ-FREYLE
 SRC-SH-COL-FREYLE-EL-CARNERO-1636
+
+RGBL
+mw:work:quran
+mw:passage:...
 ```
 
 When an explicit cross-repository notation is useful, qualify the owner:
@@ -61,6 +67,8 @@ When an explicit cross-repository notation is useful, qualify the owner:
 mftl:MYTH-...
 legend:EVT-...
 superhero:PER-...
+rgbl:mw:work:...
+rgbl:mw:passage:...
 ```
 
 This notation does not require renaming existing data.
@@ -71,4 +79,4 @@ Repository-local CI validates local schema and graph integrity. Cross-repository
 
 ## Non-goals
 
-Do not create a shared database, shared monorepo, or fourth "source" repository simply to unify IDs. Stable ownership + explicit references are sufficient for v0.1.
+Do not create a shared database or shared monorepo simply to unify IDs. RGBL is the existing corpus/text reference layer; it is not a generic dumping ground for every MFTL/LEGEND/SUPERHERO source object. Stable ownership + explicit references are sufficient for v0.1.
