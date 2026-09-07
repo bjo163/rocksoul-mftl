@@ -1,0 +1,117 @@
+{
+  "schema_version": "myth.v0.1",
+  "id": "MYTH-EXAMPLE-000001",
+  "identity": {
+    "canonical_name": "Example Sky Figure",
+    "native_names": [],
+    "aliases": [],
+    "record_type": "deity"
+  },
+  "classification": {
+    "domain": "mythology",
+    "tradition": "Example only — not a real tradition",
+    "myth_family": null,
+    "status": "example"
+  },
+  "geography": {
+    "origin": {
+      "country": null,
+      "region": "Example",
+      "locality": null,
+      "lat": null,
+      "lon": null
+    },
+    "spread": []
+  },
+  "time": {
+    "earliest_attestation": {
+      "value": "unknown",
+      "precision": "unknown",
+      "era": null
+    },
+    "active_periods": []
+  },
+  "narrative": {
+    "summary": "Synthetic record used only to demonstrate the MFTL schema.",
+    "long_description": null,
+    "motifs": [
+      "sky"
+    ]
+  },
+  "entities": [
+    {
+      "entity_id": "ENTITY-EXAMPLE-SKY",
+      "name": "Example Sky Figure",
+      "entity_type": "deity",
+      "roles": [
+        "sky_figure"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "CLAIM-EXAMPLE-001",
+      "subject": "ENTITY-EXAMPLE-SKY",
+      "predicate": "controls",
+      "object": "thunder",
+      "claim_type": "supernatural_power",
+      "source_basis": [
+        "SOURCE-EXAMPLE-001"
+      ],
+      "confidence": 0.5
+    }
+  ],
+  "practices": [],
+  "symbols": [],
+  "cosmology": {},
+  "relations": [],
+  "sources": [
+    {
+      "id": "SOURCE-EXAMPLE-001",
+      "source_type": "other",
+      "title": "Synthetic example source",
+      "author": null,
+      "date": null,
+      "language": "en",
+      "primary_source": false,
+      "locator": "internal://schema-example",
+      "accessed_at": null,
+      "notes": "Not a real-world source."
+    }
+  ],
+  "evidence": {
+    "source_quality": 0,
+    "historical_attestation": 0,
+    "notes": "Synthetic example only."
+  },
+  "historicity": {
+    "entity_historical_person": null,
+    "belief_historically_attested": null,
+    "ritual_historically_attested": null,
+    "confidence": 0
+  },
+  "assessments": {
+    "academic": {
+      "classification": [
+        "synthetic_example"
+      ]
+    },
+    "theological": {
+      "status": "not_assessed",
+      "framework": null,
+      "shirk_analysis": null
+    }
+  },
+  "quality": {
+    "record_status": "discovered",
+    "confidence": 0,
+    "needs_review": true
+  },
+  "metadata": {
+    "created_at": "2026-09-07T00:00:00Z",
+    "updated_at": "2026-09-07T00:00:00Z",
+    "dataset": "world-myth-corpus",
+    "created_by": "mftl-bootstrap",
+    "last_research_run": null
+  }
+}
