@@ -1,66 +1,165 @@
 <div align="center">
 
-# FROM MYTH FADES TO LEGEND
+# MFTL
 
-### **MFTL**
+## FROM MYTH FADES TO LEGEND
 
-**Expose the myth · Trace the source · Separate story from truth**
+### **TRACE THE STORY · FIND THE SOURCE · WEIGH THE EVIDENCE**
+
+A provenance-first **Narrative & Belief Intelligence Corpus** for mythology, folklore, supernatural claims, historical ritual traditions, information integrity, deviation, and explainable comparative analysis.
+
+<br/>
 
 [![Corpus Validation](https://github.com/bjo163/rocksoul-mftl/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/bjo163/rocksoul-mftl/actions/workflows/validate.yml)
-![Schema](https://img.shields.io/badge/schema-myth.v0.1-8b5cf6)
-![Runtime](https://img.shields.io/badge/Node.js-22-3c873a)
-![Language](https://img.shields.io/badge/TypeScript-strict-3178c6)
-![Branch](https://img.shields.io/badge/workflow-main--only-black)
+![Workflow](https://img.shields.io/badge/workflow-main--only-111111)
+![Runtime](https://img.shields.io/badge/Node.js-22-3C873A)
+![Language](https://img.shields.io/badge/TypeScript-strict-3178C6)
+![Corpus](https://img.shields.io/badge/corpus-provenance--first-B43A32)
+![Families](https://img.shields.io/badge/record_families-18-6F6F6F)
 
-**WORLD MYTH CORPUS · EVIDENCE GRAPH · COMPARATIVE RESEARCH ENGINE**
+<br/>
+
+**WORLD CORPUS · EVIDENCE GRAPH · SOURCE LINEAGE · NARRATIVE INTEGRITY · MIZAN**
+
+[Explore the architecture](#the-intelligence-graph) ·
+[Browse the corpus](#corpus-snapshot) ·
+[Read the method](docs/INDEX.md) ·
+[View roadmap](docs/ROADMAP.md)
 
 </div>
 
 ---
 
-## What is MFTL?
+> **MFTL stores what the source says before storing what the analyst concludes.**
 
-MFTL is a provenance-first research project for documenting mythology, folklore, supernatural claims, historical ritual traditions, symbols, and their sources.
+A myth can exist without being believed.  
+A belief is not automatically a ritual.  
+A ritual is not automatically worship.  
+A false claim is not automatically a hoax.  
+A deviation cannot exist without an explicit baseline.  
+A textual attestation is not the same thing as empirical proof.
 
-It is designed around one rule:
+That separation is the foundation of MFTL.
 
-> **Store what the source says before storing what the analyst concludes.**
+## The intelligence graph
 
-MFTL does not collapse a culture, ethnicity, religion, story, reader, or modern community into a theological verdict.
+```mermaid
+flowchart LR
+    A["NARRATIVE / EVENT / CLAIM"] --> B["ENTITY + PRACTICE"]
+    B --> C["SOURCE + PROVENANCE"]
+    C --> D["EVIDENCE"]
 
-### The evidence chain
+    D --> E["SUPPORT"]
+    D --> F["COUNTEREVIDENCE"]
+    D --> G["ALTERNATIVE EXPLANATION"]
 
-```text
-MYTH / TRADITION
-        ↓
-ENTITY · CLAIM · PRACTICE
-        ↓
-SOURCE · PROVENANCE · EVIDENCE
-        ↓
-HISTORICITY · ACADEMIC CLASSIFICATION
-        ↓
-OPTIONAL THEOLOGICAL ASSESSMENT
-        ↓
-MIZAN / SHIRK-PATTERN ANALYSIS
+    E --> H["HISTORICITY"]
+    F --> H
+    G --> H
+
+    H --> I["INTEGRITY"]
+    I --> J["DEVIATION"]
+    J --> K["OPTIONAL MIZAN"]
+
+    K --> L["EXPLAINABLE RESULT"]
 ```
 
-**Myth exists** ≠ **someone believes it** ≠ **ritual** ≠ **worship** ≠ **theological verdict**.
+<div align="center">
+
+### **DESCRIPTION ≠ VERDICT**
+
+Every derived conclusion must remain traceable to claims, sources, evidence, uncertainty, and—when relevant—counterevidence.
+
+</div>
 
 ---
 
-## Why this repository is different
+## Four analytical layers
 
-| Layer | Question |
-|---|---|
-| **Myth Registry** | What story, entity, motif, or tradition is being documented? |
-| **Claim Graph** | What exactly is being claimed? |
-| **Practice Registry** | What is historically reported as being done? |
-| **Source Graph** | Which primary, academic, museum, archive, or institutional source supports it? |
-| **Evidence Layer** | How strong is the attestation? |
-| **Academic Layer** | How is it classified descriptively? |
-| **Mizan Layer** | Which explicit theological pattern, if any, matches the documented claim/practice? |
+| | Layer | Purpose |
+|---:|---|---|
+| **01** | **MYTH / NARRATIVE** | Describe stories, entities, traditions, rituals, motifs, events, and claims without pre-judging them. |
+| **02** | **INTEGRITY** | Detect misinformation, disinformation, fabrication, false attribution, misleading context, propaganda, and related epistemic distortions. |
+| **03** | **DEVIATION** | Compare an observed text, teaching, practice, translation, or narrative against an explicit baseline. |
+| **04** | **MIZAN** | Optional explainable normative/theological assessment attached to explicit evidence—not to cultures or populations. |
 
-This separation makes the corpus usable for research, graph analysis, historical comparison, and explainable assessment.
+---
+
+## Corpus snapshot
+
+> Generated corpus state is published to `apps/web/public/data/corpus-index.json`.
+
+| Canonical | Active Candidates | Entities | Atomic Claims | Sources | Evidence Edges | Record Families |
+|---:|---:|---:|---:|---:|---:|---:|
+| **1** | **16** | **5** | **5** | **3** | **6** | **18** |
+
+### First reviewed canonical graph
+
+**Inana's Descent to the Netherworld**  
+`MYTH-MES-INANA-DESCENT-000001`
+
+```text
+Sumerian composition
+        │
+        ├── 5 reusable entities
+        ├── 5 atomic claims
+        ├── 3 source records
+        └── 6 evidence edges
+
+Epistemic model:
+supported_as_textual_attestation
+≠
+empirically proven supernatural event
+```
+
+The original discovery candidate is preserved as `merged`, so the path from discovery → research → canonicalization stays auditable.
+
+---
+
+## More than a mythology database
+
+MFTL is designed around **18 record families**, including:
+
+```text
+NARRATIVE          ENTITY             CLAIM
+PRACTICE           BELIEF / DOCTRINE  TEXT / TRANSMISSION
+PROPHECY            PARANORMAL         PLACE / ARTIFACT
+EVENT               INTEGRITY          DEVIATION
+PSEUDOKNOWLEDGE     MOVEMENT           SYMBOL / MOTIF
+SOURCE / EVIDENCE   COMPARISON         ASSESSMENT
+```
+
+This allows the same graph model to investigate mythology, folklore, ritual, prophecy, textual drift, pseudohistory, hoaxes, manipulated narratives, and supernatural reports without forcing them into the same category.
+
+---
+
+## Evidence before certainty
+
+MFTL avoids a single rhetorical `truth_score`.
+
+Instead, the graph can preserve:
+
+```text
+CLAIM
+ ├── supporting evidence
+ ├── contradicting evidence
+ ├── contextual evidence
+ ├── alternative explanation
+ └── unresolved uncertainty
+```
+
+Possible epistemic states include:
+
+`supported_as_textual_attestation` ·
+`supported_as_historical_attestation` ·
+`probable` ·
+`plausible` ·
+`unverified` ·
+`disputed` ·
+`contradicted` ·
+`fabricated` ·
+`indeterminate` ·
+`not_empirically_testable`
 
 ---
 
@@ -70,126 +169,108 @@ This separation makes the corpus usable for research, graph analysis, historical
 rocksoul-mftl/
 │
 ├── data/
-│   ├── candidates/      discovery staging — not canonical truth
-│   ├── records/         reviewed canonical myth records
-│   └── indexes/         coverage and generated indexes
+│   ├── candidates/     discovery staging + merged provenance
+│   ├── records/        canonical myth / narrative records
+│   ├── objects/        general canonical MFTL objects
+│   ├── entities/       reusable entity registry
+│   ├── claims/         atomic claim registry
+│   ├── sources/        reusable provenance registry
+│   ├── evidence/       support / contradiction / alternatives
+│   └── indexes/        corpus coverage metadata
 │
-├── schemas/
-│   ├── myth-record.schema.json
-│   └── discovery-candidate.schema.json
-│
-├── taxonomy/
-│   ├── record-types.json
-│   └── shirk-dimensions.json
-│
-├── docs/
-│   ├── INDEX.md
-│   ├── DATA_MODEL.md
-│   ├── RESEARCH_POLICY.md
-│   ├── AUTOMATION.md
-│   ├── CONTRIBUTING_DATA.md
-│   └── ROADMAP.md
-│
-├── apps/web/            React + Vite + TypeScript research UI
-├── scripts/             corpus validation tooling
-└── .github/             CI and research issue templates
+├── schemas/            machine-valid JSON contracts
+├── taxonomy/           record families + analytical taxonomies
+├── docs/               research policy + architecture
+├── apps/web/           React + Vite intelligence explorer
+├── scripts/            validation + index generation
+└── .github/            CI + issue intake
 ```
 
 ---
 
-## Record lifecycle
+## Research pipeline
 
-```text
-DISCOVERED
-    ↓
-SOURCED
-    ↓
-REVIEWED
-    ↓
-ASSESSED
-    ↓
-PUBLISHED
+```mermaid
+flowchart LR
+    A["DISCOVER"] --> B["DE-DUPLICATE"]
+    B --> C["SOURCE"]
+    C --> D["CROSS-CHECK"]
+    D --> E["EXTRACT CLAIMS"]
+    E --> F["LINK EVIDENCE"]
+    F --> G["VALIDATE"]
+    G --> H["CANONICALIZE"]
+    H --> I["INDEX"]
+    I --> J["AUDIT"]
 ```
 
-Incomplete discoveries belong in `data/candidates/`. Canonical records belong in `data/records/`.
+This repository intentionally uses **`main` as the only working branch**.
 
-The automated researcher is deliberately conservative about promotion: **uncertainty is data, not an error to hide.**
+Automated research may write to `main` only when the change is defensible and schema-valid. When evidence is incomplete, it stays in candidate staging. When there is no defensible improvement, the correct action is **no commit**.
 
 ---
 
-## Stable identifiers
+## Research guardrails
 
-| Object | Example |
+MFTL prioritizes:
+
+**primary texts → inscriptions / archaeology → peer-reviewed scholarship → university press → museums / libraries / archives → recognized institutional sources**
+
+The project does **not**:
+
+- fabricate or autocomplete citations;
+- erase conflicting scholarship;
+- promote weak discovery material into high-confidence fact;
+- infer deceptive intent simply because a claim is false;
+- use `myth` as a synonym for `lie`;
+- call something `deviation` without defining the baseline;
+- assign theological verdicts to living people, ethnicities, nationalities, or populations.
+
+The theological layer is optional and remains separate from academic classification.
+
+[Read the full research policy →](docs/RESEARCH_POLICY.md)
+
+---
+
+## Documentation
+
+| Document | What it defines |
 |---|---|
-| Myth record | `MYTH-GRC-000001` |
-| Entity | `ENTITY-GRC-ZEUS` |
-| Claim | `CLAIM-GRC-000001` |
-| Practice | `PRACTICE-GRC-000001` |
-| Source | `SOURCE-GRC-000001` |
-| Assessment | `ASSESS-MIZAN-000001` |
-
-Graph-compatible relations use simple triples:
-
-```json
-{
-  "subject": "ENTITY-X",
-  "predicate": "associated_with",
-  "object": "ENTITY-Y"
-}
-```
+| **[Documentation Index](docs/INDEX.md)** | Entry point to all project contracts |
+| **[Data Model](docs/DATA_MODEL.md)** | Core object and graph semantics |
+| **[Record Families](docs/RECORD_FAMILIES.md)** | 18 extensible intelligence families |
+| **[Narrative Integrity](docs/NARRATIVE_INTEGRITY.md)** | Hoax, fake-news, distortion, and deviation model |
+| **[Research Policy](docs/RESEARCH_POLICY.md)** | Source quality, uncertainty, provenance, and dignity rules |
+| **[Automation](docs/AUTOMATION.md)** | Main-only hourly research contract |
+| **[Roadmap](docs/ROADMAP.md)** | Current and future milestones |
 
 ---
 
-## Research rules
+<details>
+<summary><strong>Local development</strong></summary>
 
-MFTL prioritizes primary texts, inscriptions, archaeology, peer-reviewed scholarship, university-press works, museums, libraries, archives, and recognized institutional sources.
-
-Every material claim should be traceable to `source_basis`.
-
-The project explicitly forbids:
-
-- fabricated or AI-invented citations;
-- silently upgrading weak evidence to certainty;
-- treating disagreement as something to erase;
-- inferring a theological verdict from a culture or tradition name;
-- labeling living people, ethnicities, nationalities, or populations with theological verdicts.
-
-Read the full policy in **[docs/RESEARCH_POLICY.md](docs/RESEARCH_POLICY.md)**.
-
----
-
-## Main-only workflow
-
-This repository intentionally uses **`main` as the single working branch**.
-
-```text
-RESEARCH
-   ↓
-DE-DUPLICATE
-   ↓
-SOURCE + CROSS-CHECK
-   ↓
-VALIDATE
-   ↓
-COMMIT TO main
-   ↓
-CI
-   ↓
-AUDIT / CORRECT
-```
-
-Hourly automation may improve the corpus directly on `main`, but only when the change is evidence-backed and schema-valid. If no defensible improvement exists, it should make no commit.
-
----
-
-## Local development
+<br/>
 
 ```bash
 git clone https://github.com/bjo163/rocksoul-mftl.git
 cd rocksoul-mftl
 npm install
+```
 
+Validate all machine contracts:
+
+```bash
 npm run validate
+```
+
+Generate the corpus explorer index:
+
+```bash
+npm run index
+```
+
+Run the research UI:
+
+```bash
 npm run dev
 ```
 
@@ -199,44 +280,51 @@ Build everything:
 npm run build
 ```
 
----
+</details>
 
-## Documentation
+<details>
+<summary><strong>Stable identifier examples</strong></summary>
 
-Start at **[docs/INDEX.md](docs/INDEX.md)**.
+<br/>
 
-- [Data model](docs/DATA_MODEL.md)
-- [Research policy](docs/RESEARCH_POLICY.md)
-- [Automation contract](docs/AUTOMATION.md)
-- [Contributing data](docs/CONTRIBUTING_DATA.md)
-- [Roadmap](docs/ROADMAP.md)
-- [Project issue #1](https://github.com/bjo163/rocksoul-mftl/issues/1)
+| Object | Example |
+|---|---|
+| Canonical record | `MYTH-MES-INANA-DESCENT-000001` |
+| Entity | `ENTITY-MES-INANA` |
+| Claim | `CLAIM-MES-INANA-001` |
+| Source | `SOURCE-ETCSL-INANA-DESCENT` |
+| Evidence | `EVIDENCE-MES-INANA-001` |
+| Integrity assessment | `INTEGRITY-...` |
+| Deviation assessment | `DEVIATION-...` |
+
+</details>
 
 ---
 
 ## Current horizon
 
-**v0.1 — Foundation**
+```text
+FOUNDATION            ████████████████████  READY
+CANONICALIZATION      ███░░░░░░░░░░░░░░░░  ACTIVE
+WORLD COVERAGE        ████████████░░░░░░░░  ACTIVE
+SOURCE LINEAGE        ██░░░░░░░░░░░░░░░░░  NEXT
+VERSION MUTATION      ██░░░░░░░░░░░░░░░░░  NEXT
+PUBLIC EXPLORER       ███████░░░░░░░░░░░░░  ACTIVE
+```
 
-- provenance-first schemas ✅
-- candidate staging ✅
-- evidence taxonomy ✅
-- CI validation ✅
-- React research-site foundation ✅
-- world corpus expansion ◐
-- corpus explorer ○
-- evidence panels ○
-- graph visualization ○
-- Mizan explainability ○
+See **[the roadmap](docs/ROADMAP.md)** for acceptance criteria and upcoming milestones.
 
 ---
 
 <div align="center">
 
-### **WHERE MYTH FADES TO LEGEND**
+## WHERE MYTH FADES TO LEGEND
 
-**TRACE · VERIFY · WEIGH · REVEAL**
+### **TRACE · VERIFY · COMPARE · WEIGH · REVEAL**
 
-`MFTL / rocksoul research / v0.1`
+**Not a list of gods. Not a list of verdicts.  
+A traceable world evidence graph.**
+
+`MFTL / rocksoul research`
 
 </div>
