@@ -1,0 +1,45 @@
+{
+  "schema_version": "candidate.v0.1",
+  "candidate_id": "CAND-IDN-TIRTA-EMPUL-000001",
+  "name": "Tirta Empul sacred spring tradition",
+  "aliases": ["Pura Tirta Empul", "Tirta Empul"],
+  "region": "Southeast Asia / Bali",
+  "country": "Indonesia",
+  "tradition": "Balinese Hindu sacred-water practice",
+  "candidate_type": "sacred place / purification practice / historical ritual tradition",
+  "discovery": {
+    "summary": "Institutional and archaeological sources document Tirta Empul in Tampaksiring, Bali, as an ancient sacred spring and bathing complex with inscriptional evidence from the late ninth or tenth century. A 2025 archaeological study published by BRIN documents present and historical spiritual use of the spring as tirtha (holy water) and for melukat purification, while the Smithsonian's National Museum of Asian Art notes the Old Balinese inscription associated with the site's ponds and long veneration.",
+    "why_relevant": "This candidate is valuable because it joins inscriptional/historical evidence with a still-documented ritual practice, allowing MFTL to separate place history, ritual attestation, sacred interpretation, and later legendary narratives.",
+    "discovered_at": "2026-09-07T12:45:45Z",
+    "search_terms": ["Tirta Empul Manukaya inscription", "Tirta Empul melukat", "Tirta Empul sacred spring", "Pura Tirta Empul"]
+  },
+  "sources": [
+    {
+      "title": "Konservasi Lingkungan dan Pemanfaatan Mata Air Pura Tirta Empul: Kajian Prasasti Manukaya",
+      "locator": "https://doi.org/10.55981/amt.2025.8670",
+      "source_type": "academic_article",
+      "authority": "academic",
+      "notes": "2025 AMERTA archaeological research article published by BRIN. Supports spiritual use of the spring as tirtha and for melukat, the Manukaya inscription context, and continuing customary protection of the sacred spring. Accessed 2026-09-07T12:45:45Z."
+    },
+    {
+      "title": "Tirta Empul - National Museum of Asian Art",
+      "locator": "https://asia.si.edu/explore-art-culture/collections/collections-areas/southeast-asian/sacred-sites-in-southeast-asia/tirta-empul/",
+      "source_type": "museum",
+      "authority": "institutional",
+      "notes": "Supports identification as an ancient shrine, the Old Balinese inscription at nearby Pura Sakenan mentioning formation of two ponds, and long-term veneration of the site. Accessed 2026-09-07T12:45:45Z."
+    },
+    {
+      "title": "Tirta Empul Temple - Dinas Pariwisata Kabupaten Gianyar",
+      "locator": "https://diparda.gianyarkab.go.id/index.php/destinasi/tirta-empul-temple",
+      "source_type": "institutional",
+      "authority": "institutional",
+      "notes": "Local government source supports the Tampaksiring/Gianyar location and links the site's history to the Manukaya inscription; exact regnal/date readings should remain cross-checked against archaeological scholarship. Accessed 2026-09-07T12:45:45Z."
+    }
+  ],
+  "duplicate_check": {
+    "checked": true,
+    "possible_matches": []
+  },
+  "status": "ready_for_record",
+  "notes": "Material claim mapping: present/historical tirtha and melukat use -> BRIN AMERTA 2025; inscriptional antiquity and pond/veneration evidence -> National Museum of Asian Art; location/local administrative history -> Gianyar tourism authority. Date/regnal details vary across public summaries and should be normalized only after direct inscription-focused review. Theological assessment intentionally not performed."
+}
