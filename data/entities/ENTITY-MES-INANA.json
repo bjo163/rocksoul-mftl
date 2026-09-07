@@ -1,0 +1,36 @@
+{
+  "schema_version": "entity.v0.1",
+  "id": "ENTITY-MES-INANA",
+  "canonical_name": "Inana",
+  "names": [
+    {
+      "value": "Inana",
+      "language": "Sumerian",
+      "script": null
+    }
+  ],
+  "aliases": [
+    "Inanna",
+    "Ištar (later Akkadian counterpart/identification)"
+  ],
+  "entity_type": "deity",
+  "traditions": [
+    "Sumerian literary and religious tradition",
+    "Mesopotamian deity tradition"
+  ],
+  "roles": [
+    "central figure in ETCSL 1.4.1",
+    "deity associated with Venus in ORACC reference"
+  ],
+  "source_basis": [
+    "SOURCE-ETCSL-INANA-DESCENT",
+    "SOURCE-ORACC-INANA-ISHTAR"
+  ],
+  "status": "reviewed",
+  "confidence": 0.98,
+  "notes": "The record preserves Inana as the Sumerian form. Related Akkadian Ištar traditions should not be collapsed into this entity without explicit relation modeling.",
+  "metadata": {
+    "created_at": "2026-09-07T18:26:10Z",
+    "updated_at": "2026-09-07T18:26:10Z"
+  }
+}
