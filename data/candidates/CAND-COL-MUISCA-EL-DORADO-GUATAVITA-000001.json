@@ -1,0 +1,55 @@
+{
+  "schema_version": "candidate.v0.1",
+  "candidate_id": "CAND-COL-MUISCA-EL-DORADO-GUATAVITA-000001",
+  "name": "Muisca Guatavita investiture and El Dorado tradition",
+  "aliases": [
+    "Guatavita ceremony",
+    "El Dorado ceremony",
+    "Muisca raft tradition",
+    "Balsa muisca"
+  ],
+  "region": "South America / Colombia / Muisca highlands",
+  "country": "Colombia",
+  "tradition": "Muisca ritual, offering, and colonial-contact narrative tradition",
+  "candidate_type": "historical ritual practice / votive offering tradition / colonial-contact legend",
+  "discovery": {
+    "summary": "Banco de la República's Museo del Oro describes colonial chroniclers' reports that succession to the Guatavita chiefdom involved a lake ceremony with a raft and offerings of gold and emeralds, and it presents the Muisca gold raft found at Pasca in 1969 as traditionally interpreted as a representation of that investiture ceremony. The museum explicitly notes that the raft was not found at Lake Guatavita and that its exact manufacture date cannot be determined, although it probably belongs to the late Muisca period, approximately 1200–1500 CE. The Metropolitan Museum of Art independently documents Muisca tunjos from the Guatavita Lake region and notes the tradition of offerings at Lake Guatavita and the later El Dorado legend. These sources support historical attestation of a Muisca offering complex and later colonial narrative, while the precise relationship between surviving objects, specific ceremonies, and chroniclers' descriptions remains interpretive and should be modeled with uncertainty.",
+    "why_relevant": "This candidate fills an under-covered South American region and is useful for separating archaeological objects, reported historical ritual practice, indigenous offering traditions, colonial chronicler testimony, and the later expansion of El Dorado into a broader treasure legend. It is well suited to source-lineage and narrative-mutation modeling without treating colonial reports as eyewitness proof of every ritual detail.",
+    "discovered_at": "2026-09-07T18:40:49Z",
+    "search_terms": [
+      "Muisca Guatavita El Dorado ritual",
+      "Balsa muisca Museo del Oro",
+      "Muisca raft Pasca",
+      "Guatavita tunjo Met Museum"
+    ]
+  },
+  "sources": [
+    {
+      "title": "Balsa muisca",
+      "locator": "https://enciclopedia.banrepcultural.org/Balsa_muisca",
+      "source_type": "museum / national cultural institution reference",
+      "authority": "institutional",
+      "notes": "Banco de la República / Museo del Oro reference. Documents the 1969 Pasca find, traditional interpretation of the raft as representing the Guatavita investiture ceremony, chronicler-based description of lake offerings, lost-wax manufacture, and uncertainty in exact dating. It explicitly states the raft was not found at Lake Guatavita."
+    },
+    {
+      "title": "Historias de ofrendas muiscas",
+      "locator": "https://babel.banrepcultural.org/digital/collection/p17054coll18/id/400/",
+      "source_type": "museum research publication / digital library book",
+      "authority": "institutional",
+      "notes": "Banco de la República digital publication devoted to Muisca offerings, rituals, metallurgy, Guatavita, and the history of the Pasca raft; useful for deeper canonical review and source-lineage work."
+    },
+    {
+      "title": "Serpent (Tunjo) — Muisca",
+      "locator": "https://www.metmuseum.org/art/collection/search/312927",
+      "source_type": "museum collection record",
+      "authority": "institutional",
+      "notes": "The Metropolitan Museum of Art dates the object to the 10th–16th century and contextualizes Muisca tunjos as offerings, including traditions associated with Lake Guatavita and the later El Dorado legend."
+    }
+  ],
+  "duplicate_check": {
+    "checked": true,
+    "possible_matches": []
+  },
+  "status": "ready_for_record",
+  "notes": "Canonicalization should separate at least four layers: archaeological/votive objects; reported Muisca offering and investiture practices; sixteenth- and seventeenth-century colonial textual accounts; and the later expanding El Dorado treasure legend. Do not state that the Pasca raft itself was recovered from Lake Guatavita. Preserve uncertainty around exact date, frequency, and ritual details. No theological assessment has been made."
+}
