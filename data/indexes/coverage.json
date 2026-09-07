@@ -1,22 +1,31 @@
 {
   "schema_version": "coverage.v0.1",
-  "generated_at": "2026-09-07T12:45:45Z",
+  "generated_at": "2026-09-07T13:45:20Z",
   "canonical_records": 0,
-  "candidates": 3,
+  "candidates": 6,
   "regions": {
     "Polynesia / Hawaiʻi": 1,
     "Polynesia / Aotearoa New Zealand": 1,
-    "Southeast Asia / Bali": 1
+    "Southeast Asia / Bali": 1,
+    "Africa / West and Central Africa / African Atlantic": 1,
+    "East Asia / Japan": 1,
+    "Mesoamerica / Maya highlands": 1
   },
   "record_types": {
     "deity / volcano tradition": 1,
     "culture hero / trickster": 1,
-    "sacred place / purification practice / historical ritual tradition": 1
+    "sacred place / purification practice / historical ritual tradition": 1,
+    "water spirit / deity tradition / visual and ritual culture": 1,
+    "solar deity / cave narrative / ritual-symbolic tradition": 1,
+    "creation narrative / heroic cycle / transmitted sacred text": 1
   },
   "traditions": {
     "Native Hawaiian moʻolelo": 1,
     "Māori traditions": 1,
-    "Balinese Hindu sacred-water practice": 1
+    "Balinese Hindu sacred-water practice": 1,
+    "Mami Wata and related African water-spirit traditions": 1,
+    "Shintō / classical Japanese mythic tradition": 1,
+    "K'iche' Maya narrative and textual tradition": 1
   },
-  "notes": "Candidate coverage only. No canonical records have been promoted yet; canonicalization requires full myth/general-record validation and evidence review."
+  "notes": "Candidate coverage only. No canonical records have been promoted yet; canonicalization requires full myth/general-record validation and evidence review. Regional labels describe candidate provenance/coverage and do not imply a single uniform tradition within those regions."
 }
