@@ -1,0 +1,37 @@
+{
+  "schema_version": "source.v0.1",
+  "id": "SOURCE-ETCSL-INANA-DESCENT",
+  "source_type": "reference_work",
+  "title": "Inana's descent to the nether world: translation",
+  "creator": "The Electronic Text Corpus of Sumerian Literature (ETCSL)",
+  "publisher": "University of Oxford",
+  "date": "2000-01-21",
+  "languages": [
+    "English",
+    "Sumerian"
+  ],
+  "locators": [
+    {
+      "type": "url",
+      "value": "https://etcsl.orinst.ox.ac.uk/section1/tr141.htm",
+      "accessed_at": "2026-09-07T18:26:10Z"
+    },
+    {
+      "type": "citation",
+      "value": "ETCSL composition 1.4.1",
+      "accessed_at": null
+    }
+  ],
+  "authority": "academic",
+  "reliability": {
+    "score": 0.98,
+    "notes": "University scholarly corpus providing composite text, translation, manuscript-variation markers, bibliography, and line-level navigation."
+  },
+  "rights": "See ETCSL copyright and project terms.",
+  "notes": "Use as scholarly representation of the Sumerian composition; it is not a single physical manuscript.",
+  "status": "active",
+  "metadata": {
+    "created_at": "2026-09-07T18:26:10Z",
+    "updated_at": "2026-09-07T18:26:10Z"
+  }
+}
