@@ -1,0 +1,38 @@
+{
+  "schema_version": "candidate.v0.1",
+  "candidate_id": "CAND-CHN-CHANGE-000001",
+  "name": "Chang'e and the Moon",
+  "aliases": ["Chang'e", "Chang E", "The Moon Goddess Chang'e"],
+  "region": "East Asia / China",
+  "country": "China",
+  "tradition": "Chinese moon-goddess folklore and visual tradition",
+  "candidate_type": "moon-goddess legend / immortality narrative / visual tradition",
+  "discovery": {
+    "summary": "The Metropolitan Museum of Art describes an 8th–9th century Tang-dynasty bronze mirror depicting Chang'e on the moon with a rabbit, and summarizes a folklore cycle in which she reaches the moon after taking an elixir of immortality associated with Hou Yi. Smithsonian's National Museum of Asian Art independently documents later visual tradition showing Chang'e in the Lunar Palace with the white rabbit. Source basis: The Met, 'Mirror with moon goddess and rabbit'; Smithsonian NMAA, 'The Goddess Chang'e in the Lunar Palace'.",
+    "why_relevant": "This candidate is well suited to MFTL because it combines a transmitted narrative with datable material-culture evidence, allowing later separation of story variants, iconographic continuity, immortality motifs, moon symbolism, and historical reception.",
+    "discovered_at": "2026-09-07T14:39:24Z",
+    "search_terms": ["Chang'e moon goddess", "Chang E lunar palace", "Hou Yi elixir folklore", "Tang moon goddess mirror"]
+  },
+  "sources": [
+    {
+      "title": "Mirror with moon goddess and rabbit",
+      "locator": "https://www.metmuseum.org/art/collection/search/61405",
+      "source_type": "museum collection record",
+      "authority": "institutional",
+      "notes": "The Met dates the object to the 8th–9th century Tang dynasty and identifies Chang'e, the rabbit, and the elixir-related folklore represented on the mirror."
+    },
+    {
+      "title": "The Goddess Chang'e in the Lunar Palace",
+      "locator": "https://asia-archive.si.edu/object/F1909.244a/",
+      "source_type": "museum collection record",
+      "authority": "institutional",
+      "notes": "Smithsonian collection record supporting the later visual tradition of Chang'e in the lunar palace with the white rabbit and explicitly noting attribution uncertainty in the artwork itself."
+    }
+  ],
+  "duplicate_check": {
+    "checked": true,
+    "possible_matches": []
+  },
+  "status": "ready_for_record",
+  "notes": "Canonicalization should distinguish early textual versions, later folklore retellings, and visual/iconographic reception. The museum summaries are reliable for the objects and curatorial narrative, but they should not be treated as a substitute for a primary-text genealogy. No theological assessment has been made."
+}
