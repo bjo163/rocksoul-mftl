@@ -1,0 +1,18 @@
+{
+  "name": "rocksoul-mftl",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "workspaces": [
+    "apps/web"
+  ],
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "dev": "npm --workspace @mftl/web run dev",
+    "build": "npm run validate && npm --workspace @mftl/web run build"
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
+  }
+}
