@@ -42,11 +42,23 @@ A textual attestation is not the same thing as empirical proof.
 
 That separation is the foundation of MFTL.
 
+## Rocksoul Research ownership
+
+```text
+MFTL       → STORY / NARRATIVE
+LEGEND     → CANONICAL EVENT / HISTORICAL CORE
+SUPERHERO  → PERSON / HUMAN AGENCY
+```
+
+MFTL may describe **event reports, event claims, or events as narrated**, but canonical historical-event ownership belongs to LEGEND. Human actor/transmission ownership belongs to SUPERHERO.
+
+[Read the interoperability contract →](docs/INTEROP.md)
+
 ## The intelligence graph
 
 ```mermaid
 flowchart LR
-    A["NARRATIVE / EVENT / CLAIM"] --> B["ENTITY + PRACTICE"]
+    A["NARRATIVE / EVENT-CLAIM / CLAIM"] --> B["ENTITY + PRACTICE"]
     B --> C["SOURCE + PROVENANCE"]
     C --> D["EVIDENCE"]
 
@@ -151,7 +163,7 @@ MFTL is designed around **18 record families**, including:
 NARRATIVE          ENTITY             CLAIM
 PRACTICE           BELIEF / DOCTRINE  TEXT / TRANSMISSION
 PROPHECY            PARANORMAL         PLACE / ARTIFACT
-EVENT               INTEGRITY          DEVIATION
+EVENT-REPORT        INTEGRITY          DEVIATION
 PSEUDOKNOWLEDGE     MOVEMENT           SYMBOL / MOTIF
 SOURCE / EVIDENCE   COMPARISON         ASSESSMENT
 ```
@@ -267,6 +279,7 @@ The theological layer is optional and remains separate from academic classificat
 | **[Record Families](docs/RECORD_FAMILIES.md)** | 18 extensible intelligence families |
 | **[Narrative Integrity](docs/NARRATIVE_INTEGRITY.md)** | Hoax, fake-news, distortion, and deviation model |
 | **[Research Policy](docs/RESEARCH_POLICY.md)** | Source quality, uncertainty, provenance, and dignity rules |
+| **[Interoperability](docs/INTEROP.md)** | Ownership boundaries and links to LEGEND / SUPERHERO |
 | **[Automation](docs/AUTOMATION.md)** | Main-only hourly research contract |
 | **[Roadmap](docs/ROADMAP.md)** | Current and future milestones |
 
@@ -334,7 +347,7 @@ npm run build
 FOUNDATION            ████████████████████  READY
 CANONICALIZATION      ███░░░░░░░░░░░░░░░░  ACTIVE
 WORLD COVERAGE        ████████████░░░░░░░░  ACTIVE
-SOURCE LINEAGE        ██░░░░░░░░░░░░░░░░░  NEXT
+SOURCE LINEAGE        ██░░░░░░░░░░░░░░░░░  VIA SUPERHERO
 VERSION MUTATION      ██░░░░░░░░░░░░░░░░░  NEXT
 PUBLIC EXPLORER       ███████░░░░░░░░░░░░░  ACTIVE
 ```

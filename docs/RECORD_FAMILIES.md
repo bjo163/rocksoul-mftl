@@ -33,7 +33,7 @@ A record family describes what kind of object is being investigated. Separate as
 | F07 | Prophecy / Prediction | prophecy, omen, astrology, numerology |
 | F08 | Paranormal / Supernatural | apparition, possession, haunting, miracle report |
 | F09 | Place / Object / Artifact | relic, idol, shrine, tomb, archaeological site |
-| F10 | Event | battle, disaster, disappearance, celestial event |
+| F10 | Event Report / Event Claim | battle report, disaster narrative, disappearance claim, celestial-event interpretation |
 | F11 | Information Integrity | hoax, disinformation, forged document, deepfake |
 | F12 | Deviation / Drift | doctrinal drift, translation drift, ritual drift |
 | F13 | Pseudoknowledge | pseudohistory, pseudoarchaeology, pseudoscience |
@@ -42,6 +42,20 @@ A record family describes what kind of object is being investigated. Separate as
 | F16 | Source / Evidence | text, inscription, archaeology, media, counterevidence |
 | F17 | Comparison | parallel, contradiction, shared motif, dependency |
 | F18 | Assessment | historicity, integrity, deviation, Mizan |
+
+### F10 ownership boundary
+
+F10 remains useful inside MFTL for **events as narrative objects**: reports, claims, prophecies, remembered events, supernatural interpretations, or source-bound descriptions.
+
+```text
+EVENT AS TOLD / CLAIMED
+→ MFTL
+
+CANONICAL HISTORICAL EVENT
+→ LEGEND
+```
+
+If a LEGEND `EVT-*` object exists, MFTL should link to it instead of creating a competing historical-event truth record.
 
 ## Particularly valuable additions
 
@@ -97,7 +111,7 @@ mftl-record
 ├── entity-record
 ├── claim-record
 ├── practice-record
-├── event-record
+├── event-report / event-claim
 ├── source-record
 ├── integrity-case
 ├── deviation-case

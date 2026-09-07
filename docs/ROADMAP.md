@@ -33,7 +33,7 @@
 ## v0.2 — World Graph
 
 - entity registry
-- event registry
+- LEGEND event references / interoperability
 - claim registry
 - cross-cultural motif graph
 - equivalence/syncretism relations
@@ -55,7 +55,7 @@
 ## v0.4 — Provenance Intelligence
 
 - source lineage graph
-- quotation/transmission chain
+- SUPERHERO actor / quotation / transmission links
 - claim version history
 - supporting vs contradicting evidence balance
 - provenance health score

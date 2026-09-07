@@ -12,6 +12,7 @@ This is the navigation hub for the repository contract.
 | [RECORD_FAMILIES.md](RECORD_FAMILIES.md) | 18 extensible intelligence record families |
 | [NARRATIVE_INTEGRITY.md](NARRATIVE_INTEGRITY.md) | Hoax, fake news, fake narrative, and deviation model |
 | [RESEARCH_POLICY.md](RESEARCH_POLICY.md) | Source quality, provenance, uncertainty, and assessment rules |
+| [INTEROP.md](INTEROP.md) | Rocksoul Research ownership and cross-repository references |
 | [AUTOMATION.md](AUTOMATION.md) | Hourly researcher contract and main-only safety rules |
 | [CONTRIBUTING_DATA.md](CONTRIBUTING_DATA.md) | How to add or improve records |
 | [ROADMAP.md](ROADMAP.md) | Product and corpus evolution |
