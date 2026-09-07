@@ -1,0 +1,38 @@
+{
+  "schema_version": "candidate.v0.1",
+  "candidate_id": "CAND-MAYA-POPOL-VUH-000001",
+  "name": "Popol Vuh K'iche' Maya narrative tradition",
+  "aliases": ["Popol Vuh", "Popol Wuj"],
+  "region": "Mesoamerica / Maya highlands",
+  "country": "Guatemala",
+  "tradition": "K'iche' Maya narrative and textual tradition",
+  "candidate_type": "creation narrative / heroic cycle / transmitted sacred text",
+  "discovery": {
+    "summary": "Library of Congress and Metropolitan Museum sources identify the Popol Vuh as a K'iche' Maya text containing creation narrative material and document its surviving transmission history. The Library of Congress describes Francisco Ximénez's early-eighteenth-century K'iche'-Spanish transcription as one of the earliest surviving copies and notes scholarly views that it derives from an earlier sixteenth-century alphabetic version, while the Met documents later artistic reception of the text.",
+    "why_relevant": "This candidate adds Mesoamerican coverage and provides an excellent case for MFTL's text-transmission model: oral performance, earlier lost or hypothesized forms, surviving colonial transcription, translation, and modern artistic reception can be stored as distinct provenance layers rather than flattened into one undated 'myth'.",
+    "discovered_at": "2026-09-07T13:45:20Z",
+    "search_terms": ["Popol Vuh Library of Congress", "Popol Vuh K'iche' manuscript", "Francisco Ximenez Popol Vuh", "Popol Vuh Metropolitan Museum"]
+  },
+  "sources": [
+    {
+      "title": "Popol Vuh: Transcription in Quiché Mayan and Translation into Spanish - Library of Congress",
+      "locator": "https://www.loc.gov/item/2021668226/",
+      "source_type": "library_manuscript_record",
+      "authority": "institutional",
+      "notes": "Library of Congress record supports the K'iche' language context, Francisco Ximénez transcription dated approximately 1700–1715, side-by-side Spanish translation, oral-performance character of the text, and the qualified scholarly view that this surviving copy may derive from an earlier sixteenth-century alphabetic version. Accessed 2026-09-07T13:45:20Z."
+    },
+    {
+      "title": "Portfolio: 'Popol-Vuh' - The Metropolitan Museum of Art",
+      "locator": "https://www.metmuseum.org/art/collection/search/747936",
+      "source_type": "museum_collection",
+      "authority": "institutional",
+      "notes": "Metropolitan Museum record identifies Popol Vuh as a K'iche' Maya sacred text containing a creation account and documents Carlos Mérida's 1943 visual interpretation, useful as evidence for later reception rather than for reconstructing the earliest textual form. Accessed 2026-09-07T13:45:20Z."
+    }
+  ],
+  "duplicate_check": {
+    "checked": true,
+    "possible_matches": []
+  },
+  "status": "ready_for_record",
+  "notes": "Material claim mapping: surviving manuscript/transcription history, language, approximate Ximénez date, oral-performance character, and qualified earlier-version hypothesis -> Library of Congress; classification as K'iche' Maya sacred/creation text and 1943 artistic reception -> Metropolitan Museum. Earlier textual forms should remain explicitly uncertain unless supported by stronger manuscript scholarship. Theological assessment intentionally not performed."
+}
