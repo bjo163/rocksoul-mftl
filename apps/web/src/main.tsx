@@ -7,6 +7,9 @@ type CorpusIndex = {
   counts: {
     canonical_records: number;
     candidates: number;
+    merged_candidates: number;
+    entities: number;
+    claims: number;
     sources: number;
     evidence: number;
     families: number;
@@ -76,6 +79,9 @@ function App() {
   const counts = index?.counts ?? {
     canonical_records: 0,
     candidates: 0,
+    merged_candidates: 0,
+    entities: 0,
+    claims: 0,
     sources: 0,
     evidence: 0,
     families: 18,
@@ -106,9 +112,9 @@ function App() {
         </div>
         <div className="metrics">
           <div><strong>{String(counts.canonical_records).padStart(2,"0")}</strong><span>CANONICAL RECORDS</span></div>
+          <div><strong>{String(counts.claims).padStart(2,"0")}</strong><span>ATOMIC CLAIMS</span></div>
           <div><strong>{String(counts.sources).padStart(2,"0")}</strong><span>SOURCE RECORDS</span></div>
-          <div><strong>{String(counts.families).padStart(2,"0")}</strong><span>RECORD FAMILIES</span></div>
-          <div><strong>01H</strong><span>RESEARCH CYCLE</span></div>
+          <div><strong>{String(counts.evidence).padStart(2,"0")}</strong><span>EVIDENCE EDGES</span></div>
         </div>
       </section>
 
@@ -142,7 +148,7 @@ function App() {
           <div><p className="eyebrow">CORPUS EXPLORER</p><h2>SEARCH THE<br/>EVIDENCE GRAPH.</h2></div>
           <div>
             <input className="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="SEARCH ID · NAME · TYPE · REGION" aria-label="Search corpus" />
-            <p className="section-copy explorer-note">{counts.canonical_records} canonical · {counts.candidates} candidates · {counts.sources} sources · {counts.evidence} evidence objects</p>
+            <p className="section-copy explorer-note">{counts.canonical_records} canonical · {counts.candidates} active candidates · {counts.merged_candidates} merged · {counts.entities} entities · {counts.claims} claims</p>
           </div>
         </div>
         {visibleRecords.length > 0 ? (
