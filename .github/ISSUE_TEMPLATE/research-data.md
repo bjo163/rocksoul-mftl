@@ -1,45 +1,48 @@
 ---
-name: Research / Data Record
-about: Propose a myth, source, provenance correction, or corpus improvement
-title: "[DATA] "
+name: Research Lead
+about: Add a sourced mythology, folklore, supernatural-claim, or ritual research lead
+title: "[RESEARCH] "
 labels: ""
 assignees: ""
 ---
 
-## Record / topic
+## Topic
 
-<!-- Canonical name, tradition, region, or existing ID -->
+<!-- Name of the myth, folklore, claim, ritual, text, entity, or tradition. -->
 
-## Change type
+## Region / tradition
 
-- [ ] New discovery candidate
-- [ ] Promote candidate to canonical record
-- [ ] Add/correct source
-- [ ] Correct claim/practice
-- [ ] Resolve duplicate/equivalence
-- [ ] Correct assessment
-- [ ] Other
+<!-- Country, region, community, historical tradition, or cultural context. -->
 
-## Evidence
+## Summary
+
+<!-- What is worth investigating? Keep it concise and descriptive. -->
+
+## Sources
 
 <!-- Prefer primary, academic, museum, library, archive, or institutional sources. -->
 
-| Source | Type | Locator | Supports |
+| Source | Type | Link / locator | What it supports |
 |---|---|---|---|
 | | | | |
 
-## Claims / practices affected
+## Uncertainty
 
-<!-- Be specific. What exact statement or practice does the evidence support? -->
+<!-- Conflicting versions, uncertain dating, disputed interpretation, source limitations, etc. -->
 
-## Uncertainty / disagreement
+## Duplicate check
 
-<!-- Note competing interpretations or unresolved identity questions. -->
+<!-- Existing issue, candidate, canonical record, entity, or claim checked. -->
 
-## Validation
+- [ ] No obvious duplicate found
 
-- [ ] Existing records/candidates searched for duplicates
-- [ ] Material claims have source_basis
-- [ ] Academic description and theological assessment remain separate
-- [ ] No fabricated citation
-- [ ] JSON validates, if JSON is included
+## Suggested next action
+
+- [ ] Keep as research lead
+- [ ] Draft discovery candidate
+- [ ] Strengthen existing candidate
+- [ ] Consider canonical review
+- [ ] Merge with existing research
+- [ ] Reject / insufficient evidence
+
+> Research issues are an inbox, not canonical truth. Academic description and optional theological assessment must remain separate.
