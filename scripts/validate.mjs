@@ -5,32 +5,63 @@ import Ajv2020 from "ajv/dist/2020.js";
 import addFormats from "ajv-formats";
 
 const root = process.cwd();
-const schema = JSON.parse(fs.readFileSync(path.join(root, "schemas/myth-record.schema.json"), "utf8"));
-const ajv = new Ajv2020({allErrors:true, strict:false});
+const ajv = new Ajv2020({allErrors:true,strict:false});
 addFormats(ajv);
-const validate = ajv.compile(schema);
+
+function loadSchema(name) {
+  return JSON.parse(fs.readFileSync(path.join(root,"schemas",name),"utf8"));
+}
 
 function walk(dir) {
   if (!fs.existsSync(dir)) return [];
-  return fs.readdirSync(dir, {withFileTypes:true}).flatMap((entry) => {
-    const full = path.join(dir, entry.name);
+  return fs.readdirSync(dir,{withFileTypes:true}).flatMap((entry) => {
+    const full = path.join(dir,entry.name);
     return entry.isDirectory() ? walk(full) : [full];
   });
 }
 
-const files = walk(path.join(root, "data/records")).filter((f) => f.endsWith(".json"));
-let failed = false;
+const contracts = [
+  {dir:"data/records",schema:"myth-record.schema.json",label:"myth records"},
+  {dir:"data/candidates",schema:"discovery-candidate.schema.json",label:"discovery candidates"},
+  {dir:"data/objects",schema:"mftl-record.schema.json",label:"general MFTL objects"},
+  {dir:"data/sources",schema:"source-record.schema.json",label:"source records"},
+  {dir:"data/evidence",schema:"evidence-record.schema.json",label:"evidence records"}
+];
 
-for (const file of files) {
-  const data = JSON.parse(fs.readFileSync(file, "utf8"));
-  if (!validate(data)) {
-    failed = true;
-    console.error("\nINVALID:", path.relative(root, file));
-    console.error(validate.errors);
-  } else {
-    console.log("OK:", path.relative(root, file));
+let failed = false;
+let total = 0;
+
+for (const contract of contracts) {
+  const validate = ajv.compile(loadSchema(contract.schema));
+  const files = walk(path.join(root,contract.dir)).filter((file) => file.endsWith(".json"));
+  let validCount = 0;
+
+  for (const file of files) {
+    total += 1;
+    const relative = path.relative(root,file);
+    let data;
+
+    try {
+      data = JSON.parse(fs.readFileSync(file,"utf8"));
+    } catch (error) {
+      failed = true;
+      console.error("\nINVALID JSON:",relative);
+      console.error(error);
+      continue;
+    }
+
+    if (!validate(data)) {
+      failed = true;
+      console.error("\nINVALID:",relative);
+      console.error(validate.errors);
+    } else {
+      validCount += 1;
+      console.log("OK:",relative);
+    }
   }
+
+  console.log(`Validated ${validCount}/${files.length} ${contract.label}.`);
 }
 
 if (failed) process.exit(1);
-console.log(`Validated ${files.length} record(s).`);
+console.log(`All ${total} JSON data object(s) passed schema validation.`);
