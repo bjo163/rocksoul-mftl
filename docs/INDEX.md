@@ -22,6 +22,8 @@ This is the navigation hub for the repository contract.
 
 - `../schemas/myth-record.schema.json`
 - `../schemas/mftl-record.schema.json`
+- `../schemas/entity-record.schema.json`
+- `../schemas/claim-record.schema.json`
 - `../schemas/source-record.schema.json`
 - `../schemas/evidence-record.schema.json`
 
@@ -45,6 +47,8 @@ This is the navigation hub for the repository contract.
 data/candidates/   staging / incomplete discoveries
 data/records/      specialized canonical myth records
 data/objects/      general canonical MFTL objects
+data/entities/     reusable entity registry
+data/claims/       atomic claim registry
 data/sources/      reusable provenance registry
 data/evidence/     support / contradiction / alternatives
 data/indexes/      generated coverage metadata
