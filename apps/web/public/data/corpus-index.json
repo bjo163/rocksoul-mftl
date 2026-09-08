@@ -1,6 +1,6 @@
 {
-  "schema_version": "corpus-index.v0.2",
-  "generated_at": "2026-09-07T21:28:21Z",
+  "schema_version": "corpus-index.v0.3",
+  "generated_at": "2026-09-08T02:32:00Z",
   "counts": {
     "canonical_records": 2,
     "candidates": 16,
@@ -12,6 +12,30 @@
     "families": 18,
     "regions": 2
   },
+  "coverage": {
+    "regions": {
+      "Polynesia / Hawaiʻi": 1,
+      "Polynesia / Aotearoa New Zealand": 1,
+      "Southeast Asia / Bali": 1,
+      "Africa / West and Central Africa / African Atlantic": 1,
+      "East Asia / Japan": 1,
+      "Mesoamerica / Maya highlands": 1,
+      "Middle East / Mesopotamia / Sumer": 1,
+      "East Asia / China": 1,
+      "South Asia / India": 1,
+      "Oceania / Australia / Indigenous Australia": 1,
+      "Arctic / Inuit regions": 1,
+      "Europe / Ireland": 1,
+      "Europe / Finland and Karelia": 1,
+      "Central Asia / Kyrgyzstan": 1,
+      "North Asia / Sakha Republic (Yakutia)": 1,
+      "Southeast Asia / Philippines / Ifugao": 1,
+      "South America / Colombia / Muisca highlands": 1
+    },
+    "canonical_regions": {
+      "Middle East / Mesopotamia / Sumer": 1
+    }
+  },
   "records": [
     {
       "id": "MYTH-MES-INANA-DESCENT-000001",
@@ -20,7 +44,204 @@
       "record_type": "underworld_narrative",
       "region": "Mesopotamia / Sumer",
       "status": "reviewed",
-      "confidence": 0.97
+      "confidence": 0.97,
+      "detail": {
+        "summary": "A Sumerian literary composition in which Inana descends to the underworld, passes through seven gates while regalia are removed, is judged and killed within the narrative, is restored through Enki's intervention, and must provide a substitute in order to ascend.",
+        "long_description": "This canonical record describes what the Sumerian textual tradition says. ETCSL provides the scholarly composite text and translation, while CDLI P275004 supplies an Old Babylonian physical manuscript witness from Nippur. The record intentionally separates textual/historical attestation from empirical verification of supernatural events, and it does not collapse the Sumerian composition into the related Akkadian Ištar descent tradition.",
+        "tradition": "Sumerian literary and religious tradition",
+        "earliest_attestation": "ca. 1900–1600 BCE",
+        "entities": [
+          {
+            "id": "ENTITY-MES-INANA",
+            "name": "Inana",
+            "entity_type": "deity",
+            "roles": [
+              "central figure",
+              "descender"
+            ]
+          },
+          {
+            "id": "ENTITY-MES-ERESKIGALA",
+            "name": "Ereškigala",
+            "entity_type": "deity",
+            "roles": [
+              "underworld ruler",
+              "sister of Inana in the narrative"
+            ]
+          },
+          {
+            "id": "ENTITY-MES-NETI",
+            "name": "Neti",
+            "entity_type": "underworld_gatekeeper",
+            "roles": [
+              "chief doorman"
+            ]
+          },
+          {
+            "id": "ENTITY-MES-NINCUBURA",
+            "name": "Ninšubur",
+            "entity_type": "deity_or_divine_attendant",
+            "roles": [
+              "minister",
+              "escort",
+              "petitioner"
+            ]
+          },
+          {
+            "id": "ENTITY-MES-DUMUZID",
+            "name": "Dumuzid",
+            "entity_type": "deity",
+            "roles": [
+              "husband of Inana",
+              "later substitute figure"
+            ]
+          }
+        ],
+        "claims": [
+          {
+            "id": "CLAIM-MES-INANA-001",
+            "subject": "ENTITY-MES-INANA",
+            "predicate": "descends_to",
+            "object": "underworld",
+            "claim_type": "supernatural_narrative",
+            "source_basis": [
+              "SOURCE-ETCSL-INANA-DESCENT",
+              "SOURCE-CDLI-P275004"
+            ],
+            "confidence": 0.99
+          },
+          {
+            "id": "CLAIM-MES-INANA-002",
+            "subject": "ENTITY-MES-INANA",
+            "predicate": "passes_through",
+            "object": "seven gates where regalia are removed",
+            "claim_type": "textual_attestation",
+            "source_basis": [
+              "SOURCE-ETCSL-INANA-DESCENT"
+            ],
+            "confidence": 0.99
+          },
+          {
+            "id": "CLAIM-MES-INANA-003",
+            "subject": "ENTITY-MES-INANA",
+            "predicate": "is_judged_and_turned_into",
+            "object": "a corpse hung on a hook",
+            "claim_type": "supernatural_narrative",
+            "source_basis": [
+              "SOURCE-ETCSL-INANA-DESCENT"
+            ],
+            "confidence": 0.99
+          },
+          {
+            "id": "CLAIM-MES-INANA-004",
+            "subject": "ENTITY-MES-INANA",
+            "predicate": "is_restored_by",
+            "object": "life-giving plant and life-giving water used by Enki's created agents",
+            "claim_type": "supernatural_narrative",
+            "source_basis": [
+              "SOURCE-ETCSL-INANA-DESCENT"
+            ],
+            "confidence": 0.99
+          },
+          {
+            "id": "CLAIM-MES-INANA-005",
+            "subject": "ENTITY-MES-INANA",
+            "predicate": "must_provide",
+            "object": "a substitute in order to ascend from the underworld",
+            "claim_type": "supernatural_narrative",
+            "source_basis": [
+              "SOURCE-ETCSL-INANA-DESCENT"
+            ],
+            "confidence": 0.99
+          }
+        ],
+        "sources": [
+          {
+            "id": "SOURCE-ETCSL-INANA-DESCENT",
+            "title": "Inana's descent to the nether world: translation",
+            "source_type": "reference_work",
+            "primary_source": false,
+            "locator": "https://etcsl.orinst.ox.ac.uk/section1/tr141.htm",
+            "author": "The Electronic Text Corpus of Sumerian Literature (ETCSL)",
+            "date": "2000-01-21"
+          },
+          {
+            "id": "SOURCE-CDLI-P275004",
+            "title": "CDLI P275004 — literary tablet witness to Inanna's Descent",
+            "source_type": "primary_text",
+            "primary_source": true,
+            "locator": "https://cdli.earth/artifacts/275004",
+            "author": null,
+            "date": "Old Babylonian (ca. 1900-1600 BCE)"
+          },
+          {
+            "id": "SOURCE-ORACC-INANA-ISHTAR",
+            "title": "Ancient Mesopotamian Gods and Goddesses — Inana/Ištar (goddess)",
+            "source_type": "reference_work",
+            "primary_source": false,
+            "locator": "https://oracc.museum.upenn.edu/amgg/listofdeities/inanaitar/",
+            "author": "Ancient Mesopotamian Gods and Goddesses project",
+            "date": null
+          }
+        ],
+        "evidence": [
+          {
+            "id": "EVIDENCE-MES-INANA-001",
+            "target_id": "CLAIM-MES-INANA-001",
+            "source_id": "SOURCE-ETCSL-INANA-DESCENT",
+            "stance": "supports",
+            "evidence_type": "textual",
+            "locator": "ETCSL 1.4.1, lines 1–5",
+            "summary": "The scholarly translation explicitly opens with Inana abandoning heaven and earth and descending to the underworld.",
+            "confidence": 0.99,
+            "status": "reviewed"
+          },
+          {
+            "id": "EVIDENCE-MES-INANA-002",
+            "target_id": "CLAIM-MES-INANA-002",
+            "source_id": "SOURCE-ETCSL-INANA-DESCENT",
+            "stance": "supports",
+            "evidence_type": "textual",
+            "locator": "ETCSL 1.4.1, lines 114–163",
+            "summary": "Ereškigala orders seven gates controlled separately; the text then narrates removal of Inana's regalia gate by gate.",
+            "confidence": 0.99,
+            "status": "reviewed"
+          },
+          {
+            "id": "EVIDENCE-MES-INANA-003",
+            "target_id": "CLAIM-MES-INANA-003",
+            "source_id": "SOURCE-ETCSL-INANA-DESCENT",
+            "stance": "supports",
+            "evidence_type": "textual",
+            "locator": "ETCSL 1.4.1, lines 164–172",
+            "summary": "The Anuna render judgment against Inana; the composition says she is turned into a corpse and hung on a hook.",
+            "confidence": 0.99,
+            "status": "reviewed"
+          },
+          {
+            "id": "EVIDENCE-MES-INANA-004",
+            "target_id": "CLAIM-MES-INANA-004",
+            "source_id": "SOURCE-ETCSL-INANA-DESCENT",
+            "stance": "supports",
+            "evidence_type": "textual",
+            "locator": "ETCSL 1.4.1, lines 217–281",
+            "summary": "Enki creates two agents, gives life-giving plant/water, and the narrative states that Inana rises after they are applied.",
+            "confidence": 0.99,
+            "status": "reviewed"
+          },
+          {
+            "id": "EVIDENCE-MES-INANA-005",
+            "target_id": "CLAIM-MES-INANA-005",
+            "source_id": "SOURCE-ETCSL-INANA-DESCENT",
+            "stance": "supports",
+            "evidence_type": "textual",
+            "locator": "ETCSL 1.4.1, lines 282–289",
+            "summary": "The Anuna state that if Inana is to ascend from the underworld she must provide a substitute.",
+            "confidence": 0.99,
+            "status": "reviewed"
+          }
+        ]
+      }
     },
     {
       "id": "MYTH-JERUSALEM-TEMPLE-DESTRUCTION-PROPHECY-000001",
@@ -29,7 +250,135 @@
       "record_type": "prophecy_narrative",
       "region": "Jerusalem / Roman Judaea narrative setting",
       "status": "reviewed",
-      "confidence": 0.97
+      "confidence": 0.97,
+      "detail": {
+        "summary": "In Mark 13:2, Jesus is portrayed as telling a disciple that the Temple's great buildings will be thrown down so completely that no stone remains upon another. Later readers compare this wording with the Roman destruction of Jerusalem and the Second Temple in 70 CE. MFTL treats the wording as textual attestation and the text–event connection as an interpretive historical comparison; it does not infer supernatural fulfillment from the historical event alone.",
+        "long_description": "RGBL supplies the exact SBLGNT and World English Bible passage identities. LEGEND owns the independently evidenced 70 CE destruction event. SUPERHERO owns human witness/recorder intelligence such as Flavius Josephus. The dating of Mark relative to 70 CE remains a scholarly question, so this record intentionally separates the existence of a prediction narrative from claims about its historical timing, authorship, or supernatural fulfillment.",
+        "tradition": "Early Christian Gospel textual tradition",
+        "earliest_attestation": "commonly dated within ca. 65–75 CE scholarly range for Mark",
+        "entities": [],
+        "claims": [
+          {
+            "id": "CLAIM-JERUSALEM-MARK13-001",
+            "subject": "MYTH-JERUSALEM-TEMPLE-DESTRUCTION-PROPHECY-000001",
+            "predicate": "contains_prediction",
+            "object": "the Temple's great buildings will be thrown down so that no stone remains upon another",
+            "claim_type": "textual_attestation",
+            "source_basis": [
+              "SOURCE-RGBL-SBLGNT-MARK-13-2",
+              "SOURCE-RGBL-WEB-MARK-13-2"
+            ],
+            "confidence": 0.99
+          },
+          {
+            "id": "CLAIM-JERUSALEM-MARK13-002",
+            "subject": "MYTH-JERUSALEM-TEMPLE-DESTRUCTION-PROPHECY-000001",
+            "predicate": "is_associated_with_historical_event",
+            "object": "legend:EVT-JERUSALEM-SECOND-TEMPLE-DESTRUCTION-70",
+            "claim_type": "historical_comparison",
+            "source_basis": [
+              "SOURCE-RGBL-SBLGNT-MARK-13-2",
+              "SOURCE-MET-JERUSALEM-70"
+            ],
+            "confidence": 0.95
+          },
+          {
+            "id": "CLAIM-JERUSALEM-MARK13-003",
+            "subject": "MYTH-JERUSALEM-TEMPLE-DESTRUCTION-PROPHECY-000001",
+            "predicate": "composition_date_relative_to_70_CE",
+            "object": "scholarly dating is commonly placed around 65–75 CE, with debate over a pre- or post-destruction setting",
+            "claim_type": "chronology_claim",
+            "source_basis": [
+              "SOURCE-CAMBRIDGE-MARK-DATE"
+            ],
+            "confidence": 0.9
+          }
+        ],
+        "sources": [
+          {
+            "id": "SOURCE-RGBL-SBLGNT-MARK-13-2",
+            "title": "RGBL SBLGNT v1.2 — Mark 13:2",
+            "source_type": "primary_text",
+            "primary_source": true,
+            "locator": "https://github.com/bjo163/rocksoul-rgbl/blob/main/datasets/sblgnt-v1-2/data/core/resources/sblgnt-v1-2.jsonl",
+            "author": "SBLGNT / Rocksoul RGBL",
+            "date": "SBLGNT v1.2 corpus expression"
+          },
+          {
+            "id": "SOURCE-RGBL-WEB-MARK-13-2",
+            "title": "RGBL World English Bible Classic 2020 — Mark 13:2",
+            "source_type": "primary_text",
+            "primary_source": true,
+            "locator": "https://github.com/bjo163/rocksoul-rgbl/blob/main/datasets/web-classic-2020/data/core/resources/web-classic-2020.jsonl",
+            "author": "World English Bible / Rocksoul RGBL",
+            "date": "2020 stable edition"
+          },
+          {
+            "id": "SOURCE-CAMBRIDGE-MARK-DATE",
+            "title": "The Date of the Markan Gospel",
+            "source_type": "academic_article",
+            "primary_source": false,
+            "locator": "https://www.cambridge.org/core/journals/new-testament-studies/article/abs/date-of-the-markan-gospel/B34650230D991C2B56A96866131DC994",
+            "author": "S. G. F. Brandon",
+            "date": "1961"
+          },
+          {
+            "id": "SOURCE-MET-JERUSALEM-70",
+            "title": "The World between Empires: Art and Identity in the Ancient Middle East — Judaea",
+            "source_type": "museum",
+            "primary_source": false,
+            "locator": "https://resources.metmuseum.org/resources/metpublications/pdf/The_World_between_Empires_Art_and_Identity_in_the_Ancient_Middle_East.pdf",
+            "author": "The Metropolitan Museum of Art",
+            "date": "2019"
+          }
+        ],
+        "evidence": [
+          {
+            "id": "EVIDENCE-JERUSALEM-MARK13-001",
+            "target_id": "CLAIM-JERUSALEM-MARK13-001",
+            "source_id": "SOURCE-RGBL-SBLGNT-MARK-13-2",
+            "stance": "supports",
+            "evidence_type": "textual",
+            "locator": "rgbl:mw:content:sblgnt:v1-2:mark:13:2",
+            "summary": "RGBL's canonical SBLGNT record preserves Mark 13:2 in Greek and targets the exact passage ID.",
+            "confidence": 0.99,
+            "status": "reviewed"
+          },
+          {
+            "id": "EVIDENCE-JERUSALEM-MARK13-002",
+            "target_id": "CLAIM-JERUSALEM-MARK13-001",
+            "source_id": "SOURCE-RGBL-WEB-MARK-13-2",
+            "stance": "supports",
+            "evidence_type": "textual",
+            "locator": "rgbl:mw:content:web-classic:2020:mar:13:2",
+            "summary": "RGBL's World English Bible Classic 2020 expression independently exposes the same verse reference in English.",
+            "confidence": 0.98,
+            "status": "reviewed"
+          },
+          {
+            "id": "EVIDENCE-JERUSALEM-MARK13-003",
+            "target_id": "CLAIM-JERUSALEM-MARK13-002",
+            "source_id": "SOURCE-MET-JERUSALEM-70",
+            "stance": "contextualizes",
+            "evidence_type": "historical",
+            "locator": "Judaea section discussing the 70 CE siege and Temple destruction",
+            "summary": "Metropolitan Museum scholarship independently describes Titus's 70 CE siege ending in the sack of Jerusalem and destruction of the Temple.",
+            "confidence": 0.97,
+            "status": "reviewed"
+          },
+          {
+            "id": "EVIDENCE-JERUSALEM-MARK13-004",
+            "target_id": "CLAIM-JERUSALEM-MARK13-003",
+            "source_id": "SOURCE-CAMBRIDGE-MARK-DATE",
+            "stance": "contextualizes",
+            "evidence_type": "historical",
+            "locator": "New Testament Studies 7(2), pp. 126–141",
+            "summary": "Academic discussion places the common dating debate for Mark around the 65–75 CE period and explicitly treats the 70 CE destruction as central to the chronology question.",
+            "confidence": 0.93,
+            "status": "reviewed"
+          }
+        ]
+      }
     }
   ]
 }

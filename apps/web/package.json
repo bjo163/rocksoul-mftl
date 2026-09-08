@@ -1,7 +1,7 @@
 {
   "name": "@mftl/web",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -12,8 +12,9 @@
     "@vitejs/plugin-react": "latest",
     "vite": "latest",
     "typescript": "latest",
-    "react": "latest",
-    "react-dom": "latest"
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "@rocksoul/ui": "github:bjo163/rocksoul-ui#99649beb4784ed43393f58d482186e9e4ef2a0a7"
   },
   "devDependencies": {
     "@types/react": "latest",
