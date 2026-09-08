@@ -2,6 +2,10 @@
 
 > **/// KEEP THE STORY. KEEP THE BOUNDARY. ///**
 
+These are canonical MFTL research objects outside the specialized myth-record lane. EVENT remains LEGEND-owned; PERSON remains SUPERHERO-owned; exact TEXT remains RGBL-owned; LAW remains AWS-owned.
+
+> **/// KEEP THE STORY. KEEP THE BOUNDARY. ///**
+
 These are canonical MFTL research objects that do not belong in the specialized myth-record lane. EVENT remains LEGEND-owned; PERSON remains SUPERHERO-owned; exact TEXT remains RGBL-owned; LAW remains AWS-owned.
 
 This directory stores non-myth canonical objects using `schemas/mftl-record.schema.json`.
