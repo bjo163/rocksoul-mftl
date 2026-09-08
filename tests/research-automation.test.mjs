@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import fs from "node:fs";
+import { execFileSync } from "node:child_process";
 import path from "node:path";
 import test from "node:test";
 
@@ -26,3 +27,5 @@ test("automation can write issues and vetted candidate staging only",()=>{
   assert.match(workflow,/issues: write/); assert.match(workflow,/contents: write/);
   assert.match(workflow,/npm run ci/);
 });
+
+test("automation scripts are syntactically valid",()=>{\n  for(const file of ["scripts/research-scout.mjs","scripts/research-intake.mjs","scripts/research-steward.mjs"]){\n    execFileSync(process.execPath,["--check",path.join(root,file)],{stdio:"pipe"});\n  }\n});\n
