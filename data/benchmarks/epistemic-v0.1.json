@@ -1,0 +1,166 @@
+{
+  "schema_version": "epistemic-benchmark.v0.1",
+  "id": "MFTL-BENCHMARK-25-V0.1",
+  "target_slots": 25,
+  "principle": "Case count is subordinate to epistemic coverage. A slot exists to exercise a distinct failure mode, not to inflate corpus size.",
+  "acceptance": [
+    "sourceable",
+    "traceable",
+    "counterevidence-aware",
+    "uncertainty-preserving",
+    "non-duplicate",
+    "owner-boundary-safe"
+  ],
+  "slots": [
+    {
+      "id": "BENCH-001",
+      "status": "canonical",
+      "ref": "mftl:MYTH-MES-INANA-DESCENT-000001",
+      "failure_mode": "textual_attestation_vs_empirical_truth"
+    },
+    {
+      "id": "BENCH-002",
+      "status": "canonical",
+      "ref": "mftl:MYTH-JERUSALEM-TEMPLE-DESTRUCTION-PROPHECY-000001",
+      "failure_mode": "prediction_correspondence_vs_fulfillment"
+    },
+    {
+      "id": "BENCH-003",
+      "status": "candidate",
+      "ref": "mftl:CAND-AFR-MAMI-WATA-000001",
+      "failure_mode": "cross_cultural_conflation"
+    },
+    {
+      "id": "BENCH-004",
+      "status": "candidate",
+      "ref": "mftl:CAND-ARCTIC-SEDNA-000001",
+      "failure_mode": "oral_variant_conflation"
+    },
+    {
+      "id": "BENCH-005",
+      "status": "candidate",
+      "ref": "mftl:CAND-AUS-NGATYI-RAINBOW-SERPENT-000001",
+      "failure_mode": "population_overgeneralization"
+    },
+    {
+      "id": "BENCH-006",
+      "status": "candidate",
+      "ref": "mftl:CAND-CHN-CHANGE-000001",
+      "failure_mode": "variant_conflation"
+    },
+    {
+      "id": "BENCH-007",
+      "status": "candidate",
+      "ref": "mftl:CAND-COL-MUISCA-EL-DORADO-GUATAVITA-000001",
+      "failure_mode": "colonial_retelling_vs_ritual_evidence"
+    },
+    {
+      "id": "BENCH-008",
+      "status": "candidate",
+      "ref": "mftl:CAND-FIN-KALEVALA-000001",
+      "failure_mode": "compiled_text_vs_oral_sources"
+    },
+    {
+      "id": "BENCH-009",
+      "status": "candidate",
+      "ref": "mftl:CAND-HAW-PELE-000001",
+      "failure_mode": "narrative_attribution_vs_geologic_event"
+    },
+    {
+      "id": "BENCH-010",
+      "status": "candidate",
+      "ref": "mftl:CAND-IDN-TIRTA-EMPUL-000001",
+      "failure_mode": "ritual_attestation_vs_sacred_efficacy"
+    },
+    {
+      "id": "BENCH-011",
+      "status": "candidate",
+      "ref": "mftl:CAND-IRL-BEAN-SI-000001",
+      "failure_mode": "omen_tradition_vs_empirical_prediction"
+    },
+    {
+      "id": "BENCH-012",
+      "status": "candidate",
+      "ref": "mftl:CAND-JPN-AMATERASU-000001",
+      "failure_mode": "textual_tradition_vs_ritual_identity"
+    },
+    {
+      "id": "BENCH-013",
+      "status": "candidate",
+      "ref": "mftl:CAND-KGZ-MANAS-TRILOGY-000001",
+      "failure_mode": "performance_transmission_vs_fixed_text"
+    },
+    {
+      "id": "BENCH-014",
+      "status": "candidate",
+      "ref": "mftl:CAND-MAO-MAUI-000001",
+      "failure_mode": "cross_polynesian_variant_conflation"
+    },
+    {
+      "id": "BENCH-015",
+      "status": "candidate",
+      "ref": "mftl:CAND-MAYA-POPOL-VUH-000001",
+      "failure_mode": "transmitted_text_vs_precolonial_tradition"
+    },
+    {
+      "id": "BENCH-016",
+      "status": "candidate",
+      "ref": "mftl:CAND-PHL-HUDHUD-IFUGAO-000001",
+      "failure_mode": "performance_context_vs_textual_freeze"
+    },
+    {
+      "id": "BENCH-017",
+      "status": "candidate",
+      "ref": "mftl:CAND-SAKHA-OLONKHO-000001",
+      "failure_mode": "oral_performance_vs_literary_canon"
+    },
+    {
+      "id": "BENCH-018",
+      "status": "candidate",
+      "ref": "mftl:CAND-SAS-DURGA-MAHISHA-000001",
+      "failure_mode": "textual_iconographic_variant_conflation"
+    },
+    {
+      "id": "BENCH-019",
+      "status": "research_issue",
+      "ref": "github:rocksoul-mftl#2",
+      "failure_mode": "ritual_sacrifice_vs_violent_death"
+    },
+    {
+      "id": "BENCH-020",
+      "status": "research_issue",
+      "ref": "github:rocksoul-mftl#4",
+      "failure_mode": "apotropaic_interpretation_vs_funerary_symbolism"
+    },
+    {
+      "id": "BENCH-021",
+      "status": "research_issue",
+      "ref": "github:rocksoul-mftl#5",
+      "failure_mode": "famous_interpretation_vs_new_taphonomic_evidence"
+    },
+    {
+      "id": "BENCH-022",
+      "status": "research_issue",
+      "ref": "github:rocksoul-mftl#6",
+      "failure_mode": "modern_category_vs_historical_function"
+    },
+    {
+      "id": "BENCH-023",
+      "status": "research_issue",
+      "ref": "github:rocksoul-mftl#7",
+      "failure_mode": "legacy_excavation_story_vs_forensic_evidence"
+    },
+    {
+      "id": "BENCH-024",
+      "status": "research_issue",
+      "ref": "github:rocksoul-mftl#8",
+      "failure_mode": "ritual_interpretation_vs_practical_deposition"
+    },
+    {
+      "id": "BENCH-025",
+      "status": "research_issue",
+      "ref": "github:rocksoul-mftl#9",
+      "failure_mode": "counter_witchcraft_vs_generic_protection_label"
+    }
+  ]
+}

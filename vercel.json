@@ -3,5 +3,59 @@
   "installCommand": "npm install",
   "buildCommand": "npm run build",
   "outputDirectory": "apps/web/dist",
-  "framework": "vite"
+  "framework": "vite",
+  "rewrites": [
+    {
+      "source": "/api/v1",
+      "destination": "/api/v1/manifest.json"
+    },
+    {
+      "source": "/api/v1/records",
+      "destination": "/api/v1/records/index.json"
+    },
+    {
+      "source": "/api/v1/records/:id",
+      "destination": "/api/v1/records/:id.json"
+    },
+    {
+      "source": "/api/v1/claims",
+      "destination": "/api/v1/claims/index.json"
+    },
+    {
+      "source": "/api/v1/claims/:id/challenge",
+      "destination": "/api/v1/challenges/:id.json"
+    },
+    {
+      "source": "/api/v1/claims/:id",
+      "destination": "/api/v1/claims/:id.json"
+    },
+    {
+      "source": "/api/v1/sources",
+      "destination": "/api/v1/sources/index.json"
+    },
+    {
+      "source": "/api/v1/sources/:id",
+      "destination": "/api/v1/sources/:id.json"
+    },
+    {
+      "source": "/api/v1/evidence",
+      "destination": "/api/v1/evidence/index.json"
+    },
+    {
+      "source": "/api/v1/evidence/:id",
+      "destination": "/api/v1/evidence/:id.json"
+    },
+    {
+      "source": "/api/v1/search",
+      "destination": "/api/v1/search/index.json"
+    },
+    {
+      "source": "/api/v1/benchmark",
+      "destination": "/api/v1/benchmark.json"
+    },
+    {
+      "source": "/api/v1/drift/:id",
+      "destination": "/api/v1/drift/:id.json"
+    }
+  ]
 }

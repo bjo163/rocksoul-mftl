@@ -1,7 +1,7 @@
 {
   "name": "rocksoul-mftl",
   "private": true,
-  "version": "0.2.0",
+  "version": "0.3.0",
   "type": "module",
   "workspaces": [
     "apps/web"
@@ -10,7 +10,10 @@
     "validate": "node scripts/validate.mjs",
     "index": "node scripts/build-index.mjs",
     "dev": "npm run index && npm --workspace @mftl/web run dev",
-    "build": "npm run validate && npm run index && npm --workspace @mftl/web run build"
+    "build": "npm run validate && npm run index && npm --workspace @mftl/web run build",
+    "api:build": "npm --workspace @mftl/web run api:build",
+    "test": "npm run index && npm run api:build && node --test tests/*.test.mjs",
+    "ci": "npm run validate && npm run test && npm --workspace @mftl/web run build"
   },
   "devDependencies": {
     "ajv": "^8.17.1",

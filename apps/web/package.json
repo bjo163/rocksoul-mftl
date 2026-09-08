@@ -1,12 +1,13 @@
 {
   "name": "@mftl/web",
   "private": true,
-  "version": "0.2.0",
+  "version": "0.3.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "build": "npm run api:build && tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "api:build": "node scripts/static-api.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",

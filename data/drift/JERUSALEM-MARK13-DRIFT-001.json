@@ -1,0 +1,61 @@
+{
+  "schema_version": "narrative-drift.v0.1",
+  "id": "DRIFT-JERUSALEM-MARK13-001",
+  "subject_ref": "mftl:MYTH-JERUSALEM-TEMPLE-DESTRUCTION-PROPHECY-000001",
+  "title": "Mark 13:2 — text to historical-comparison drift",
+  "stages": [
+    {
+      "id": "STAGE-TEXT-GREEK",
+      "layer": "exact_text",
+      "ref": "rgbl:mw:passage:sblgnt:v1-2:mark:13:2",
+      "scope": "Exact Greek corpus passage identity; no historical verdict."
+    },
+    {
+      "id": "STAGE-TEXT-ENGLISH",
+      "layer": "translation",
+      "ref": "rgbl:mw:passage:web-classic:2020:mar:13:2",
+      "scope": "English translation expression of the passage; translation choices remain inspectable."
+    },
+    {
+      "id": "STAGE-STORY",
+      "layer": "narrative_analysis",
+      "ref": "mftl:MYTH-JERUSALEM-TEMPLE-DESTRUCTION-PROPHECY-000001",
+      "scope": "MFTL extracts a prediction narrative and chronology-sensitive claims."
+    },
+    {
+      "id": "STAGE-EVENT",
+      "layer": "historical_comparison",
+      "ref": "legend:EVT-JERUSALEM-SECOND-TEMPLE-DESTRUCTION-70",
+      "scope": "Independent historical event used for comparison; correspondence is not fulfillment."
+    }
+  ],
+  "drift_observations": [
+    {
+      "from": "STAGE-TEXT-GREEK",
+      "to": "STAGE-TEXT-ENGLISH",
+      "dimension": "language",
+      "change": "Corpus expression changes language while passage identity is preserved.",
+      "risk": "translation_choice"
+    },
+    {
+      "from": "STAGE-TEXT-ENGLISH",
+      "to": "STAGE-STORY",
+      "dimension": "interpretive_scope",
+      "change": "Exact wording becomes an extracted narrative/claim model.",
+      "risk": "analysis_added"
+    },
+    {
+      "from": "STAGE-STORY",
+      "to": "STAGE-EVENT",
+      "dimension": "historical_relation",
+      "change": "Narrative is compared with an independently modeled event.",
+      "risk": "correspondence_misread_as_causation_or_fulfillment"
+    }
+  ],
+  "guardrails": [
+    "TEXTUAL ATTESTATION ≠ EMPIRICAL PROOF",
+    "CORRESPONDENCE ≠ CAUSATION",
+    "CORRESPONDENCE ≠ SUPERNATURAL FULFILLMENT",
+    "DATE OF TEXT RELATIVE TO EVENT REMAINS A SEPARATE CLAIM"
+  ]
+}
