@@ -1,41 +1,93 @@
-name: MFTL Auto Research Scout
+name: MFTL Autonomous Research
 
 on:
   schedule:
     - cron: "17 2 * * *"
   workflow_dispatch:
     inputs:
-      max_new_issues:
-        description: "Maximum new research issues"
-        required: false
-        default: "4"
       dry_run:
-        description: "Discover and print leads without opening issues"
+        description: "Discover without writing issues/candidates"
         required: false
         default: "false"
 
 permissions:
-  contents: read
+  contents: write
   issues: write
 
 concurrency:
-  group: mftl-auto-research-scout
+  group: mftl-autonomous-research
   cancel-in-progress: false
 
 jobs:
   scout:
+    name: Scout / ${{ matrix.lane }}
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 12
+    strategy:
+      fail-fast: false
+      matrix:
+        lane:
+          - myth-ritual-transmission
+          - sacred-place-legend
+          - prophecy-apocalyptic
+          - pseudoarchaeology-pseudohistory
+          - conspiracy-narrative
+          - urban-legend-rumor
+          - supernatural-claim
     steps:
-      - name: Checkout
-        uses: actions/checkout@v5
-      - name: Setup Node
-        uses: actions/setup-node@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: "22"
-      - name: Search academic research leads
+      - name: Discover one strong lead
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          RESEARCH_SCOUT_MAX_NEW: ${{ inputs.max_new_issues || '4' }}
+          RESEARCH_SCOUT_LANE: ${{ matrix.lane }}
+          RESEARCH_SCOUT_MAX_NEW: "1"
           RESEARCH_SCOUT_DRY_RUN: ${{ inputs.dry_run == 'true' && '1' || '0' }}
         run: node scripts/research-scout.mjs
+
+  steward:
+    name: MFTL Steward / review + stage
+    needs: scout
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    if: ${{ always() && inputs.dry_run != 'true' }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+      - name: Upgrade npm
+        run: npm install --global npm@11.6.0
+      - name: Install
+        run: npm install --no-audit --no-fund
+      - name: Steward review
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/research-steward.mjs
+      - name: Validate generated staging data
+        run: npm run ci
+      - name: Commit staged candidates and rebuilt indexes
+        run: |
+          git config user.name "mftl-steward[bot]"
+          git config user.email "mftl-steward[bot]@users.noreply.github.com"
+          git add data/candidates apps/web/public/data
+          if git diff --cached --quiet; then
+            echo "No staged candidate changes"
+          else
+            git commit -m "research: steward stage vetted leads"
+            git push origin HEAD:main
+          fi
+
+  report:
+    name: Automation health
+    needs: [scout, steward]
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Scout result: ${{ needs.scout.result }}"
+          echo "Steward result: ${{ needs.steward.result }}"
