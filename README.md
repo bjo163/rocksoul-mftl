@@ -33,7 +33,27 @@ A provenance-first **Narrative & Belief Intelligence Corpus** for mythology, fol
 
 </div>
 
+
 ---
+<!-- ROCKSOUL_FIELD_NOTE_START -->
+<div align="center">
+
+### **STORIES HIT HARD. EVIDENCE HITS HARDER.**
+
+`/// MOONWITNESS FIELD NOTE ///`
+
+</div>
+
+> Stories can be strange, beautiful, ancient, viral, sacred, manipulated—or all of that at once. The repository does not flatten them into one verdict. It keeps the receipts: source, claim, context, counterevidence, uncertainty.
+
+```text
+TRACE IT → SOURCE IT → CROSS-CHECK IT → LABEL THE UNCERTAINTY
+```
+
+**NO VIBES-ONLY CLAIMS · NO SOURCELESS LORE · UNCERTAINTY IS DATA**
+
+<!-- ROCKSOUL_FIELD_NOTE_END -->
+
 
 > **MFTL stores what the source says before storing what the analyst concludes.**
 
@@ -84,7 +104,7 @@ MFTL may describe **event reports, event claims, persons as narrated, quoted tex
 
 [Read the interoperability contract →](docs/INTEROP.md)
 
-## Four-way proof case
+## Shared five-domain proof
 
 ### **CASE 001 — JERUSALEM 70 CE**
 
@@ -98,7 +118,7 @@ LEGEND EVENT
 SUPERHERO PERSON
 ```
 
-Mark 13:2 supplies the exact textual prediction; MFTL owns the prediction narrative; LEGEND independently models the 70 CE destruction; SUPERHERO models Josephus as witness/recorder. **Text–event correspondence is preserved without silently becoming a supernatural-fulfillment verdict.** AWS can consume the same cross-repository graph when a later legal question exists, without changing the four-way historical proof.
+Mark 13:2 supplies the exact textual prediction; MFTL owns the prediction narrative; LEGEND independently models the 70 CE destruction; SUPERHERO models Josephus as witness/recorder. **Text–event correspondence is preserved without silently becoming a supernatural-fulfillment verdict.** AWS can consume the same cross-repository graph when a later legal question exists, without changing the five-domain research proof.
 
 [Read the shared case →](docs/cases/JERUSALEM-70-TEMPLE.md)
 
