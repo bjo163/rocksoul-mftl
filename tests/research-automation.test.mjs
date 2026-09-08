@@ -26,3 +26,12 @@ test("research is issue-first and does not auto-canonicalize",()=>{
 test("workflow surface is validation only",()=>{
   assert.deepEqual(workflowFiles,["validate.yml"]);
 });
+
+
+test("generic research issue lifecycle maps deterministic Steward decisions",()=>{
+  const steward=fs.readFileSync(path.join(process.cwd(),"scripts/research-steward.mjs"),"utf8");
+  assert.match(steward,/stage_candidate[^\n]+needs_sources/);
+  assert.match(steward,/hold[^\n]+triaged/);
+  assert.match(steward,/ROCKSOUL-RESEARCH-STATE/);
+  assert.match(steward,/state_reason[^\n]+not_planned/);
+});

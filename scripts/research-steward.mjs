@@ -27,9 +27,10 @@ function candidate(issue,d){
 }
 async function patchIssue(issue,d){
   const marker="## MFTL Steward review"; let body=String(issue.body??"").split(marker)[0].trim();
-  body+=`\n\n${marker}\n\n- **Steward score:** ${d.score}/100\n- **Duplicate:** ${d.duplicate}\n- **Decision:** ${d.action}\n- **Reviewed at:** ${new Date().toISOString()}\n\nROCKSOUL-RESEARCH-STATE:${d.action}\nAUTO-RESEARCH-STATE:${d.action}`;
+  const issueState=d.action==="stage_candidate"?"needs_sources":d.action==="hold"?"triaged":d.action;
+  body+=`\n\n${marker}\n\n- **Steward score:** ${d.score}/100\n- **Duplicate:** ${d.duplicate}\n- **Decision:** ${d.action}\n- **Reviewed at:** ${new Date().toISOString()}\n\nROCKSOUL-RESEARCH-STATE:${issueState}\nAUTO-RESEARCH-STATE:${d.action}`;
   const [owner,name]=repo.split("/");
-  await jfetch(`https://api.github.com/repos/${owner}/${name}/issues/${issue.number}`,{method:"PATCH",headers:{authorization:`Bearer ${token}`,"content-type":"application/json","x-github-api-version":"2022-11-28"},body:JSON.stringify({body})});
+  await jfetch(`https://api.github.com/repos/${owner}/${name}/issues/${issue.number}`,{method:"PATCH",headers:{authorization:`Bearer ${token}`,"content-type":"application/json","x-github-api-version":"2022-11-28"},body:JSON.stringify({body,...(d.action==="duplicate"?{state:"closed",state_reason:"not_planned"}:{})})});
 }
 const [owner,name]=repo.split("/");
 const issues=await jfetch(`https://api.github.com/repos/${owner}/${name}/issues?state=open&per_page=100`,{headers:{authorization:`Bearer ${token}`,"x-github-api-version":"2022-11-28"}});
