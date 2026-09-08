@@ -18,7 +18,10 @@ type Claim = {
   object: string | null;
   claim_type: string | null;
   source_basis: string[];
+  evidence_ids?: string[];
+  epistemic_status?: string | null;
   confidence: number | null;
+  notes?: string | null;
 };
 
 type Source = {
@@ -29,6 +32,8 @@ type Source = {
   locator: string | null;
   author: string | null;
   date: string | null;
+  authority?: string | null;
+  reliability?: { score?: number | null; notes?: string | null } | null;
 };
 
 type Evidence = {
@@ -63,6 +68,41 @@ type CorpusRecord = {
   };
 };
 
+
+type CorpusAnalytics = {
+  candidate_pipeline: Record<string, number>;
+  candidate_types: Record<string, number>;
+  claim_epistemic: Record<string, number>;
+  claim_types: Record<string, number>;
+  claim_confidence: { high: number; medium: number; low: number };
+  evidence_stance: Record<string, number>;
+  evidence_types: Record<string, number>;
+  source_authority: Record<string, number>;
+  source_types: Record<string, number>;
+  source_reliability_average: number | null;
+  provenance_completeness: {
+    claims_with_evidence: number;
+    claims_total: number;
+    sources_with_locators: number;
+    sources_total: number;
+    canonical_records_with_claims: number;
+    canonical_records_total: number;
+  };
+  benchmark: {
+    target: number;
+    status: Record<string, number>;
+    canonical: number;
+    candidate: number;
+    research_issue: number;
+  };
+  drift: { records: number; risks: Record<string, number> };
+  automation: {
+    steward: string;
+    schedule: string;
+    parallel_lanes: Array<{ id: string; candidate_type: string }>;
+  };
+};
+
 type CorpusIndex = {
   generated_at: string;
   counts: {
@@ -80,6 +120,7 @@ type CorpusIndex = {
     regions: Record<string, number>;
     canonical_regions: Record<string, number>;
   };
+  analytics?: CorpusAnalytics;
   records: CorpusRecord[];
 };
 
@@ -148,7 +189,7 @@ function EvidenceTrail({ record }: { record: CorpusRecord }) {
                 aria-pressed={selectedClaimId === claim.id}
               >
                 <MoonWitnessAssetImage pack="correlation-semantics" file="svg/node-claim.svg" alt="" aria-hidden="true" />
-                <span><strong>{claim.predicate ?? claim.id}</strong><small>{claim.object ?? claim.claim_type ?? claim.id}</small></span>
+                <span><strong>{claim.predicate ?? claim.id}</strong><small>{claim.epistemic_status ?? claim.object ?? claim.claim_type ?? claim.id}</small></span>
               </button>
             )) : <p className="muted">No atomic claims attached.</p>}
           </div>
@@ -181,7 +222,7 @@ function EvidenceTrail({ record }: { record: CorpusRecord }) {
                 rel={source.locator ? "noreferrer" : undefined}
               >
                 <MoonWitnessAssetImage pack="correlation-semantics" file="svg/node-source.svg" alt="" aria-hidden="true" />
-                <span><strong>{source.title}</strong><small>{source.primary_source ? "PRIMARY SOURCE" : source.source_type ?? source.id}</small></span>
+                <span><strong>{source.title}</strong><small>{source.primary_source ? "PRIMARY SOURCE" : source.authority ?? source.source_type ?? source.id}</small></span>
               </a>
             ))}
           </div>
@@ -238,6 +279,72 @@ function RecordDetail({ record }: { record: CorpusRecord }) {
             )) : <span className="muted">No reusable entities linked yet.</span>}
           </div>
         </section>
+      </div>
+    </section>
+  );
+}
+
+
+function ratio(a: number, b: number) {
+  return b ? Math.round((a / b) * 100) : 0;
+}
+
+function MetricBars({ title, data }: { title: string; data: Record<string, number> }) {
+  const rows = Object.entries(data).sort((a,b) => b[1] - a[1]);
+  const max = Math.max(1, ...rows.map(([,value]) => value));
+  return (
+    <section className="intel-card">
+      <p className="mw-eyebrow">{title}</p>
+      <div className="intel-bars">
+        {rows.length ? rows.map(([label,value]) => (
+          <div className="intel-row" key={label}>
+            <span>{label.replaceAll("_"," ")}</span>
+            <i><b style={{width:`${Math.max(6,(value/max)*100)}%`}} /></i>
+            <strong>{value}</strong>
+          </div>
+        )) : <span className="muted">No data yet.</span>}
+      </div>
+    </section>
+  );
+}
+
+function IntelligenceDashboard({ analytics }: { analytics: CorpusAnalytics }) {
+  const p = analytics.provenance_completeness;
+  const completedBenchmark = analytics.benchmark.canonical + analytics.benchmark.candidate + analytics.benchmark.research_issue;
+  return (
+    <section className="section intelligence" id="intelligence">
+      <div className="section-head compact">
+        <div><p className="mw-eyebrow">RESEARCH INTELLIGENCE</p><h2>SEE THE<br/>UNCERTAINTY.</h2></div>
+        <p className="section-copy">The dashboard exposes corpus strength, disagreement, provenance, research backlog and automation lanes. A larger corpus is not automatically a stronger corpus.</p>
+      </div>
+
+      <div className="intel-summary">
+        <div><strong>{ratio(p.claims_with_evidence,p.claims_total)}%</strong><span>CLAIMS WITH EVIDENCE</span></div>
+        <div><strong>{ratio(p.sources_with_locators,p.sources_total)}%</strong><span>SOURCES WITH LOCATORS</span></div>
+        <div><strong>{analytics.source_reliability_average == null ? "—" : Math.round(analytics.source_reliability_average*100)+"%"}</strong><span>AVG SOURCE RELIABILITY</span></div>
+        <div><strong>{completedBenchmark}/{analytics.benchmark.target}</strong><span>EPISTEMIC BENCHMARK SLOTS</span></div>
+      </div>
+
+      <div className="intel-grid">
+        <MetricBars title="CLAIM EPISTEMIC STATUS" data={analytics.claim_epistemic} />
+        <MetricBars title="EVIDENCE BALANCE" data={analytics.evidence_stance} />
+        <MetricBars title="SOURCE AUTHORITY" data={analytics.source_authority} />
+        <MetricBars title="CANDIDATE PIPELINE" data={analytics.candidate_pipeline} />
+        <MetricBars title="EVIDENCE TYPES" data={analytics.evidence_types} />
+        <MetricBars title="NARRATIVE DRIFT RISKS" data={analytics.drift.risks} />
+      </div>
+
+      <div className="automation-panel">
+        <div>
+          <p className="mw-eyebrow">AUTONOMOUS RESEARCH</p>
+          <h3>{analytics.automation.steward}</h3>
+          <p>Scheduled {analytics.automation.schedule}. Seven discovery lanes run in parallel; Steward then reviews and stages only vetted leads.</p>
+        </div>
+        <div className="lane-list">
+          {analytics.automation.parallel_lanes.map((lane) => (
+            <span className="lane-chip" key={lane.id}><strong>{lane.id}</strong><small>{lane.candidate_type}</small></span>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -328,6 +435,8 @@ function App() {
           ))}
         </div>
       </section>
+
+      {index?.analytics ? <IntelligenceDashboard analytics={index.analytics} /> : null}
 
       <section className="section explorer" id="explorer">
         <div className="section-head compact">
