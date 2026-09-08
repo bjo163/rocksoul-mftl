@@ -17,7 +17,7 @@ A provenance-first **Narrative & Belief Intelligence Corpus** for mythology, fol
 <br/>
 
 [![Corpus Validation](https://github.com/bjo163/rocksoul-mftl/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/bjo163/rocksoul-mftl/actions/workflows/validate.yml)
-![Branches](https://img.shields.io/badge/branches-main%20%2B%20dev-111111)
+![Branches](https://img.shields.io/badge/branch-main--only-111111)
 ![Runtime](https://img.shields.io/badge/Node.js-22-3C873A)
 ![Language](https://img.shields.io/badge/TypeScript-strict-3178C6)
 ![Domain](https://img.shields.io/badge/domain-STORY-6F6F6F)
@@ -29,7 +29,7 @@ A provenance-first **Narrative & Belief Intelligence Corpus** for mythology, fol
 
 **WORLD CORPUS · EVIDENCE GRAPH · SOURCE LINEAGE · NARRATIVE INTEGRITY · MIZAN**
 
-[Architecture](#the-intelligence-graph) · [Corpus](#corpus-snapshot) · [Research queue](#research-queue) · [Documentation](#documentation) · [Assets](https://github.com/bjo163/rocksoul-assets) · [Console](https://github.com/bjo163/rocksoul-crayon)
+[Architecture](#the-intelligence-graph) · [Public API](docs/RESEARCH-LOOP.md#public-api) · [Corpus](#corpus-snapshot) · [Research queue](#research-queue) · [Documentation](#documentation) · [Assets](https://github.com/bjo163/rocksoul-assets) · [Console](https://github.com/bjo163/rocksoul-crayon)
 
 </div>
 
@@ -194,6 +194,15 @@ empirically proven supernatural event
 ```
 
 The original discovery candidate is preserved as `merged`, so the path from discovery → research → canonicalization stays auditable.
+
+
+## Public research API
+
+MFTL now exposes a stable read-only STORY-domain API plus a local Node runtime. The API includes canonical records, claims, sources, evidence, search, claim challenges, the first narrative-drift case, and the 25-slot epistemic benchmark. Cross-domain edges remain owned by `rocksoul-correlation`.
+
+A claim challenge answers not only “what supports this?” but also **what weakens it, what alternatives remain, and what evidence would materially change the current assessment**.
+
+[Read the research loop →](docs/RESEARCH-LOOP.md) · [Read the public/operator boundary →](docs/PUBLIC-OPERATOR-BOUNDARY.md)
 
 ## Research Queue
 

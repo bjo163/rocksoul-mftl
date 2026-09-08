@@ -2,7 +2,7 @@ name: validate-corpus
 
 on:
   push:
-    branches: [main, dev]
+    branches: [main]
   pull_request:
     branches: [main]
 
@@ -21,7 +21,5 @@ jobs:
         run: npm install --global npm@11.6.0
       - name: Install
         run: npm install --no-audit --no-fund
-      - name: Validate corpus
-        run: npm run validate
-      - name: Build web
-        run: npm run build
+      - name: Validate, test API, and build web
+        run: npm run ci

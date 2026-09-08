@@ -27,7 +27,7 @@ const contracts = [
   {dir:"data/entities",schema:"entity-record.schema.json",label:"entity records"},
   {dir:"data/claims",schema:"claim-record.schema.json",label:"claim records"},
   {dir:"data/sources",schema:"source-record.schema.json",label:"source records"},
-  {dir:"data/evidence",schema:"evidence-record.schema.json",label:"evidence records"}
+  {dir:"data/evidence",schema:"evidence-record.schema.json",label:"evidence records"},\n  {dir:"data/drift",schema:"narrative-drift.schema.json",label:"narrative drift records"},\n  {dir:"data/benchmarks",schema:"epistemic-benchmark.schema.json",label:"epistemic benchmark records"}
 ];
 
 let failed = false;

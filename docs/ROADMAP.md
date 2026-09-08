@@ -20,13 +20,13 @@
 - [x] GitHub Actions validation
 - [x] React/Vite intelligence explorer foundation
 - [x] First reviewed canonical record — Inana's Descent to the Netherworld
-- [ ] First 25 reviewed canonical records
+- [ ] First 25 reviewed canonical records (governed by the 25-slot epistemic benchmark; count alone is not acceptance)
 - [ ] First 10 world regions represented
 - [ ] First 50 reusable source records
 - [ ] First counterevidence-linked case
-- [ ] Record detail pages
-- [ ] Source/evidence panels
-- [ ] Claim graph visualization
+- [x] Record detail pages
+- [x] Source/evidence panels
+- [x] Claim graph visualization
 - [ ] Timeline + geography explorer
 - [ ] Mizan assessment visualization
 
@@ -38,8 +38,8 @@
 - cross-cultural motif graph
 - equivalence/syncretism relations
 - geography and timeline indexes
-- stable public JSON API
-- search index generated from canonical corpus
+- [x] stable public JSON API + local read-only runtime
+- [x] search index generated from canonical corpus
 
 ## v0.3 — Comparative Engine
 
@@ -50,14 +50,14 @@
 - confidence calibration
 - human-review queue
 - prophecy/prediction evaluation
-- narrative version diffing
+- [x] narrative drift engine v0.1
 
 ## v0.4 — Provenance Intelligence
 
 - source lineage graph
 - SUPERHERO actor / quotation / transmission links
 - claim version history
-- supporting vs contradicting evidence balance
+- [x] claim challenge projection: support / counterevidence / alternatives / what-would-change
 - provenance health score
 - source reuse and dependency analysis
 
