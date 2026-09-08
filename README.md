@@ -12,12 +12,12 @@
 
 A provenance-first **Narrative & Belief Intelligence Corpus** for mythology, folklore, supernatural claims, historical ritual traditions, information integrity, deviation, and explainable comparative analysis.
 
-**MOONWITNESS · ROCKSOUL RESEARCH · STORY × EVENT × PERSON × TEXT × LAW**
+**MOONWITNESS · ROCKSOUL RESEARCH · STORY × EVENT × PERSON × RGBL × AWS**
 
 <br/>
 
 [![Corpus Validation](https://github.com/bjo163/rocksoul-mftl/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/bjo163/rocksoul-mftl/actions/workflows/validate.yml)
-![Workflow](https://img.shields.io/badge/workflow-main--only-111111)
+![Branches](https://img.shields.io/badge/branches-main%20%2B%20dev-111111)
 ![Runtime](https://img.shields.io/badge/Node.js-22-3C873A)
 ![Language](https://img.shields.io/badge/TypeScript-strict-3178C6)
 ![Domain](https://img.shields.io/badge/domain-STORY-6F6F6F)
@@ -280,6 +280,8 @@ The project does **not**:
 The theological layer is optional and remains separate from academic classification.
 
 [Read the full research policy →](docs/RESEARCH_POLICY.md)
+
+[Branching](docs/BRANCHING.md) · `dev` development · `main` stable/release
 
 ## Documentation
 
