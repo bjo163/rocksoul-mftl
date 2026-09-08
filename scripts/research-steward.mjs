@@ -3,6 +3,8 @@ import path from "node:path";
 import crypto from "node:crypto";
 
 const root=process.cwd(); const repo=process.env.GITHUB_REPOSITORY; const token=process.env.GITHUB_TOKEN;
+const topicConfig=JSON.parse(fs.readFileSync(path.join(root,"data/research-scout/topics.json"),"utf8"));
+const topicById=new Map((topicConfig.topics??[]).map(t=>[t.id,t]));
 if(!repo||!token)throw new Error("GITHUB_REPOSITORY and GITHUB_TOKEN are required");
 function clean(v=""){return String(v).replace(/\s+/g," ").trim()}
 function slug(v){return clean(v).toUpperCase().replace(/[^A-Z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,48)}
@@ -20,8 +22,8 @@ function decision(issue){
   return {title,locator,lane:meta(body,"AUTO-RESEARCH-LANE")??"unknown",score,duplicate:dup,action};
 }
 function candidate(issue,d){
-  const id=`CAND-AUTO-${slug(d.lane)}-${short(d.title)}`; const now=new Date().toISOString();
-  return {schema_version:"candidate.v0.1",candidate_id:id,name:d.title,aliases:[],region:"Global / auto-discovery",country:null,tradition:`Auto research lane: ${d.lane}`,candidate_type:d.lane==="conspiracy-narrative"?"conspiracy_narrative":"research_lead",discovery:{summary:`Automatically discovered scholarly lead: ${d.title}`,why_relevant:`MFTL Steward score ${d.score}/100. This candidate remains a staging object until source content and claim-level evidence are inspected.`,discovered_at:now,search_terms:[d.lane,d.title]},sources:[{title:d.title,locator:d.locator??issue.html_url,source_type:"academic_metadata",authority:"discovery_only",notes:`Auto-staged from GitHub issue #${issue.number}; metadata discovery is not claim verification.`}],duplicate_check:{checked:true,possible_matches:[]},status:"needs_sources",notes:d.lane==="conspiracy-narrative"?"Conspiracy narrative guardrail: document provenance, evidence claims, counterevidence and transmission; do not treat popularity as proof.":"Auto-staged by MFTL Steward; canonical promotion requires stronger structured evidence."};
+  const id=`CAND-AUTO-${slug(d.lane)}-${short(d.title)}`; const now=new Date().toISOString(); const topic=topicById.get(d.lane)??{};
+  return {schema_version:"candidate.v0.1",candidate_id:id,name:d.title,aliases:[],region:topic.region_hint==="global"?"Global / auto-discovery":topic.region_hint??"Global / auto-discovery",country:null,tradition:topic.tradition_hint??`Auto research lane: ${d.lane}`,candidate_type:topic.candidate_type??"research_lead",discovery:{summary:`Automatically discovered scholarly lead: ${d.title}`,why_relevant:`MFTL Steward score ${d.score}/100. This candidate remains a staging object until source content and claim-level evidence are inspected.`,discovered_at:now,search_terms:[d.lane,d.title]},sources:[{title:d.title,locator:d.locator??issue.html_url,source_type:"academic_metadata",authority:"discovery_only",notes:`Auto-staged from GitHub issue #${issue.number}; metadata discovery is not claim verification.`}],duplicate_check:{checked:true,possible_matches:[]},status:"needs_sources",notes:d.lane==="conspiracy-narrative"?"Conspiracy narrative guardrail: document provenance, evidence claims, counterevidence and transmission; do not treat popularity as proof.":"Auto-staged by MFTL Steward; canonical promotion requires stronger structured evidence."};
 }
 async function patchIssue(issue,d){
   const marker="## MFTL Steward review"; let body=String(issue.body??"").split(marker)[0].trim();
