@@ -39,20 +39,49 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version: "22"
-      - name: Discover one strong lead
+      - name: Discover scholarly shortlist
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           RESEARCH_SCOUT_LANE: ${{ matrix.lane }}
-          RESEARCH_SCOUT_MAX_NEW: "1"
+          RESEARCH_SCOUT_MAX_NEW: "3"
+          RESEARCH_SCOUT_OUTPUT: research-out/${{ matrix.lane }}.json
           RESEARCH_SCOUT_DRY_RUN: ${{ inputs.dry_run == 'true' && '1' || '0' }}
         run: node scripts/research-scout.mjs
+      - name: Upload shortlist
+        uses: actions/upload-artifact@v4
+        with:
+          name: scout-${{ matrix.lane }}
+          path: research-out/${{ matrix.lane }}.json
+          if-no-files-found: error
+
+  intake:
+    name: Rank + deduplicate intake
+    needs: scout
+    if: ${{ always() && needs.scout.result != 'cancelled' && inputs.dry_run != 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+      - name: Download all scout shortlists
+        uses: actions/download-artifact@v4
+        with:
+          pattern: scout-*
+          path: research-out
+          merge-multiple: true
+      - name: Open top research leads
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RESEARCH_INTAKE_MAX_NEW: "4"
+        run: node scripts/research-intake.mjs
 
   steward:
     name: MFTL Steward / review + stage
-    needs: scout
+    needs: intake
+    if: ${{ always() && needs.intake.result == 'success' }}
     runs-on: ubuntu-latest
     timeout-minutes: 20
-    if: ${{ always() && inputs.dry_run != 'true' }}
     steps:
       - uses: actions/checkout@v5
         with:
@@ -60,17 +89,15 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version: "22"
-      - name: Upgrade npm
-        run: npm install --global npm@11.6.0
-      - name: Install
-        run: npm install --no-audit --no-fund
-      - name: Steward review
+      - run: npm install --global npm@11.6.0
+      - run: npm install --no-audit --no-fund
+      - name: Automatic Steward review
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node scripts/research-steward.mjs
-      - name: Validate generated staging data
+      - name: Rebuild + validate + test
         run: npm run ci
-      - name: Commit staged candidates and rebuilt indexes
+      - name: Commit vetted staging data
         run: |
           git config user.name "mftl-steward[bot]"
           git config user.email "mftl-steward[bot]@users.noreply.github.com"
@@ -84,10 +111,11 @@ jobs:
 
   report:
     name: Automation health
-    needs: [scout, steward]
+    needs: [scout, intake, steward]
     if: ${{ always() }}
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "Scout result: ${{ needs.scout.result }}"
-          echo "Steward result: ${{ needs.steward.result }}"
+          echo "Scout: ${{ needs.scout.result }}"
+          echo "Intake: ${{ needs.intake.result }}"
+          echo "Steward: ${{ needs.steward.result }}"
