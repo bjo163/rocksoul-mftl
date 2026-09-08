@@ -1,6 +1,6 @@
 {
-  "schema_version": "corpus-index.v0.4",
-  "generated_at": "2026-09-08T03:35:00Z",
+  "schema_version": "corpus-index.v0.5",
+  "generated_at": "2026-09-08T04:18:00Z",
   "counts": {
     "canonical_records": 2,
     "candidates": 16,
@@ -485,6 +485,526 @@
           "candidate_type": "supernatural_claim"
         }
       ]
+    },
+    "observatory": {
+      "benchmark_slots": [
+        {
+          "id": "BENCH-001",
+          "status": "canonical",
+          "ref": "mftl:MYTH-MES-INANA-DESCENT-000001",
+          "failure_mode": "textual_attestation_vs_empirical_truth"
+        },
+        {
+          "id": "BENCH-002",
+          "status": "canonical",
+          "ref": "mftl:MYTH-JERUSALEM-TEMPLE-DESTRUCTION-PROPHECY-000001",
+          "failure_mode": "prediction_correspondence_vs_fulfillment"
+        },
+        {
+          "id": "BENCH-003",
+          "status": "candidate",
+          "ref": "mftl:CAND-AFR-MAMI-WATA-000001",
+          "failure_mode": "cross_cultural_conflation"
+        },
+        {
+          "id": "BENCH-004",
+          "status": "candidate",
+          "ref": "mftl:CAND-ARCTIC-SEDNA-000001",
+          "failure_mode": "oral_variant_conflation"
+        },
+        {
+          "id": "BENCH-005",
+          "status": "candidate",
+          "ref": "mftl:CAND-AUS-NGATYI-RAINBOW-SERPENT-000001",
+          "failure_mode": "population_overgeneralization"
+        },
+        {
+          "id": "BENCH-006",
+          "status": "candidate",
+          "ref": "mftl:CAND-CHN-CHANGE-000001",
+          "failure_mode": "variant_conflation"
+        },
+        {
+          "id": "BENCH-007",
+          "status": "candidate",
+          "ref": "mftl:CAND-COL-MUISCA-EL-DORADO-GUATAVITA-000001",
+          "failure_mode": "colonial_retelling_vs_ritual_evidence"
+        },
+        {
+          "id": "BENCH-008",
+          "status": "candidate",
+          "ref": "mftl:CAND-FIN-KALEVALA-000001",
+          "failure_mode": "compiled_text_vs_oral_sources"
+        },
+        {
+          "id": "BENCH-009",
+          "status": "candidate",
+          "ref": "mftl:CAND-HAW-PELE-000001",
+          "failure_mode": "narrative_attribution_vs_geologic_event"
+        },
+        {
+          "id": "BENCH-010",
+          "status": "candidate",
+          "ref": "mftl:CAND-IDN-TIRTA-EMPUL-000001",
+          "failure_mode": "ritual_attestation_vs_sacred_efficacy"
+        },
+        {
+          "id": "BENCH-011",
+          "status": "candidate",
+          "ref": "mftl:CAND-IRL-BEAN-SI-000001",
+          "failure_mode": "omen_tradition_vs_empirical_prediction"
+        },
+        {
+          "id": "BENCH-012",
+          "status": "candidate",
+          "ref": "mftl:CAND-JPN-AMATERASU-000001",
+          "failure_mode": "textual_tradition_vs_ritual_identity"
+        },
+        {
+          "id": "BENCH-013",
+          "status": "candidate",
+          "ref": "mftl:CAND-KGZ-MANAS-TRILOGY-000001",
+          "failure_mode": "performance_transmission_vs_fixed_text"
+        },
+        {
+          "id": "BENCH-014",
+          "status": "candidate",
+          "ref": "mftl:CAND-MAO-MAUI-000001",
+          "failure_mode": "cross_polynesian_variant_conflation"
+        },
+        {
+          "id": "BENCH-015",
+          "status": "candidate",
+          "ref": "mftl:CAND-MAYA-POPOL-VUH-000001",
+          "failure_mode": "transmitted_text_vs_precolonial_tradition"
+        },
+        {
+          "id": "BENCH-016",
+          "status": "candidate",
+          "ref": "mftl:CAND-PHL-HUDHUD-IFUGAO-000001",
+          "failure_mode": "performance_context_vs_textual_freeze"
+        },
+        {
+          "id": "BENCH-017",
+          "status": "candidate",
+          "ref": "mftl:CAND-SAKHA-OLONKHO-000001",
+          "failure_mode": "oral_performance_vs_literary_canon"
+        },
+        {
+          "id": "BENCH-018",
+          "status": "candidate",
+          "ref": "mftl:CAND-SAS-DURGA-MAHISHA-000001",
+          "failure_mode": "textual_iconographic_variant_conflation"
+        },
+        {
+          "id": "BENCH-019",
+          "status": "research_issue",
+          "ref": "github:rocksoul-mftl#2",
+          "failure_mode": "ritual_sacrifice_vs_violent_death"
+        },
+        {
+          "id": "BENCH-020",
+          "status": "research_issue",
+          "ref": "github:rocksoul-mftl#4",
+          "failure_mode": "apotropaic_interpretation_vs_funerary_symbolism"
+        },
+        {
+          "id": "BENCH-021",
+          "status": "research_issue",
+          "ref": "github:rocksoul-mftl#5",
+          "failure_mode": "famous_interpretation_vs_new_taphonomic_evidence"
+        },
+        {
+          "id": "BENCH-022",
+          "status": "research_issue",
+          "ref": "github:rocksoul-mftl#6",
+          "failure_mode": "modern_category_vs_historical_function"
+        },
+        {
+          "id": "BENCH-023",
+          "status": "research_issue",
+          "ref": "github:rocksoul-mftl#7",
+          "failure_mode": "legacy_excavation_story_vs_forensic_evidence"
+        },
+        {
+          "id": "BENCH-024",
+          "status": "research_issue",
+          "ref": "github:rocksoul-mftl#8",
+          "failure_mode": "ritual_interpretation_vs_practical_deposition"
+        },
+        {
+          "id": "BENCH-025",
+          "status": "research_issue",
+          "ref": "github:rocksoul-mftl#9",
+          "failure_mode": "counter_witchcraft_vs_generic_protection_label"
+        }
+      ],
+      "drift_records": [
+        {
+          "schema_version": "narrative-drift.v0.1",
+          "id": "DRIFT-JERUSALEM-MARK13-001",
+          "subject_ref": "mftl:MYTH-JERUSALEM-TEMPLE-DESTRUCTION-PROPHECY-000001",
+          "title": "Mark 13:2 — text to historical-comparison drift",
+          "stages": [
+            {
+              "id": "STAGE-TEXT-GREEK",
+              "layer": "exact_text",
+              "ref": "rgbl:mw:passage:sblgnt:v1-2:mark:13:2",
+              "scope": "Exact Greek corpus passage identity; no historical verdict."
+            },
+            {
+              "id": "STAGE-TEXT-ENGLISH",
+              "layer": "translation",
+              "ref": "rgbl:mw:passage:web-classic:2020:mar:13:2",
+              "scope": "English translation expression of the passage; translation choices remain inspectable."
+            },
+            {
+              "id": "STAGE-STORY",
+              "layer": "narrative_analysis",
+              "ref": "mftl:MYTH-JERUSALEM-TEMPLE-DESTRUCTION-PROPHECY-000001",
+              "scope": "MFTL extracts a prediction narrative and chronology-sensitive claims."
+            },
+            {
+              "id": "STAGE-EVENT",
+              "layer": "historical_comparison",
+              "ref": "legend:EVT-JERUSALEM-SECOND-TEMPLE-DESTRUCTION-70",
+              "scope": "Independent historical event used for comparison; correspondence is not fulfillment."
+            }
+          ],
+          "drift_observations": [
+            {
+              "from": "STAGE-TEXT-GREEK",
+              "to": "STAGE-TEXT-ENGLISH",
+              "dimension": "language",
+              "change": "Corpus expression changes language while passage identity is preserved.",
+              "risk": "translation_choice"
+            },
+            {
+              "from": "STAGE-TEXT-ENGLISH",
+              "to": "STAGE-STORY",
+              "dimension": "interpretive_scope",
+              "change": "Exact wording becomes an extracted narrative/claim model.",
+              "risk": "analysis_added"
+            },
+            {
+              "from": "STAGE-STORY",
+              "to": "STAGE-EVENT",
+              "dimension": "historical_relation",
+              "change": "Narrative is compared with an independently modeled event.",
+              "risk": "correspondence_misread_as_causation_or_fulfillment"
+            }
+          ],
+          "guardrails": [
+            "TEXTUAL ATTESTATION ≠ EMPIRICAL PROOF",
+            "CORRESPONDENCE ≠ CAUSATION",
+            "CORRESPONDENCE ≠ SUPERNATURAL FULFILLMENT",
+            "DATE OF TEXT RELATIVE TO EVENT REMAINS A SEPARATE CLAIM"
+          ]
+        }
+      ],
+      "research_queue": [
+        {
+          "id": "PIPE-active",
+          "name": "16 candidate(s)",
+          "status": "active",
+          "region": "multi-region",
+          "candidate_type": "aggregate pipeline",
+          "source_count": 0,
+          "authorities": [],
+          "discovered_at": "2026-09-08T04:18:00Z"
+        },
+        {
+          "id": "PIPE-merged",
+          "name": "1 candidate(s)",
+          "status": "merged",
+          "region": "multi-region",
+          "candidate_type": "aggregate pipeline",
+          "source_count": 0,
+          "authorities": [],
+          "discovered_at": "2026-09-08T04:18:00Z"
+        }
+      ],
+      "coverage_points": [
+        {
+          "id": "MYTH-MES-INANA-DESCENT-000001",
+          "label": "Inana's Descent to the Netherworld",
+          "kind": "canonical",
+          "region": "Mesopotamia / Sumer",
+          "lat": 32.5,
+          "lon": 44,
+          "estimated": true
+        },
+        {
+          "id": "MYTH-JERUSALEM-TEMPLE-DESTRUCTION-PROPHECY-000001",
+          "label": "Temple Destruction Prediction in Mark 13:2",
+          "kind": "canonical",
+          "region": "Jerusalem / Roman Judaea narrative setting",
+          "lat": 31.78,
+          "lon": 35.23,
+          "estimated": true
+        },
+        {
+          "id": "REGION-Polynesia / Hawaiʻi",
+          "label": "Polynesia / Hawaiʻi",
+          "kind": "candidate",
+          "region": "Polynesia / Hawaiʻi",
+          "lat": 20.8,
+          "lon": -156.3,
+          "estimated": true,
+          "status": "coverage"
+        },
+        {
+          "id": "REGION-Polynesia / Aotearoa New Zealand",
+          "label": "Polynesia / Aotearoa New Zealand",
+          "kind": "candidate",
+          "region": "Polynesia / Aotearoa New Zealand",
+          "lat": -41,
+          "lon": 174,
+          "estimated": true,
+          "status": "coverage"
+        },
+        {
+          "id": "REGION-Southeast Asia / Bali",
+          "label": "Southeast Asia / Bali",
+          "kind": "candidate",
+          "region": "Southeast Asia / Bali",
+          "lat": -8.4,
+          "lon": 115.2,
+          "estimated": true,
+          "status": "coverage"
+        },
+        {
+          "id": "REGION-Africa / West and Central Africa / African Atlantic",
+          "label": "Africa / West and Central Africa / African Atlantic",
+          "kind": "candidate",
+          "region": "Africa / West and Central Africa / African Atlantic",
+          "lat": 5,
+          "lon": 10,
+          "estimated": true,
+          "status": "coverage"
+        },
+        {
+          "id": "REGION-East Asia / Japan",
+          "label": "East Asia / Japan",
+          "kind": "candidate",
+          "region": "East Asia / Japan",
+          "lat": 36,
+          "lon": 138,
+          "estimated": true,
+          "status": "coverage"
+        },
+        {
+          "id": "REGION-Mesoamerica / Maya highlands",
+          "label": "Mesoamerica / Maya highlands",
+          "kind": "candidate",
+          "region": "Mesoamerica / Maya highlands",
+          "lat": 15.2,
+          "lon": -91,
+          "estimated": true,
+          "status": "coverage"
+        },
+        {
+          "id": "REGION-Middle East / Mesopotamia / Sumer",
+          "label": "Middle East / Mesopotamia / Sumer",
+          "kind": "candidate",
+          "region": "Middle East / Mesopotamia / Sumer",
+          "lat": 32.5,
+          "lon": 44,
+          "estimated": true,
+          "status": "coverage"
+        },
+        {
+          "id": "REGION-East Asia / China",
+          "label": "East Asia / China",
+          "kind": "candidate",
+          "region": "East Asia / China",
+          "lat": 35,
+          "lon": 103,
+          "estimated": true,
+          "status": "coverage"
+        },
+        {
+          "id": "REGION-South Asia / India",
+          "label": "South Asia / India",
+          "kind": "candidate",
+          "region": "South Asia / India",
+          "lat": 22,
+          "lon": 79,
+          "estimated": true,
+          "status": "coverage"
+        },
+        {
+          "id": "REGION-Oceania / Australia / Indigenous Australia",
+          "label": "Oceania / Australia / Indigenous Australia",
+          "kind": "candidate",
+          "region": "Oceania / Australia / Indigenous Australia",
+          "lat": -25,
+          "lon": 134,
+          "estimated": true,
+          "status": "coverage"
+        },
+        {
+          "id": "REGION-Arctic / Inuit regions",
+          "label": "Arctic / Inuit regions",
+          "kind": "candidate",
+          "region": "Arctic / Inuit regions",
+          "lat": 67,
+          "lon": -100,
+          "estimated": true,
+          "status": "coverage"
+        },
+        {
+          "id": "REGION-Europe / Ireland",
+          "label": "Europe / Ireland",
+          "kind": "candidate",
+          "region": "Europe / Ireland",
+          "lat": 53,
+          "lon": -8,
+          "estimated": true,
+          "status": "coverage"
+        },
+        {
+          "id": "REGION-Europe / Finland and Karelia",
+          "label": "Europe / Finland and Karelia",
+          "kind": "candidate",
+          "region": "Europe / Finland and Karelia",
+          "lat": 63,
+          "lon": 30,
+          "estimated": true,
+          "status": "coverage"
+        },
+        {
+          "id": "REGION-Central Asia / Kyrgyzstan",
+          "label": "Central Asia / Kyrgyzstan",
+          "kind": "candidate",
+          "region": "Central Asia / Kyrgyzstan",
+          "lat": 41,
+          "lon": 75,
+          "estimated": true,
+          "status": "coverage"
+        },
+        {
+          "id": "REGION-North Asia / Sakha Republic (Yakutia)",
+          "label": "North Asia / Sakha Republic (Yakutia)",
+          "kind": "candidate",
+          "region": "North Asia / Sakha Republic (Yakutia)",
+          "lat": 66,
+          "lon": 129,
+          "estimated": true,
+          "status": "coverage"
+        },
+        {
+          "id": "REGION-Southeast Asia / Philippines / Ifugao",
+          "label": "Southeast Asia / Philippines / Ifugao",
+          "kind": "candidate",
+          "region": "Southeast Asia / Philippines / Ifugao",
+          "lat": 16.8,
+          "lon": 121,
+          "estimated": true,
+          "status": "coverage"
+        },
+        {
+          "id": "REGION-South America / Colombia / Muisca highlands",
+          "label": "South America / Colombia / Muisca highlands",
+          "kind": "candidate",
+          "region": "South America / Colombia / Muisca highlands",
+          "lat": 4.7,
+          "lon": -74.1,
+          "estimated": true,
+          "status": "coverage"
+        }
+      ],
+      "freshness_events": [
+        {
+          "type": "corpus_index",
+          "id": "corpus-index.v0.5",
+          "label": "Research Observatory snapshot",
+          "date": "2026-09-08T04:18:00Z",
+          "age_days": 0
+        },
+        {
+          "type": "canonical_record",
+          "id": "MYTH-MES-INANA-DESCENT-000001",
+          "label": "Inana's Descent to the Netherworld",
+          "date": "2026-09-07T21:28:21Z",
+          "age_days": 1
+        },
+        {
+          "type": "canonical_record",
+          "id": "MYTH-JERUSALEM-TEMPLE-DESTRUCTION-PROPHECY-000001",
+          "label": "Temple Destruction Prediction in Mark 13:2",
+          "date": "2026-09-07T21:28:21Z",
+          "age_days": 1
+        }
+      ],
+      "research_velocity": [
+        {
+          "date": "2026-09-07",
+          "total": 36,
+          "types": {
+            "candidate": 16,
+            "canonical_record": 2,
+            "claim": 8,
+            "evidence": 10
+          }
+        },
+        {
+          "date": "2026-09-08",
+          "total": 1,
+          "types": {
+            "observatory_release": 1
+          }
+        }
+      ],
+      "cross_repo_refs": [
+        {
+          "ref": "mftl:MYTH-MES-INANA-DESCENT-000001",
+          "domain": "mftl",
+          "source_record_id": "MYTH-MES-INANA-DESCENT-000001"
+        },
+        {
+          "ref": "legend:EVT-JERUSALEM-SECOND-TEMPLE-DESTRUCTION-70",
+          "domain": "legend",
+          "source_record_id": "MYTH-JERUSALEM-TEMPLE-DESTRUCTION-PROPHECY-000001"
+        },
+        {
+          "ref": "rgbl:mw:content:sblgnt:v1-2:mark:13:2",
+          "domain": "rgbl",
+          "source_record_id": "MYTH-JERUSALEM-TEMPLE-DESTRUCTION-PROPHECY-000001"
+        },
+        {
+          "ref": "rgbl:mw:content:web-classic:2020:mar:13:2",
+          "domain": "rgbl",
+          "source_record_id": "MYTH-JERUSALEM-TEMPLE-DESTRUCTION-PROPHECY-000001"
+        },
+        {
+          "ref": "mftl:MYTH-JERUSALEM-TEMPLE-DESTRUCTION-PROPHECY-000001",
+          "domain": "mftl",
+          "source_record_id": "MYTH-JERUSALEM-TEMPLE-DESTRUCTION-PROPHECY-000001"
+        }
+      ],
+      "conspiracy": {
+        "integrity_code": "E17",
+        "lane_active": true,
+        "lane": {
+          "id": "conspiracy-narrative",
+          "candidate_type": "conspiracy_narrative",
+          "region_hint": "global",
+          "tradition_hint": "conspiracy, rumor, and misinformation studies",
+          "queries": [
+            "conspiracy narrative misinformation rumor historical transmission",
+            "conspiracy theory narrative evidence misinformation social history"
+          ],
+          "guardrail": "Study the existence, transmission, evidence, counterevidence, and social history of the narrative. Never treat the conspiracy claim as established merely because it is widespread."
+        },
+        "staged_candidates": []
+      },
+      "confidence_distribution": {
+        "0–59": 0,
+        "60–84": 0,
+        "85–94": 1,
+        "95–100": 7
+      }
     }
   }
 }

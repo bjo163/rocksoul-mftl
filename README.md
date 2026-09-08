@@ -204,6 +204,10 @@ A claim challenge answers not only “what supports this?” but also **what wea
 
 [Read the research loop →](docs/RESEARCH-LOOP.md) · [Read the public/operator boundary →](docs/PUBLIC-OPERATOR-BOUNDARY.md)
 
+## Research Observatory
+
+MFTL v0.4 exposes P0–P2 observability directly in the public explorer: Narrative Drift Timeline, Claim × Evidence Matrix, Benchmark 25 grid, autonomous research queue, Source Lineage, Evidence Coverage heatmap, geographic coverage map, Conspiracy Narrative lane, Freshness timeline, Cross-Rocksoul qualified references, Confidence Distribution, and Research Velocity.
+
 ## Research Queue
 
 Research discovered by **MFTL Steward** goes to GitHub Issues first. It does **not** automatically become corpus truth.
@@ -287,9 +291,9 @@ flowchart LR
     I --> J["AUDIT"]
 ```
 
-This repository intentionally uses **`main` as the only working branch**.
+This repository uses **`dev` for integration and autonomous research, then promotes verified state to `main` for stable/release**.
 
-Automated research is **issue-first**: MFTL Steward browses, de-duplicates, and creates or updates a `[RESEARCH]` Issue. It does not directly add or canonicalize corpus research data. Small README/docs hygiene fixes may still be committed to `main` when useful and CI-safe.
+Autonomous research runs seven Scout lanes in parallel, ranks and de-duplicates the strongest leads, lets **MFTL Steward** stage vetted `needs_sources` candidates on `dev`, validates the full corpus, and only then promotes `dev` to `main`.
 
 ## Research guardrails
 

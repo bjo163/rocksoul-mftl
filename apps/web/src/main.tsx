@@ -79,6 +79,24 @@ type CorpusRecord = {
 };
 
 
+
+type Observatory = {
+  benchmark_slots: Array<{ id:string; status:string; ref:string; failure_mode:string }>;
+  drift_records: Array<{
+    id:string; title:string; subject_ref:string;
+    stages:Array<{id:string;layer:string;ref:string;scope:string}>;
+    drift_observations:Array<{from:string;to:string;dimension:string;change:string;risk:string}>;
+    guardrails:string[];
+  }>;
+  research_queue: Array<{id:string;name:string;status:string;region:string;candidate_type:string;source_count:number;authorities:string[];discovered_at:string|null}>;
+  coverage_points: Array<{id:string;label:string;kind:"canonical"|"candidate";region:string;lat:number;lon:number;estimated:boolean;status?:string}>;
+  freshness_events: Array<{type:string;id:string;label:string;date:string;age_days:number}>;
+  research_velocity: Array<{date:string;total:number;types:Record<string,number>}>;
+  cross_repo_refs: Array<{ref:string;domain:string;source_record_id:string}>;
+  conspiracy: {integrity_code:string;lane_active:boolean;lane:any;staged_candidates:Array<{id:string;name:string;status:string;region:string}>};
+  confidence_distribution: Record<string,number>;
+};
+
 type CorpusAnalytics = {
   candidate_pipeline: Record<string, number>;
   candidate_types: Record<string, number>;
@@ -111,6 +129,7 @@ type CorpusAnalytics = {
     schedule: string;
     parallel_lanes: Array<{ id: string; candidate_type: string }>;
   };
+  observatory?: Observatory;
 };
 
 type CorpusIndex = {
@@ -389,6 +408,128 @@ function IntelligenceDashboard({ analytics }: { analytics: CorpusAnalytics }) {
   );
 }
 
+
+function ObservatoryBars({ title, data }: { title:string; data:Record<string,number> }) {
+  const rows=Object.entries(data); const max=Math.max(1,...rows.map(([,v])=>v));
+  return <div className="obs-bars-card"><p className="mw-eyebrow">{title}</p>{rows.map(([k,v])=>
+    <div className="obs-bar-row" key={k}><span>{k}</span><i><b style={{width:`${Math.max(5,v/max*100)}%`}}/></i><strong>{v}</strong></div>
+  )}</div>;
+}
+
+function NarrativeDriftTimeline({ drift }: { drift:Observatory["drift_records"][number] | undefined }) {
+  if(!drift)return <div className="obs-empty">No narrative drift model yet.</div>;
+  const riskByTo=new Map(drift.drift_observations.map(o=>[o.to,o.risk]));
+  return <section className="obs-card obs-span-2"><div className="obs-title"><p className="mw-eyebrow">P0 / NARRATIVE DRIFT</p><h3>{drift.title}</h3></div>
+    <div className="drift-timeline">{drift.stages.map((stage,i)=><React.Fragment key={stage.id}>
+      <div className="drift-stage"><span>{String(i+1).padStart(2,"0")}</span><strong>{stage.layer.replaceAll("_"," ")}</strong><small>{stage.ref}</small><p>{stage.scope}</p>{riskByTo.get(stage.id)?<Badge variant="unresolved">{riskByTo.get(stage.id)}</Badge>:null}</div>
+      {i<drift.stages.length-1?<div className="drift-arrow">→</div>:null}
+    </React.Fragment>)}</div>
+    <div className="guardrail-strip">{drift.guardrails.map(g=><span key={g}>{g}</span>)}</div>
+  </section>;
+}
+
+function ClaimEvidenceMatrix({ records }: { records:CorpusRecord[] }) {
+  const rows=records.flatMap(record=>record.detail.claims.map(claim=>{
+    const edges=record.detail.evidence.filter(e=>e.target_id===claim.id);
+    const count=(stance:string)=>edges.filter(e=>e.stance===stance).length;
+    return {record,claim,edges,supports:count("supports"),contradicts:count("contradicts"),context:count("contextualizes"),alternative:count("alternative_explanation")};
+  }));
+  return <section className="obs-card obs-span-2"><div className="obs-title"><p className="mw-eyebrow">P0 / CLAIM × EVIDENCE MATRIX</p><h3>Coverage and disagreement</h3></div>
+    <div className="matrix-scroll"><table className="evidence-matrix"><thead><tr><th>Claim</th><th>Epistemic</th><th>Support</th><th>Counter</th><th>Context</th><th>Alternative</th><th>Sources</th></tr></thead>
+    <tbody>{rows.map(r=><tr key={r.claim.id}><td><strong>{r.claim.predicate??r.claim.id}</strong><small>{r.record.title}</small></td><td>{r.claim.epistemic_status??"—"}</td>
+      {[r.supports,r.contradicts,r.context,r.alternative].map((v,i)=><td key={i}><span className={`matrix-cell level-${Math.min(3,v)}`}>{v}</span></td>)}
+      <td>{new Set(r.edges.map(e=>e.source_id)).size}</td></tr>)}</tbody></table></div>
+  </section>;
+}
+
+function BenchmarkGrid({ slots }: { slots:Observatory["benchmark_slots"] }) {
+  return <section className="obs-card obs-span-2"><div className="obs-title"><p className="mw-eyebrow">P0 / EPISTEMIC BENCHMARK 25</p><h3>Failure-mode coverage</h3></div>
+    <div className="benchmark-grid">{slots.map(slot=><div className={`benchmark-slot is-${slot.status.replaceAll("_","-")}`} key={slot.id}><span>{slot.id}</span><strong>{slot.failure_mode.replaceAll("_"," ")}</strong><small>{slot.status} · {slot.ref}</small></div>)}</div>
+  </section>;
+}
+
+function ResearchPipeline({ obs, pipeline }: { obs:Observatory; pipeline:Record<string,number> }) {
+  const stages=[["SCOUT","7 lanes"],["INTAKE","rank + dedup"],["STEWARD","automatic review"],["CANDIDATE","needs_sources"],["CANONICAL","CI gate"]];
+  return <section className="obs-card obs-span-2"><div className="obs-title"><p className="mw-eyebrow">P0 / AUTONOMOUS RESEARCH QUEUE</p><h3>Discovery to canonical gate</h3></div>
+    <div className="pipeline-flow">{stages.map(([a,b],i)=><React.Fragment key={a}><div><strong>{a}</strong><small>{b}</small></div>{i<stages.length-1?<span>→</span>:null}</React.Fragment>)}</div>
+    <div className="pipeline-bottom"><ObservatoryBars title="CANDIDATE STATUS" data={pipeline}/><div className="queue-list">{obs.research_queue.slice(0,8).map(q=><div key={q.id}><span>{q.status}</span><strong>{q.name}</strong><small>{q.candidate_type} · {q.source_count} source(s)</small></div>)}</div></div>
+  </section>;
+}
+
+function SourceLineage({ record }: { record:CorpusRecord | null }) {
+  if(!record)return null;
+  const tier=(s:Source)=>s.primary_source||s.authority==="primary"?"01 PRIMARY":s.authority==="academic"||s.authority==="institutional"?"02 SCHOLARLY":"03 CONTEXT";
+  return <section className="obs-card"><div className="obs-title"><p className="mw-eyebrow">P1 / SOURCE LINEAGE</p><h3>{record.title}</h3></div>
+    <div className="lineage-list">{record.detail.sources.map(s=><div key={s.id}><span>{tier(s)}</span><strong>{s.title}</strong><small>{s.authority??s.source_type??"unknown"} → {record.detail.claims.filter(c=>c.source_basis.includes(s.id)).length} claim(s)</small></div>)}</div>
+  </section>;
+}
+
+function EvidenceCoverage({ records }: { records:CorpusRecord[] }) {
+  const claims=records.flatMap(r=>r.detail.claims.map(c=>({record:r,claim:c,edges:r.detail.evidence.filter(e=>e.target_id===c.id)})));
+  return <section className="obs-card"><div className="obs-title"><p className="mw-eyebrow">P1 / EVIDENCE COVERAGE</p><h3>Claim heatmap</h3></div>
+    <div className="coverage-heat">{claims.map(x=>{const sources=new Set(x.edges.map(e=>e.source_id)).size;const diversity=new Set(x.edges.map(e=>e.stance)).size;const score=Math.min(4,sources+diversity);return <div key={x.claim.id} className={`heat-row heat-${score}`}><span>{x.claim.id.replace("CLAIM-","")}</span><i/><strong>{x.edges.length} edge · {sources} src</strong></div>})}</div>
+  </section>;
+}
+
+function WorldEvidenceMap({ points }: { points:Observatory["coverage_points"] }) {
+  const xy=(lat:number,lon:number)=>({left:`${((lon+180)/360)*100}%`,top:`${((90-lat)/180)*100}%`});
+  return <section className="obs-card obs-span-2"><div className="obs-title"><p className="mw-eyebrow">P1 / WORLD COVERAGE MAP</p><h3>Canonical + candidate geography</h3></div>
+    <div className="world-map-canvas"><MoonWitnessAssetImage pack="data-viz" file="charts/geographic-heatmap.svg" alt="" aria-hidden="true"/>
+      {points.map(p=><button key={p.id} type="button" className={`map-point is-${p.kind}`} style={xy(p.lat,p.lon)} title={`${p.label} · ${p.region}`}><span/></button>)}
+    </div><p className="map-note">Region centroids are used where exact coordinates are unavailable; markers show coverage, not precise archaeological sites.</p>
+  </section>;
+}
+
+function ConspiracyResearch({ conspiracy }: { conspiracy:Observatory["conspiracy"] }) {
+  return <section className="obs-card"><div className="obs-title"><p className="mw-eyebrow">P1 / CONSPIRACY NARRATIVE</p><h3>{conspiracy.integrity_code} research lane</h3></div>
+    <div className="conspiracy-flow"><span>ALLEGED CLAIM</span><b>→</b><span>PROVENANCE</span><b>→</b><span>PROPONENT EVIDENCE</span><b>→</b><span>COUNTEREVIDENCE</span><b>→</b><span>ALTERNATIVES</span></div>
+    <p className="obs-copy">{conspiracy.lane_active?"Automatic lane is active.":"Lane inactive."} Popularity or repetition never upgrades an alleged conspiracy into fact.</p>
+    <div className="mini-list">{conspiracy.staged_candidates.length?conspiracy.staged_candidates.map(c=><div key={c.id}><strong>{c.name}</strong><small>{c.status} · {c.region}</small></div>):<span className="muted">No conspiracy candidate staged yet — the lane remains active and searchable.</span>}</div>
+  </section>;
+}
+
+function FreshnessTimeline({ events }: { events:Observatory["freshness_events"] }) {
+  return <section className="obs-card"><div className="obs-title"><p className="mw-eyebrow">P1 / FRESHNESS</p><h3>Research activity timeline</h3></div>
+    <div className="freshness-list">{events.slice(0,12).map((e,i)=><div key={e.type+e.id+e.date+i}><span>{e.date.slice(0,10)}</span><strong>{e.type.replaceAll("_"," ")}</strong><small>{e.label} · {e.age_days}d old</small></div>)}</div>
+  </section>;
+}
+
+function CrossRocksoul({ refs }: { refs:Observatory["cross_repo_refs"] }) {
+  const domains=["mftl","rgbl","legend","superhero","aws"];
+  return <section className="obs-card obs-span-2"><div className="obs-title"><p className="mw-eyebrow">P2 / CROSS-ROCKSOUL EXPLORER</p><h3>Owner-qualified references</h3></div>
+    <div className="cross-grid">{domains.map(domain=>{const items=refs.filter(r=>r.domain===domain);return <div key={domain}><span>{domain.toUpperCase()}</span><strong>{items.length}</strong>{items.slice(0,5).map(r=><small key={r.ref}>{r.ref}</small>)}{!items.length?<small>no canonical ref yet</small>:null}</div>})}</div>
+  </section>;
+}
+
+function ResearchVelocity({ velocity }: { velocity:Observatory["research_velocity"] }) {
+  const max=Math.max(1,...velocity.map(v=>v.total));
+  return <section className="obs-card"><div className="obs-title"><p className="mw-eyebrow">P2 / RESEARCH VELOCITY</p><h3>Corpus change rate</h3></div>
+    <div className="velocity-chart">{velocity.slice(-14).map(v=><div key={v.date} title={`${v.date}: ${v.total} research objects`}><i style={{height:`${Math.max(8,v.total/max*100)}%`}}/><span>{v.date.slice(5)}</span><strong>{v.total}</strong></div>)}</div>
+  </section>;
+}
+
+function ResearchObservatory({ index, selectedRecord }: { index:CorpusIndex; selectedRecord:CorpusRecord | null }) {
+  const obs=index.analytics?.observatory;
+  if(!obs)return null;
+  return <section className="section observatory" id="observatory">
+    <div className="section-head compact"><div><p className="mw-eyebrow">P0 → P2 / RESEARCH OBSERVATORY</p><h2>SHOW THE<br/>REASONING SURFACE.</h2></div><p className="section-copy">Drift, disagreement, lineage, geography, conspiracy research, freshness, cross-repository ownership, confidence and research velocity are derived from the same provenance graph.</p></div>
+    <div className="observatory-grid">
+      <NarrativeDriftTimeline drift={obs.drift_records[0]}/>
+      <ClaimEvidenceMatrix records={index.records}/>
+      <BenchmarkGrid slots={obs.benchmark_slots}/>
+      <ResearchPipeline obs={obs} pipeline={index.analytics?.candidate_pipeline??{}}/>
+      <SourceLineage record={selectedRecord}/>
+      <EvidenceCoverage records={index.records}/>
+      <WorldEvidenceMap points={obs.coverage_points}/>
+      <ConspiracyResearch conspiracy={obs.conspiracy}/>
+      <FreshnessTimeline events={obs.freshness_events}/>
+      <CrossRocksoul refs={obs.cross_repo_refs}/>
+      <ObservatoryBars title="P2 / CONFIDENCE DISTRIBUTION" data={obs.confidence_distribution}/>
+      <ResearchVelocity velocity={obs.research_velocity}/>
+    </div>
+  </section>;
+}
+
 function App() {
   const [index, setIndex] = useState<CorpusIndex | null>(null);
   const [query, setQuery] = useState("");
@@ -448,7 +589,7 @@ function App() {
             <p>A provenance-first intelligence graph for mythology, narrative integrity, reference deviation, evidence, and explainable Mizan.</p>
             <div className="hero-actions">
               <Button onClick={() => document.getElementById("explorer")?.scrollIntoView({behavior:"smooth"})}>Explore corpus</Button>
-              <Button variant="secondary" onClick={() => document.getElementById("method")?.scrollIntoView({behavior:"smooth"})}>Read method</Button>
+              <Button variant="secondary" onClick={() => document.getElementById("observatory")?.scrollIntoView({behavior:"smooth"})}>Research observatory</Button>
             </div>
           </aside>
         </div>
@@ -476,6 +617,7 @@ function App() {
       </section>
 
       {index?.analytics ? <IntelligenceDashboard analytics={index.analytics} /> : null}
+      {index ? <ResearchObservatory index={index} selectedRecord={selectedRecord} /> : null}
 
       <section className="section explorer" id="explorer">
         <div className="section-head compact">
