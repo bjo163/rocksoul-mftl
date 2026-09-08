@@ -530,169 +530,213 @@ function ResearchObservatory({ index, selectedRecord }: { index:CorpusIndex; sel
   </section>;
 }
 
+
+function ResearchActivityPanel({ velocity }: { velocity: Observatory["research_velocity"] }) {
+  const rows=velocity.slice(-10);
+  const max=Math.max(1,...rows.map(row=>row.total));
+  return <section className="command-card activity-card">
+    <div className="command-card-head"><div><p className="mw-eyebrow">RESEARCH ACTIVITY</p><h3>Recent corpus movement</h3></div><span>LAST {rows.length || 0} SNAPSHOTS</span></div>
+    <div className="activity-bars">{rows.length?rows.map(row=><div key={row.date} className="activity-column" title={`${row.date}: ${row.total} research objects`}>
+      <div className="activity-stack"><i style={{height:`${Math.max(9,row.total/max*100)}%`}}/><b style={{height:`${Math.max(5,(row.types.evidence??0)/max*100)}%`}}/></div>
+      <span>{row.date.slice(5)}</span>
+    </div>):<p className="muted">Activity history will grow with Steward runs.</p>}</div>
+    <div className="chart-legend"><span><i className="legend-red"/>research objects</span><span><i className="legend-blue"/>evidence</span></div>
+  </section>;
+}
+
+function ActiveResearchLanes({ analytics }: { analytics: CorpusAnalytics }) {
+  const lanes=analytics.automation.parallel_lanes;
+  return <section className="command-card lanes-card">
+    <div className="command-card-head"><div><p className="mw-eyebrow">ACTIVE RESEARCH LANES</p><h3>{lanes.length} parallel scouts</h3></div><Badge variant="supported">AUTONOMOUS</Badge></div>
+    <div className="command-lanes">{lanes.map((lane,index)=><div key={lane.id}>
+      <span className={`lane-index lane-tone-${index%4}`}>{String(index+1).padStart(2,"0")}</span>
+      <strong>{lane.id.replaceAll("-"," ")}</strong>
+      <small>{lane.candidate_type}</small>
+      <em>{index<4?"SCANNING":"QUEUED"}</em>
+    </div>)}</div>
+  </section>;
+}
+
+function EditorialPrinciple() {
+  return <section className="command-card editorial-card">
+    <MoonWitnessAssetImage pack="editorial" file="svg/archive-dossier.svg" alt="" aria-hidden="true"/>
+    <div className="editorial-overlay">
+      <p className="mw-eyebrow">MFTL RESEARCH PRINCIPLE</p>
+      <blockquote>“Extraordinary claims require transparent evidence, not belief.”</blockquote>
+      <small>SOURCE FIRST · EVIDENCE ALWAYS</small>
+    </div>
+  </section>;
+}
+
+function CoverageWidget({ obs }: { obs: Observatory }) {
+  const canonical=obs.coverage_points.filter(p=>p.kind==="canonical").length;
+  const candidate=obs.coverage_points.filter(p=>p.kind==="candidate").length;
+  return <section className="command-card coverage-card">
+    <div className="command-card-head"><div><p className="mw-eyebrow">WORLD COVERAGE</p><h3>{obs.coverage_points.length} mapped signals</h3></div><span>{canonical} canonical · {candidate} candidate</span></div>
+    <div className="coverage-asset-wrap">
+      <MoonWitnessAssetImage pack="dashboard" file="widgets/world-map.svg" alt="Rocksoul world coverage dashboard asset"/>
+      <div className="coverage-dots">{obs.coverage_points.slice(0,18).map((p,i)=><span key={p.id} className={p.kind==="canonical"?"is-canonical":"is-candidate"} style={{left:`${12+(i*37)%78}%`,top:`${18+(i*29)%64}%`}} title={p.label}/>)}</div>
+    </div>
+    <div className="chart-legend"><span><i className="legend-red"/>canonical</span><span><i className="legend-amber"/>candidate</span></div>
+  </section>;
+}
+
+function DashboardAssetStrip() {
+  const items=[
+    ["dashboard","widgets/evidence-timeline.svg","TIMELINE"],
+    ["data-viz","charts/evidence-matrix.svg","MATRIX"],
+    ["dashboard","widgets/provenance-chain.svg","PROVENANCE"],
+    ["dashboard","widgets/correlation-insight.svg","CORRELATION"],
+  ] as const;
+  return <div className="asset-strip">{items.map(([pack,file,label])=><div key={file}><MoonWitnessAssetImage pack={pack} file={file} alt="" aria-hidden="true"/><span>{label}</span></div>)}</div>;
+}
+
+function CommandCenter({ index, selectedRecord }: { index:CorpusIndex; selectedRecord:CorpusRecord|null }) {
+  const analytics=index.analytics;
+  const obs=analytics?.observatory;
+  if(!analytics||!obs)return null;
+  return <section className="command-center" id="observatory">
+    <div className="command-intro">
+      <div><p className="mw-eyebrow">MFTL / LIVE RESEARCH DESK</p><h2>TRACE THE CLAIM.<br/><span>OPEN THE EVIDENCE.</span></h2></div>
+      <p>Every visual below is a Rocksoul asset-backed research surface. The interface separates narrative, source, evidence, counterevidence and confidence instead of collapsing them into one score.</p>
+    </div>
+
+    <div className="command-grid-top">
+      <ResearchActivityPanel velocity={obs.research_velocity}/>
+      <ActiveResearchLanes analytics={analytics}/>
+      <EditorialPrinciple/>
+      <CoverageWidget obs={obs}/>
+    </div>
+
+    <DashboardAssetStrip/>
+
+    <div className="observatory-grid command-observatory">
+      <NarrativeDriftTimeline drift={obs.drift_records[0]}/>
+      <ClaimEvidenceMatrix records={index.records}/>
+      <EvidenceCoverage records={index.records}/>
+      <BenchmarkGrid slots={obs.benchmark_slots}/>
+      <ResearchPipeline obs={obs} pipeline={analytics.candidate_pipeline}/>
+      <ConspiracyResearch conspiracy={obs.conspiracy}/>
+      <SourceLineage record={selectedRecord}/>
+      <FreshnessTimeline events={obs.freshness_events}/>
+      <CrossRocksoul refs={obs.cross_repo_refs}/>
+      <ObservatoryBars title="P2 / CONFIDENCE DISTRIBUTION" data={obs.confidence_distribution}/>
+      <ResearchVelocity velocity={obs.research_velocity}/>
+    </div>
+  </section>;
+}
+
 function App() {
-  const [index, setIndex] = useState<CorpusIndex | null>(null);
-  const [query, setQuery] = useState("");
-  const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [index,setIndex]=useState<CorpusIndex|null>(null);
+  const [query,setQuery]=useState("");
+  const [selectedId,setSelectedId]=useState<string|null>(null);
 
-  useEffect(() => {
+  useEffect(()=>{
     fetch("/data/corpus-index.json")
-      .then((response) => response.ok ? response.json() : Promise.reject(new Error("index unavailable")))
-      .then((data: CorpusIndex) => {
-        setIndex(data);
-        setSelectedId((current) => current ?? data.records[0]?.id ?? null);
-      })
-      .catch(() => setIndex(null));
-  }, []);
+      .then(response=>response.ok?response.json():Promise.reject(new Error("index unavailable")))
+      .then((data:CorpusIndex)=>{setIndex(data);setSelectedId(current=>current??data.records[0]?.id??null)})
+      .catch(()=>setIndex(null));
+  },[]);
 
-  const visibleRecords = useMemo(() => {
-    if (!index) return [];
-    const needle = query.trim().toLowerCase();
-    if (!needle) return index.records;
-    return index.records.filter((record) =>
-      [record.id, record.title, record.family, record.record_type, record.region ?? "", record.detail.tradition ?? ""]
-        .join(" ").toLowerCase().includes(needle)
-    );
-  }, [index, query]);
+  const visibleRecords=useMemo(()=>{
+    if(!index)return[];
+    const needle=query.trim().toLowerCase();
+    if(!needle)return index.records;
+    return index.records.filter(record=>[
+      record.id,record.title,record.family,record.record_type,record.region??"",record.detail.tradition??""
+    ].join(" ").toLowerCase().includes(needle));
+  },[index,query]);
 
-  const selectedRecord = index?.records.find((record) => record.id === selectedId) ?? visibleRecords[0] ?? null;
-  const coverage = Object.entries(index?.coverage?.regions ?? {}).sort((a,b) => b[1] - a[1]);
-  const maxCoverage = Math.max(1, ...coverage.map(([,count]) => count));
-  const counts = index?.counts ?? { canonical_records:0,candidates:0,merged_candidates:0,entities:0,claims:0,sources:0,evidence:0,families:18,regions:0 };
+  const selectedRecord=index?.records.find(record=>record.id===selectedId)??visibleRecords[0]??null;
+  const counts=index?.counts??{canonical_records:0,candidates:0,merged_candidates:0,entities:0,claims:0,sources:0,evidence:0,families:18,regions:0};
+  const benchmark=index?.analytics?.benchmark.target??25;
 
-  const selectRecord = (id: string) => {
+  const selectRecord=(id:string)=>{
     setSelectedId(id);
-    window.setTimeout(() => document.getElementById("record-detail")?.scrollIntoView({ behavior:"smooth", block:"start" }), 0);
+    window.setTimeout(()=>document.getElementById("record-detail")?.scrollIntoView({behavior:"smooth",block:"start"}),0);
   };
 
-  return (
-    <main className="site-shell">
-      <nav className="top-nav">
-        <MoonWitnessBrand ecosystem subtitle="MFTL / STORY CORPUS" />
-        <div className="nav-meta">
-          <span>WORLD CORPUS</span>
-          <span>ASSETS v1.3</span>
-          <Badge variant="supported">LIVE</Badge>
-          <ThemeToggle />
-        </div>
-      </nav>
+  return <main className="site-shell new-observatory-shell">
+    <nav className="top-nav command-nav">
+      <a className="mftl-wordmark" href="#top" aria-label="MFTL home"><span>≡</span><strong>MFTL</strong><small>MYTH RESEARCH OBSERVATORY</small></a>
+      <div className="primary-nav" aria-label="Primary navigation">
+        <a className="is-active" href="#explorer">Explore</a>
+        <a href="#observatory">Research</a>
+        <a href="#benchmark">Benchmark</a>
+        <a href="#map">Map</a>
+        <a href="#conspiracy">Conspiracy</a>
+        <a href="#method">About</a>
+      </div>
+      <div className="nav-search"><span>⌕</span><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Search myths, places, claims, sources…" aria-label="Search MFTL"/></div>
+      <ThemeToggle/>
+    </nav>
 
-      <section className="hero">
-        <MoonWitnessAssetImage className="hero-art" pack="hero-backgrounds" file="svg/evidence-constellation.svg" alt="" aria-hidden="true" />
-        <div className="hero-grid">
-          <div>
-            <p className="mw-eyebrow">FROM MYTH FADES TO LEGEND / STORY INTELLIGENCE</p>
-            <h1>TRACE THE<br/><span>STORY.</span><br/>FIND THE<br/><em>SOURCE.</em></h1>
-          </div>
-          <aside className="hero-aside">
-            <div className="hero-rule" />
-            <p>A provenance-first intelligence graph for mythology, narrative integrity, reference deviation, evidence, and explainable Mizan.</p>
-            <div className="hero-actions">
-              <Button onClick={() => document.getElementById("explorer")?.scrollIntoView({behavior:"smooth"})}>Explore corpus</Button>
-              <Button variant="secondary" onClick={() => document.getElementById("observatory")?.scrollIntoView({behavior:"smooth"})}>Research observatory</Button>
-            </div>
-          </aside>
+    <section className="cinematic-hero" id="top">
+      <MoonWitnessAssetImage className="cinematic-hero-art" pack="cinematic-hero" file="svg/observatory-night.svg" alt="" aria-hidden="true"/>
+      <MoonWitnessAssetImage className="cinematic-grid-texture" pack="texture-material" file="svg/data-matrix.svg" alt="" aria-hidden="true"/>
+      <div className="cinematic-scrim"/>
+      <div className="cinematic-content">
+        <p className="mw-eyebrow">SOURCE FIRST · EVIDENCE ALWAYS</p>
+        <div className="hero-title-block"><strong>MFTL</strong><h1>MYTH RESEARCH<br/>OBSERVATORY</h1></div>
+        <p className="hero-lede">Autonomous research that traces stories from source to evidence across time, cultures, texts and competing explanations.</p>
+        <div className="hero-actions">
+          <Button onClick={()=>document.getElementById("explorer")?.scrollIntoView({behavior:"smooth"})}>Explore the archive →</Button>
+          <Button variant="secondary" onClick={()=>document.getElementById("observatory")?.scrollIntoView({behavior:"smooth"})}>Open research desk</Button>
         </div>
-        <div className="metrics">
-          <div><strong>{String(counts.canonical_records).padStart(2,"0")}</strong><span>CANONICAL RECORDS</span></div>
-          <div><strong>{String(counts.claims).padStart(2,"0")}</strong><span>ATOMIC CLAIMS</span></div>
-          <div><strong>{String(counts.sources).padStart(2,"0")}</strong><span>SOURCE RECORDS</span></div>
-          <div><strong>{String(counts.evidence).padStart(2,"0")}</strong><span>EVIDENCE EDGES</span></div>
-        </div>
-      </section>
+        <div className="hero-mantra"><em>Truth leaves a trace.</em><span>OBSERVE · TRACE · COMPARE · QUESTION · UNDERSTAND</span></div>
+      </div>
+      <div className="hero-signal">
+        <MoonWitnessAssetImage pack="data-viz" file="charts/node-link-correlation.svg" alt="" aria-hidden="true"/>
+        <span>DIFFERENT TIMES.<br/>THE SAME QUESTIONS.</span>
+      </div>
+    </section>
 
-      <section className="section" id="method">
-        <div className="section-head">
-          <div><p className="mw-eyebrow">MFTL ANALYSIS STACK</p><h2>ONE STORY.<br/>FOUR QUESTIONS.</h2></div>
-          <p className="section-copy">Narrative description, integrity, deviation and Mizan remain distinct layers. Evidence moves forward; labels never silently collapse into one verdict.</p>
-        </div>
-        <div className="layer-grid">
-          {layers.map((item) => (
-            <article className="layer-card" key={item.code}>
-              <div className="layer-top"><span>{item.code}</span><Badge variant="neutral">{item.signal}</Badge></div>
-              <p className="overline">{item.subtitle}</p><h3>{item.title}</h3><p>{item.description}</p>
-            </article>
-          ))}
-        </div>
-      </section>
+    <section className="hero-metrics" aria-label="Corpus metrics">
+      {[
+        [counts.canonical_records,"CANONICAL RECORDS","reviewed"],
+        [counts.candidates,"RESEARCH CANDIDATES","in progress"],
+        [counts.claims,"ATOMIC CLAIMS","under analysis"],
+        [counts.sources,"SOURCES","verified"],
+        [counts.evidence,"EVIDENCE LINKS","mapped"],
+        [benchmark,"BENCHMARK TOPICS","active"],
+      ].map(([value,label,state])=><div key={String(label)}><strong>{value}</strong><span>{label}</span><small>{state}</small></div>)}
+      <div className="metric-mantra"><strong>HUMAN CURIOSITY.<br/>MACHINE CLARITY.</strong><span>A MORE TRUTHFUL TOMORROW.</span></div>
+    </section>
 
-      {index?.analytics ? <IntelligenceDashboard analytics={index.analytics} /> : null}
-      {index ? <ResearchObservatory index={index} selectedRecord={selectedRecord} /> : null}
+    {index?<CommandCenter index={index} selectedRecord={selectedRecord}/>:null}
 
-      <section className="section explorer" id="explorer">
-        <div className="section-head compact">
-          <div><p className="mw-eyebrow">CORPUS EXPLORER</p><h2>SEARCH THE<br/>EVIDENCE GRAPH.</h2></div>
-          <div>
-            <input className="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="SEARCH ID · NAME · TYPE · REGION · TRADITION" aria-label="Search corpus" />
-            <p className="section-copy explorer-note">{counts.canonical_records} canonical · {counts.candidates} active candidates · {counts.entities} entities · {counts.claims} claims</p>
-          </div>
-        </div>
+    <section className="archive-explorer section" id="explorer">
+      <div className="archive-heading">
+        <div><p className="mw-eyebrow">EXPLORE / CANONICAL STORY CORPUS</p><h2>OPEN THE<br/><span>DOSSIER.</span></h2></div>
+        <div className="archive-heading-copy"><p>Search canonical story records and inspect their claims, sources, provenance, narrative drift, and strongest counter-case.</p><span>{counts.canonical_records} canonical · {counts.candidates} active candidates · {counts.entities} entities</span></div>
+      </div>
 
-        <div className="record-list">
-          {visibleRecords.map((record) => (
-            <button className={`record-row ${selectedId === record.id ? "is-selected" : ""}`} key={record.id} type="button" onClick={() => selectRecord(record.id)}>
-              <span className="record-id">{record.id}</span>
-              <span className="record-title"><strong>{record.title}</strong><small>{record.family} / {record.record_type}</small></span>
-              <span>{record.region ?? "GLOBAL / UNKNOWN"}</span>
-              <Badge variant={confidenceVariant(record.confidence)}>{pct(record.confidence)}</Badge>
-            </button>
-          ))}
-          {!visibleRecords.length ? <div className="empty-state">No record matches this search.</div> : null}
-        </div>
-      </section>
+      <div className="record-list dossier-list">
+        {visibleRecords.map(record=><button className={`record-row ${selectedId===record.id?"is-selected":""}`} key={record.id} type="button" onClick={()=>selectRecord(record.id)}>
+          <span className="record-id">{record.id}</span>
+          <span className="record-title"><strong>{record.title}</strong><small>{record.family} / {record.record_type}</small></span>
+          <span>{record.region??"GLOBAL / UNKNOWN"}</span>
+          <Badge variant={confidenceVariant(record.confidence)}>{pct(record.confidence)}</Badge>
+        </button>)}
+        {!visibleRecords.length?<div className="empty-state">No record matches this search.</div>:null}
+      </div>
+    </section>
 
-      {selectedRecord ? <RecordDetail record={selectedRecord} /> : null}
+    {selectedRecord?<RecordDetail record={selectedRecord}/>:null}
 
-      <section className="section world">
-        <div className="section-head compact">
-          <div><p className="mw-eyebrow">WORLD COVERAGE</p><h2>THE MAP IS<br/>THE QUEUE.</h2></div>
-          <p className="section-copy">Coverage is driven by repository provenance. Under-covered traditions remain visible instead of being hidden behind the best-known mythologies.</p>
-        </div>
-        <div className="world-grid">
-          <div className="map-card">
-            <MoonWitnessAssetImage pack="data-viz" file="charts/geographic-heatmap.svg" alt="Canonical MoonWitness geographic coverage visualization" />
-            <div className="asset-caption"><span>ROCKSOUL-ASSETS / DATA-VIZ</span><strong>Geographic evidence coverage</strong></div>
-          </div>
-          <div className="coverage-list">
-            {coverage.slice(0,12).map(([region,count]) => (
-              <div className="coverage-row" key={region}>
-                <span>{region}</span>
-                <i><b style={{width:`${Math.max(8,(count/maxCoverage)*100)}%`}} /></i>
-                <strong>{count}</strong>
-              </div>
-            ))}
-            {!coverage.length ? <p className="muted">Coverage index unavailable.</p> : null}
-          </div>
-        </div>
-      </section>
+    <section className="method-band section" id="method">
+      <div className="method-asset"><MoonWitnessAssetImage pack="editorial" file="svg/lunar-observatory.svg" alt="" aria-hidden="true"/></div>
+      <div className="method-copy"><p className="mw-eyebrow">MFTL ANALYSIS STACK</p><h2>ONE STORY.<br/>FOUR QUESTIONS.</h2><p>Narrative description, integrity, deviation and Mizan stay distinct. Evidence moves forward; labels never silently collapse into one verdict.</p></div>
+      <div className="method-list">{layers.map(item=><div key={item.code}><span>{item.code}</span><strong>{item.title}</strong><small>{item.signal} · {item.subtitle}</small></div>)}</div>
+    </section>
 
-      <section className="section asset-proof">
-        <div>
-          <p className="mw-eyebrow">CANONICAL VISUAL CHAIN</p>
-          <h2>ASSETS → UI → MFTL.</h2>
-        </div>
-        <div className="asset-proof-grid">
-          {[
-            ["node-story","STORY"],
-            ["node-claim","CLAIM"],
-            ["node-evidence","EVIDENCE"],
-            ["node-source","SOURCE"],
-          ].map(([asset,label]) => (
-            <div className="asset-proof-node" key={asset}>
-              <MoonWitnessAssetImage pack="correlation-semantics" file={`svg/${asset}.svg`} alt="" aria-hidden="true" />
-              <strong>{label}</strong>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <footer>
-        <MoonWitnessBrand compact />
-        <span>MFTL / WHERE MYTH FADES TO LEGEND</span>
-        <span>TRACE · VERIFY · COMPARE · WEIGH · REVEAL</span>
-      </footer>
-    </main>
-  );
+    <footer className="command-footer">
+      <MoonWitnessBrand compact/>
+      <span>MFTL / MYTH RESEARCH OBSERVATORY</span>
+      <span>BUILT ON MOONWITNESS × ROCKSOUL ASSETS v1.3</span>
+      <span>TRACE · VERIFY · COMPARE · WEIGH · REVEAL</span>
+    </footer>
+  </main>;
 }
 
 createRoot(document.getElementById("root")!).render(
