@@ -15,6 +15,7 @@ const claimFiles=jsonFiles(path.join(root,"data/claims"));
 const sourceFiles=jsonFiles(path.join(root,"data/sources"));
 const evidenceFiles=jsonFiles(path.join(root,"data/evidence"));
 const candidateFiles=jsonFiles(path.join(root,"data/candidates"));
+const mythRecords=mythFiles.map(read);
 const claimRegistry=new Map(claimFiles.map(file=>{const x=read(file);return[x.id,x]}));
 const sourceRegistry=new Map(sourceFiles.map(file=>{const x=read(file);return[x.id,x]}));
 const evidenceRecords=evidenceFiles.map(read);
@@ -124,7 +125,101 @@ const analytics={
   }
 };
 
-const output={schema_version:"corpus-index.v0.4",generated_at:new Date().toISOString(),
+
+const regionCentroids=[
+  ["Polynesia / Hawai",20.8,-156.3],["Polynesia / Aotearoa",-41.0,174.0],["Southeast Asia / Bali",-8.4,115.2],
+  ["Africa / West and Central Africa",5.0,10.0],["East Asia / Japan",36.0,138.0],["Mesoamerica / Maya highlands",15.2,-91.0],
+  ["Middle East / Mesopotamia",32.5,44.0],["Mesopotamia / Sumer",32.5,44.0],["East Asia / China",35.0,103.0],
+  ["South Asia / India",22.0,79.0],["Oceania / Australia",-25.0,134.0],["Arctic / Inuit regions",67.0,-100.0],
+  ["Europe / Ireland",53.0,-8.0],["Europe / Finland and Karelia",63.0,30.0],["Central Asia / Kyrgyzstan",41.0,75.0],
+  ["North Asia / Sakha",66.0,129.0],["Southeast Asia / Philippines",16.8,121.0],["South America / Colombia",4.7,-74.1],
+  ["Jerusalem / Roman Judaea",31.78,35.23]
+];
+function centroidFor(region){
+  const hit=regionCentroids.find(([label])=>String(region??"").includes(label));
+  return hit?{lat:hit[1],lon:hit[2]}:null;
+}
+const coveragePoints=[
+  ...mythRecords.map(data=>{
+    const origin=data.geography?.origin??{};
+    const fallback=centroidFor(origin.region??origin.country);
+    return {id:data.id,label:data.identity?.canonical_name??data.id,kind:"canonical",region:origin.region??origin.country??"unknown",
+      lat:origin.lat??fallback?.lat??0,lon:origin.lon??fallback?.lon??0,estimated:origin.lat==null||origin.lon==null};
+  }),
+  ...activeCandidates.map(c=>{
+    const fallback=centroidFor(c.region);
+    return {id:c.candidate_id,label:c.name,kind:"candidate",region:c.region,lat:fallback?.lat??0,lon:fallback?.lon??0,estimated:true,status:c.status};
+  }).filter(p=>p.lat!==0||p.lon!==0)
+];
+
+const qualifiedRefPattern=/\b(mftl|legend|superhero|rgbl|aws):[A-Za-z0-9][A-Za-z0-9:._\/-]*/g;
+const crossRefMap=new Map();
+for(const data of mythRecords){
+  for(const match of JSON.stringify(data).matchAll(qualifiedRefPattern)){
+    const ref=match[0];
+    if(!crossRefMap.has(ref))crossRefMap.set(ref,{ref,domain:ref.split(":")[0],source_record_id:data.id});
+  }
+}
+const crossRepoRefs=[...crossRefMap.values()].sort((a,b)=>a.domain.localeCompare(b.domain)||a.ref.localeCompare(b.ref));
+
+const freshnessEvents=[];
+function addFreshness(type,id,label,date){
+  if(!date||Number.isNaN(Date.parse(date)))return;
+  freshnessEvents.push({type,id,label,date});
+}
+for(const data of mythRecords){
+  addFreshness("canonical_record",data.id,data.identity?.canonical_name??data.id,data.metadata?.updated_at);
+  addFreshness("research_run",data.id,data.identity?.canonical_name??data.id,data.metadata?.last_research_run);
+}
+for(const c of candidates)addFreshness("candidate",c.candidate_id,c.name,c.discovery?.discovered_at);
+for(const s of sourceRecords)addFreshness("source",s.id,s.title,s.metadata?.updated_at);
+for(const c of claimRecords)addFreshness("claim",c.id,c.predicate,c.metadata?.updated_at);
+for(const e of evidenceRecords)addFreshness("evidence",e.id,e.summary,e.metadata?.updated_at);
+freshnessEvents.sort((a,b)=>Date.parse(b.date)-Date.parse(a.date));
+const now=Date.now();
+for(const item of freshnessEvents)item.age_days=Math.max(0,Math.floor((now-Date.parse(item.date))/86400000));
+
+const velocityByDate={};
+for(const item of freshnessEvents){
+  const date=item.date.slice(0,10);
+  const row=velocityByDate[date]??={date,total:0,types:{}};
+  row.total+=1;
+  row.types[item.type]=(row.types[item.type]??0)+1;
+  velocityByDate[date]=row;
+}
+const researchVelocity=Object.values(velocityByDate).sort((a,b)=>a.date.localeCompare(b.date));
+const benchmarkSlots=(benchmark.slots??[]).map(slot=>({id:slot.id,status:slot.status,ref:slot.ref,failure_mode:slot.failure_mode}));
+const researchQueue=activeCandidates.map(c=>({
+  id:c.candidate_id,name:c.name,status:c.status,region:c.region,candidate_type:c.candidate_type??"unknown",
+  source_count:(c.sources??[]).length,authorities:[...new Set((c.sources??[]).map(s=>s.authority??"unknown"))],
+  discovered_at:c.discovery?.discovered_at??null
+})).sort((a,b)=>String(b.discovered_at??"").localeCompare(String(a.discovered_at??"")));
+const conspiracyLane=(scoutConfig.topics??[]).find(t=>t.id==="conspiracy-narrative")??null;
+const conspiracyCandidates=candidates.filter(c=>/conspir/i.test(String(c.candidate_type??""))||/conspir/i.test(String(c.tradition??"")));
+const confidenceDistribution={
+  "0–59":claimRecords.filter(c=>(c.confidence??0)<0.6).length,
+  "60–84":claimRecords.filter(c=>(c.confidence??0)>=0.6&&(c.confidence??0)<0.85).length,
+  "85–94":claimRecords.filter(c=>(c.confidence??0)>=0.85&&(c.confidence??0)<0.95).length,
+  "95–100":claimRecords.filter(c=>(c.confidence??0)>=0.95).length
+};
+analytics.observatory={
+  benchmark_slots:benchmarkSlots,
+  drift_records:driftRecords,
+  research_queue:researchQueue,
+  coverage_points:coveragePoints,
+  freshness_events:freshnessEvents.slice(0,60),
+  research_velocity:researchVelocity,
+  cross_repo_refs:crossRepoRefs,
+  conspiracy:{
+    integrity_code:"E17",
+    lane_active:Boolean(conspiracyLane),
+    lane:conspiracyLane,
+    staged_candidates:conspiracyCandidates.map(c=>({id:c.candidate_id,name:c.name,status:c.status,region:c.region}))
+  },
+  confidence_distribution:confidenceDistribution
+};
+
+const output={schema_version:"corpus-index.v0.5",generated_at:new Date().toISOString(),
   counts:{canonical_records:records.length,candidates:activeCandidates.length,merged_candidates:mergedCandidates.length,
     entities:entityFiles.length,claims:claimFiles.length,sources:sourceFiles.length,evidence:evidenceFiles.length,families:18,regions:regions.size},
   coverage:{regions:coverageIndex.regions??{},canonical_regions:coverageIndex.canonical_regions??{}},
@@ -136,4 +231,4 @@ fs.mkdirSync(outDir,{recursive:true});
 fs.writeFileSync(path.join(outDir,"corpus-index.json"),JSON.stringify(output,null,2)+"\n");
 copyJson(path.join(root,"data/drift/JERUSALEM-MARK13-DRIFT-001.json"),path.join(outDir,"narrative-drift.json"));
 copyJson(path.join(root,"data/benchmarks/epistemic-v0.1.json"),path.join(outDir,"epistemic-benchmark.json"));
-console.log(`Generated corpus index v0.4: ${records.length} canonical, ${activeCandidates.length} active candidates, ${claimFiles.length} claims, ${evidenceFiles.length} evidence edges.`);
+console.log(`Generated corpus index v0.5: ${records.length} canonical, ${activeCandidates.length} active candidates, ${claimFiles.length} claims, ${evidenceFiles.length} evidence edges.`);
