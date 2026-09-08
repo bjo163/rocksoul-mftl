@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="https://raw.githubusercontent.com/bjo163/rocksoul-assets/main/moonwitness/brand/logo-horizontal.svg" alt="MoonWitness" width="380" />
+
 # MFTL
 
 ## FROM MYTH FADES TO LEGEND
@@ -20,13 +22,14 @@ A provenance-first **Narrative & Belief Intelligence Corpus** for mythology, fol
 ![Language](https://img.shields.io/badge/TypeScript-strict-3178C6)
 ![Domain](https://img.shields.io/badge/domain-STORY-6F6F6F)
 ![Corpus](https://img.shields.io/badge/corpus-provenance--first-B43A32)
-![Families](https://img.shields.io/badge/record_families-18-6F6F6F)
+![Design](https://img.shields.io/badge/design-rocksoul--assets-6C63FF)
+![Console](https://img.shields.io/badge/console-rocksoul--crayon-2E8B57)
 
 <br/>
 
 **WORLD CORPUS · EVIDENCE GRAPH · SOURCE LINEAGE · NARRATIVE INTEGRITY · MIZAN**
 
-[Architecture](#the-intelligence-graph) · [Corpus](#corpus-snapshot) · [Research queue](#research-queue) · [Documentation](#documentation) · [Roadmap](docs/ROADMAP.md)
+[Architecture](#the-intelligence-graph) · [Corpus](#corpus-snapshot) · [Research queue](#research-queue) · [Documentation](#documentation) · [Assets](https://github.com/bjo163/rocksoul-assets) · [Console](https://github.com/bjo163/rocksoul-crayon)
 
 </div>
 
@@ -43,9 +46,23 @@ A textual attestation is not the same thing as empirical proof.
 
 That separation is the foundation of MFTL.
 
+## Visual + console boundary
+
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/bjo163/rocksoul-assets/main/moonwitness/ui/v2/17-dashboard.svg" alt="Rocksoul dashboard" width="860" />
+
+</div>
+
+- **`rocksoul-assets`** owns shared visual language, application shell, icons, dashboard components, data-viz, system states, and motion references.
+- **`rocksoul-crayon`** is the operational console that exposes STORY resources beside EVENT, PERSON, TEXT, and LAW.
+- **MFTL remains canonical owner of STORY / narrative / belief intelligence.**
+
 ## MoonWitness / Rocksoul research map
 
 ```text
+DESIGN     → ROCKSOUL-ASSETS
+CONSOLE    → ROCKSOUL-CRAYON
 MFTL       → STORY / NARRATIVE
 LEGEND     → CANONICAL EVENT / HISTORICAL CORE
 SUPERHERO  → PERSON / HUMAN AGENCY
@@ -53,13 +70,15 @@ RGBL       → TEXT / SCRIPTURE / REVELATION-REFERENCE
 AWS        → LAW / APPLICABILITY / LEGAL ANALYSIS
 ```
 
-| Repository | Domain | Core question | Mantra |
-|---|---|---|---|
-| **`rocksoul-mftl`** | STORY | What was told? | TRACE THE STORY. |
-| [`rocksoul-legend`](https://github.com/bjo163/rocksoul-legend) | EVENT | What happened? | TRACE THE EVENT. |
-| [`rocksoul-superhero`](https://github.com/bjo163/rocksoul-superhero) | PERSON | Who was involved? | TRACE THE PERSON. |
-| [`rocksoul-rgbl`](https://github.com/bjo163/rocksoul-rgbl) | TEXT | What does the exact text say? | TRACE THE TEXT. |
-| [`rocksoul-aws`](https://github.com/bjo163/rocksoul-aws) | LAW | Was it allowed? | TRACE THE LAW. |
+| Repository | Layer | Core question / role |
+|---|---|---|
+| [`rocksoul-assets`](https://github.com/bjo163/rocksoul-assets) | DESIGN | How should the ecosystem look? |
+| [`rocksoul-crayon`](https://github.com/bjo163/rocksoul-crayon) | CONSOLE | How do operators work across it? |
+| **`rocksoul-mftl`** | STORY | What was told? |
+| [`rocksoul-legend`](https://github.com/bjo163/rocksoul-legend) | EVENT | What happened? |
+| [`rocksoul-superhero`](https://github.com/bjo163/rocksoul-superhero) | PERSON | Who was involved? |
+| [`rocksoul-rgbl`](https://github.com/bjo163/rocksoul-rgbl) | TEXT | What does the exact text say? |
+| [`rocksoul-aws`](https://github.com/bjo163/rocksoul-aws) | LAW | Was it allowed? |
 
 MFTL may describe **event reports, event claims, persons as narrated, quoted texts, or legal claims as narrative material**, but canonical ownership remains separated: EVENT → LEGEND, PERSON → SUPERHERO, exact TEXT → RGBL, LAW → AWS.
 
@@ -325,6 +344,8 @@ See **[the roadmap](docs/ROADMAP.md)** for acceptance criteria and upcoming mile
 ---
 
 <div align="center">
+
+<img src="https://raw.githubusercontent.com/bjo163/rocksoul-assets/main/moonwitness/brand/rocksoul-lockup.svg" alt="Rocksoul" width="480" />
 
 ## WHERE MYTH FADES TO LEGEND
 
