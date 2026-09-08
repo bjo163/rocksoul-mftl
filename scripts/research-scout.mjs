@@ -8,7 +8,9 @@ const repo=process.env.GITHUB_REPOSITORY;
 const token=process.env.GITHUB_TOKEN;
 const laneFilter=process.env.RESEARCH_SCOUT_LANE??"";
 const maxNew=Number(process.env.RESEARCH_SCOUT_MAX_NEW??2);
-const dryRun=process.env.RESEARCH_SCOUT_DRY_RUN==="1"||!repo||!token;
+const outputPath=process.env.RESEARCH_SCOUT_OUTPUT??"";
+const findings=[];
+const dryRun=process.env.RESEARCH_SCOUT_DRY_RUN==="1"||(!outputPath&&(!repo||!token));
 const minYear=Number(cfg.minimum_publication_year??2018);
 
 function clean(v=""){return String(v).replace(/<[^>]+>/g," ").replace(/\s+/g," ").trim()}
@@ -34,7 +36,7 @@ async function crossref(query){
   return (d.message?.items??[]).map(w=>({provider:"Crossref",title:Array.isArray(w.title)?w.title[0]:w.title,year:w.published?.["date-parts"]?.[0]?.[0]??null,doi:w.DOI??null,url:w.URL??null,venue:Array.isArray(w["container-title"])?w["container-title"][0]:null,citations:Number(w["is-referenced-by-count"]??0),source_type:w.type??"journal-article"}));
 }
 async function seenFingerprints(){
-  const seen=new Set(); if(dryRun)return seen;
+  const seen=new Set(); if(dryRun||outputPath)return seen;
   const [owner,name]=repo.split("/");
   for(let page=1;page<=5;page++){
     const items=await jfetch(`https://api.github.com/repos/${owner}/${name}/issues?state=all&per_page=100&page=${page}`,{headers:{authorization:`Bearer ${token}`,"x-github-api-version":"2022-11-28"}});
@@ -49,6 +51,7 @@ function body(topic,query,x,fp){
   return [`## Auto research lead`,``,`**Lane:** ${topic.id}  `,`**Suggested candidate type:** ${topic.candidate_type}  `,`**Query:** ${query}  `,``,`## Scholarly metadata`,``,`- **Title:** ${clean(x.title)}`,`- **Year:** ${x.year??"unknown"}`,`- **Venue:** ${clean(x.venue??"unknown")}`,`- **Provider:** ${x.provider}`,`- **Locator:** ${locator(x)??"unknown"}`,`- **Citation signal:** ${x.citations}`,``,`## Steward boundary`,``,`This is a discovery lead, not canonical truth. The Steward must still check duplication, source authority, counterevidence, alternative explanations, and whether the paper actually supports the inferred research topic.`,conspiracy?`\n**Conspiracy guardrail:** research the narrative, provenance, evidence claims, counterevidence, and transmission. Popularity is not evidence that the alleged conspiracy occurred.`:"",``,`AUTO-RESEARCH-FP:${fp}`,`AUTO-RESEARCH-LANE:${topic.id}`,`AUTO-RESEARCH-SCORE:${Math.round(score(x))}`,`AUTO-RESEARCH-STATE:discovered`].join("\n");
 }
 async function createIssue(topic,query,x,fp){
+  if(outputPath){findings.push({topic,query,item:x,fingerprint:fp,score:score(x)});return}
   const payload={title:`[AUTO-RESEARCH] ${clean(x.title).slice(0,110)}`,body:body(topic,query,x,fp)};
   if(dryRun){console.log(JSON.stringify(payload,null,2));return}
   const [owner,name]=repo.split("/");
@@ -70,4 +73,5 @@ for(const topic of topics){
     await createIssue(topic,query,x,fp); seen.add(fp); created++; if(created>=maxNew)break;
   }
 }
-console.log(`MFTL scout: lane=${laneFilter||"all"} created=${created} dry_run=${dryRun}`);
+if(outputPath){fs.mkdirSync(path.dirname(outputPath),{recursive:true});fs.writeFileSync(outputPath,JSON.stringify(findings,null,2)+"\n")}
+console.log(`MFTL scout: lane=${laneFilter||"all"} findings=${findings.length} created=${created} dry_run=${dryRun}`);
