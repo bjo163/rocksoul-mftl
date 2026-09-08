@@ -3,7 +3,7 @@
 MFTL is the STORY-domain owner inside a federated research graph. The operating loop is:
 
 ```text
-DISCOVER
+PARALLEL AUTO-SCOUT
   ↓
 RESEARCH ISSUE
   ↓
@@ -28,7 +28,7 @@ FRESHNESS / RE-ANALYSIS
 
 ## Non-negotiable boundaries
 
-- Browsing/research automation creates or updates research issues; it does not silently mint corpus truth.
+- Seven scheduled MFTL Scout lanes discover scholarly leads in parallel. MFTL Steward then reviews them automatically and may stage `needs_sources` candidates; neither step silently mints canonical truth.
 - MFTL owns STORY records and local evidence for narrative analysis.
 - EVENT, PERSON, exact TEXT and LAW remain owned by LEGEND, SUPERHERO, RGBL and AWS.
 - `rocksoul-correlation` owns reviewed cross-domain edges.
@@ -56,3 +56,5 @@ GET /api/v1/benchmark
 ```
 
 The public surface is read-only. Canonical research changes remain repository-reviewed operations.
+
+[Automatic research scout →](AUTOMATIC-RESEARCH.md)
