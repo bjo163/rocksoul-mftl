@@ -27,7 +27,9 @@ const contracts = [
   {dir:"data/entities",schema:"entity-record.schema.json",label:"entity records"},
   {dir:"data/claims",schema:"claim-record.schema.json",label:"claim records"},
   {dir:"data/sources",schema:"source-record.schema.json",label:"source records"},
-  {dir:"data/evidence",schema:"evidence-record.schema.json",label:"evidence records"},\n  {dir:"data/drift",schema:"narrative-drift.schema.json",label:"narrative drift records"},\n  {dir:"data/benchmarks",schema:"epistemic-benchmark.schema.json",label:"epistemic benchmark records"}
+  {dir:"data/evidence",schema:"evidence-record.schema.json",label:"evidence records"},
+  {dir:"data/drift",schema:"narrative-drift.schema.json",label:"narrative drift records"},
+  {dir:"data/benchmarks",schema:"epistemic-benchmark.schema.json",label:"epistemic benchmark records"}
 ];
 
 let failed = false;
@@ -47,14 +49,16 @@ for (const contract of contracts) {
       data = JSON.parse(fs.readFileSync(file,"utf8"));
     } catch (error) {
       failed = true;
-      console.error("\nINVALID JSON:",relative);
+      console.error("
+INVALID JSON:",relative);
       console.error(error);
       continue;
     }
 
     if (!validate(data)) {
       failed = true;
-      console.error("\nINVALID:",relative);
+      console.error("
+INVALID:",relative);
       console.error(validate.errors);
     } else {
       validCount += 1;
