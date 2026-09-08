@@ -14,7 +14,7 @@
     "typescript": "latest",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "@rocksoul/ui": "github:bjo163/rocksoul-ui#4778aad168e4de78f8d8a4c64a0df9eacffe92e1"
+    "@rocksoul/ui": "github:bjo163/rocksoul-ui#97237c609cb5cff9975b83f5a9b26ecb10b796e1"
   },
   "devDependencies": {
     "@types/react": "latest",
