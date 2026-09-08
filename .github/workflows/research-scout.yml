@@ -1,0 +1,41 @@
+name: MFTL Auto Research Scout
+
+on:
+  schedule:
+    - cron: "17 2 * * *"
+  workflow_dispatch:
+    inputs:
+      max_new_issues:
+        description: "Maximum new research issues"
+        required: false
+        default: "4"
+      dry_run:
+        description: "Discover and print leads without opening issues"
+        required: false
+        default: "false"
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: mftl-auto-research-scout
+  cancel-in-progress: false
+
+jobs:
+  scout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+      - name: Search academic research leads
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RESEARCH_SCOUT_MAX_NEW: ${{ inputs.max_new_issues || '4' }}
+          RESEARCH_SCOUT_DRY_RUN: ${{ inputs.dry_run == 'true' && '1' || '0' }}
+        run: node scripts/research-scout.mjs
