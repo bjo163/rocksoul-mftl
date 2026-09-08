@@ -2,7 +2,7 @@ name: validate-corpus
 
 on:
   push:
-    branches: [main]
+    branches: [main, dev]
   pull_request:
     branches: [main]
 
@@ -10,16 +10,12 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v5
-      - name: Setup Node
-        uses: actions/setup-node@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: "22"
           package-manager-cache: false
-      - name: Upgrade npm
-        run: npm install --global npm@11.6.0
-      - name: Install
-        run: npm install --no-audit --no-fund
+      - run: npm install --global npm@11.6.0
+      - run: npm install --no-audit --no-fund
       - name: Validate, test API, and build web
         run: npm run ci
