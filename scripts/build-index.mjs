@@ -22,6 +22,9 @@ const candidates=candidateFiles.map(read);
 const activeCandidates=candidates.filter(c=>c.status!=="merged"&&c.status!=="rejected");
 const mergedCandidates=candidates.filter(c=>c.status==="merged");
 const coverageIndex=safeRead(path.join(root,"data/indexes/coverage.json"),{regions:{},canonical_regions:{}});
+const benchmark=safeRead(path.join(root,"data/benchmarks/epistemic-v0.1.json"),{slots:[],target_slots:25});
+const scoutConfig=safeRead(path.join(root,"data/research-scout/topics.json"),{topics:[]});
+const driftRecords=jsonFiles(path.join(root,"data/drift")).map(read);
 
 const records=[];
 for(const file of mythFiles){
@@ -68,10 +71,64 @@ for(const file of generalFiles){
       tradition:data.tradition??null,earliest_attestation:null,entities:[],claims:[],sources:[],evidence:[]}})
 }
 const regions=new Set(records.map(r=>r.region).filter(Boolean));
+function countBy(items,keyFn){
+  const out={};
+  for(const item of items){const key=keyFn(item)??"unknown";out[key]=(out[key]??0)+1}
+  return out;
+}
+const claimRecords=[...claimRegistry.values()];
+const sourceRecords=[...sourceRegistry.values()];
+const avgReliability=sourceRecords.map(s=>s.reliability?.score).filter(v=>typeof v==="number");
+const evidenceLinkedClaims=claimRecords.filter(c=>(c.evidence_ids??[]).length>0).length;
+const sourceLocated=sourceRecords.filter(s=>(s.locators??[]).length>0).length;
+const benchmarkStatus=countBy(benchmark.slots??[],slot=>slot.status);
+const driftRisks=countBy(driftRecords.flatMap(d=>d.drift_observations??[]),x=>x.risk);
+const analytics={
+  candidate_pipeline:countBy(candidates,c=>c.status),
+  candidate_types:countBy(activeCandidates,c=>c.candidate_type??"unknown"),
+  claim_epistemic:countBy(claimRecords,c=>c.epistemic_status??"unknown"),
+  claim_types:countBy(claimRecords,c=>c.claim_type??"unknown"),
+  claim_confidence:{
+    high:claimRecords.filter(c=>(c.confidence??0)>=0.85).length,
+    medium:claimRecords.filter(c=>(c.confidence??0)>=0.6&&(c.confidence??0)<0.85).length,
+    low:claimRecords.filter(c=>(c.confidence??0)<0.6).length
+  },
+  evidence_stance:countBy(evidenceRecords,e=>e.stance??"unknown"),
+  evidence_types:countBy(evidenceRecords,e=>e.evidence_type??"unknown"),
+  source_authority:countBy(sourceRecords,s=>s.authority??"unknown"),
+  source_types:countBy(sourceRecords,s=>s.source_type??"unknown"),
+  source_reliability_average:avgReliability.length?avgReliability.reduce((a,b)=>a+b,0)/avgReliability.length:null,
+  provenance_completeness:{
+    claims_with_evidence:evidenceLinkedClaims,
+    claims_total:claimRecords.length,
+    sources_with_locators:sourceLocated,
+    sources_total:sourceRecords.length,
+    canonical_records_with_claims:records.filter(r=>(r.detail?.claims??[]).length>0).length,
+    canonical_records_total:records.length
+  },
+  benchmark:{
+    target:benchmark.target_slots??25,
+    status:benchmarkStatus,
+    canonical:benchmarkStatus.canonical??0,
+    candidate:benchmarkStatus.candidate??0,
+    research_issue:benchmarkStatus.research_issue??0
+  },
+  drift:{
+    records:driftRecords.length,
+    risks:driftRisks
+  },
+  automation:{
+    steward:"MFTL Steward",
+    schedule:"daily 09:17 Asia/Jakarta",
+    parallel_lanes:(scoutConfig.topics??[]).map(t=>({id:t.id,candidate_type:t.candidate_type}))
+  }
+};
+
 const output={schema_version:"corpus-index.v0.4",generated_at:new Date().toISOString(),
   counts:{canonical_records:records.length,candidates:activeCandidates.length,merged_candidates:mergedCandidates.length,
     entities:entityFiles.length,claims:claimFiles.length,sources:sourceFiles.length,evidence:evidenceFiles.length,families:18,regions:regions.size},
   coverage:{regions:coverageIndex.regions??{},canonical_regions:coverageIndex.canonical_regions??{}},
+  analytics,
   records:records.sort((a,b)=>a.title.localeCompare(b.title))
 };
 const outDir=path.join(root,"apps/web/public/data");
