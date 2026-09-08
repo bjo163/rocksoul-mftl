@@ -1,6 +1,6 @@
 {
   "schema_version": "corpus-index.v0.4",
-  "generated_at": "2026-09-08T03:07:00Z",
+  "generated_at": "2026-09-08T03:35:00Z",
   "counts": {
     "canonical_records": 2,
     "candidates": 16,
@@ -382,5 +382,109 @@
       },
       "qualified_ref": "mftl:MYTH-JERUSALEM-TEMPLE-DESTRUCTION-PROPHECY-000001"
     }
-  ]
+  ],
+  "analytics": {
+    "candidate_pipeline": {
+      "active": 16,
+      "merged": 1
+    },
+    "candidate_types": {},
+    "claim_epistemic": {
+      "supported_as_textual_attestation": 6,
+      "supported": 2
+    },
+    "claim_types": {
+      "textual_attestation": 2,
+      "historical_attestation": 1,
+      "chronology_claim": 1,
+      "supernatural_narrative": 4
+    },
+    "claim_confidence": {
+      "high": 8,
+      "medium": 0,
+      "low": 0
+    },
+    "evidence_stance": {
+      "supports": 8,
+      "contextualizes": 2
+    },
+    "evidence_types": {
+      "textual": 7,
+      "historical": 3
+    },
+    "source_authority": {
+      "academic": 3,
+      "primary": 3,
+      "institutional": 1
+    },
+    "source_types": {
+      "academic_article": 1,
+      "manuscript": 1,
+      "reference_work": 2,
+      "museum": 1,
+      "primary_text": 2
+    },
+    "source_reliability_average": 0.9714285714285715,
+    "provenance_completeness": {
+      "claims_with_evidence": 8,
+      "claims_total": 8,
+      "sources_with_locators": 7,
+      "sources_total": 7,
+      "canonical_records_with_claims": 2,
+      "canonical_records_total": 2
+    },
+    "benchmark": {
+      "target": 25,
+      "status": {
+        "canonical": 2,
+        "candidate": 16,
+        "research_issue": 7
+      },
+      "canonical": 2,
+      "candidate": 16,
+      "research_issue": 7
+    },
+    "drift": {
+      "records": 1,
+      "risks": {
+        "translation_choice": 1,
+        "analysis_added": 1,
+        "correspondence_misread_as_causation_or_fulfillment": 1
+      }
+    },
+    "automation": {
+      "steward": "MFTL Steward",
+      "schedule": "daily 09:17 Asia/Jakarta",
+      "parallel_lanes": [
+        {
+          "id": "myth-ritual-transmission",
+          "candidate_type": "myth / ritual / narrative transmission"
+        },
+        {
+          "id": "sacred-place-legend",
+          "candidate_type": "sacred_place / legend"
+        },
+        {
+          "id": "prophecy-apocalyptic",
+          "candidate_type": "prophecy_narrative / religious_claim"
+        },
+        {
+          "id": "pseudoarchaeology-pseudohistory",
+          "candidate_type": "pseudohistory / pseudoarchaeology"
+        },
+        {
+          "id": "conspiracy-narrative",
+          "candidate_type": "conspiracy_narrative"
+        },
+        {
+          "id": "urban-legend-rumor",
+          "candidate_type": "urban_legend / rumor"
+        },
+        {
+          "id": "supernatural-claim",
+          "candidate_type": "supernatural_claim"
+        }
+      ]
+    }
+  }
 }
