@@ -1,0 +1,45 @@
+{
+  "schema_version": "candidate.v0.1",
+  "candidate_id": "CAND-JPN-AMATERASU-000001",
+  "name": "Amaterasu and the Heavenly Rock Cave narrative",
+  "aliases": ["Amaterasu", "Amaterasu Ōmikami", "Amaterasu Omikami", "Ama no iwato"],
+  "region": "East Asia / Japan",
+  "country": "Japan",
+  "tradition": "Shintō / classical Japanese mythic tradition",
+  "candidate_type": "solar deity / cave narrative / ritual-symbolic tradition",
+  "discovery": {
+    "summary": "Kokugakuin University's Encyclopedia of Shinto and the British Museum document the classical narrative in which Amaterasu withdraws into a heavenly cave after Susanoo's violent conduct, bringing darkness, and is induced to emerge through the actions of other deities. Kokugakuin also discusses later ritual interpretation connecting the myth to chinkon/tamashizume traditions, while museum objects attest later visual representations of the episode.",
+    "why_relevant": "This candidate adds East Asian coverage and is useful for separating classical textual narrative, later ritual interpretation, shrine/deity tradition, and visual reception across time.",
+    "discovered_at": "2026-09-07T13:45:20Z",
+    "search_terms": ["Amaterasu heavenly cave Kokugakuin", "Ama no iwato British Museum", "Amaterasu Susanoo cave", "Amaterasu Shinto encyclopedia"]
+  },
+  "sources": [
+    {
+      "title": "Mythological Research - Encyclopedia of Shinto, Kokugakuin University Digital Museum",
+      "locator": "https://d-museum.kokugakuin.ac.jp/eos/detail/id%3D8621",
+      "source_type": "academic_reference",
+      "authority": "academic",
+      "notes": "University reference entry supports the Amaterasu/Susanoo cave episode and discusses a scholarly interpretation connecting the narrative with chinkon/tamashizume ritual tradition. The interpretive ritual linkage should remain identified as scholarly interpretation rather than collapsed into the earliest narrative layer. Accessed 2026-09-07T13:45:20Z."
+    },
+    {
+      "title": "Solstice, sunshine and the sacred - British Museum",
+      "locator": "https://www.britishmuseum.org/blog/solstice-sunshine-and-sacred",
+      "source_type": "museum_curatorial",
+      "authority": "institutional",
+      "notes": "British Museum curatorial article supports Amaterasu's central solar role in Shintō, the cave-withdrawal narrative following Susanoo's behavior, restoration of light after her emergence, and association with Ise Jingū. Accessed 2026-09-07T13:45:20Z."
+    },
+    {
+      "title": "Ama no iwato (Heavenly Rock Cave) hanging scroll - British Museum",
+      "locator": "https://www.britishmuseum.org/collection/object/A_1881-1210-0-2352",
+      "source_type": "museum_collection",
+      "authority": "institutional",
+      "notes": "Museum object record for an 1800–1880 Japanese hanging scroll representing Amaterasu emerging from the cave, with other deities present. Supports later visual reception of the narrative, not the antiquity of the myth itself. Accessed 2026-09-07T13:45:20Z."
+    }
+  ],
+  "duplicate_check": {
+    "checked": true,
+    "possible_matches": []
+  },
+  "status": "ready_for_record",
+  "notes": "Material claim mapping: cave narrative and ritual-interpretive discussion -> Kokugakuin University; Shintō centrality, cave narrative, Ise association -> British Museum curatorial source; later iconography -> British Museum object record. Classical textual variants in Kojiki/Nihon Shoki should be modeled explicitly before canonicalization rather than treated as one harmonized account. Theological assessment intentionally not performed."
+}

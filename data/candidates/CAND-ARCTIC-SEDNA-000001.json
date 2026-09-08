@@ -1,0 +1,38 @@
+{
+  "schema_version": "candidate.v0.1",
+  "candidate_id": "CAND-ARCTIC-SEDNA-000001",
+  "name": "Sedna / Talilayuk / Nuliajuk sea-woman traditions",
+  "aliases": ["Sedna", "Talilayuk", "Talelayou", "Nuliajuk", "Sea Woman", "Sea Goddess"],
+  "region": "Arctic / Inuit regions",
+  "country": "Canada",
+  "tradition": "Inuit sea-woman and sea-animal origin traditions",
+  "candidate_type": "sea-being tradition / animal-origin narrative / oral tradition",
+  "discovery": {
+    "summary": "The Canadian Museum of History's Cape Dorset Inuit prints resource describes a story shared across much of the Arctic concerning an underwater sea woman known in different places as Sedna, Talilayuk, or Nuliajuk. In the version summarized by the museum, her severed fingers become sea animals and she remains beneath the sea; the museum explicitly frames the story within intergenerational Inuit myth and storytelling traditions rather than as a uniform single text. A separate museum collection record catalogs a print titled 'Sedna Sea Goddess' by Inuit artist Germaine Arnaktauyok. Source basis: Canadian Museum of History, 'Inuit Prints of Cape Dorset — Myths' and collection record 'Print, Sedna Sea Goddess'.",
+    "why_relevant": "This candidate adds Arctic coverage and is especially useful for MFTL's variant-handling model: multiple names and localized versions should remain linked but not collapsed. It can later support entity aliases, oral-transmission variants, sea-animal origin claims, artistic reception, and regional comparison.",
+    "discovered_at": "2026-09-07T15:41:39Z",
+    "search_terms": ["Sedna Inuit Canadian Museum History", "Talilayuk Nuliajuk Inuit myth", "Cape Dorset Sedna myths", "Sedna Sea Goddess artifact"]
+  },
+  "sources": [
+    {
+      "title": "Inuit Prints of Cape Dorset — Myths",
+      "locator": "https://www.historymuseum.ca/capedorsetprints/themes/myths.php",
+      "source_type": "national museum thematic collection and oral-tradition context",
+      "authority": "institutional",
+      "notes": "Canadian Museum of History resource describing Inuit myth transmission and identifying Sedna/Talilayuk/Nuliajuk as regional names within a widely shared Arctic sea-woman story, while presenting one summarized version rather than asserting a universal text."
+    },
+    {
+      "title": "Print, Sedna Sea Goddess",
+      "locator": "https://www.historymuseum.ca/collections/artifact/3028422",
+      "source_type": "national museum artifact record",
+      "authority": "institutional",
+      "notes": "Collection record for an Inuit artwork titled 'Sedna Sea Goddess' by Germaine Arnaktauyok, useful as material evidence of modern artistic reception and naming rather than as a primary source for all narrative details."
+    }
+  ],
+  "duplicate_check": {
+    "checked": true,
+    "possible_matches": []
+  },
+  "status": "ready_for_record",
+  "notes": "Canonicalization should distinguish region-, community-, and source-specific variants and avoid treating Sedna, Talilayuk, and Nuliajuk as evidence for one fixed pan-Inuit narrative. Modern artwork is reception evidence, not proof of antiquity for every narrative detail. No theological assessment has been made."
+}

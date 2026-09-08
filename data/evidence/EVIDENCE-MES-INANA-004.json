@@ -1,0 +1,17 @@
+{
+  "id": "EVIDENCE-MES-INANA-004",
+  "target_id": "CLAIM-MES-INANA-004",
+  "source_id": "SOURCE-ETCSL-INANA-DESCENT",
+  "stance": "supports",
+  "evidence_type": "textual",
+  "locator": "ETCSL 1.4.1, lines 217–281",
+  "summary": "Enki creates two agents, gives life-giving plant/water, and the narrative states that Inana rises after they are applied.",
+  "analysis": "Direct textual support; does not imply empirical validation of supernatural restoration.",
+  "confidence": 0.99,
+  "status": "reviewed",
+  "schema_version": "evidence.v0.1",
+  "metadata": {
+    "created_at": "2026-09-07T18:26:10Z",
+    "updated_at": "2026-09-07T18:26:10Z"
+  }
+}

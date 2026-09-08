@@ -1,0 +1,17 @@
+{
+  "id": "EVIDENCE-MES-INANA-001",
+  "target_id": "CLAIM-MES-INANA-001",
+  "source_id": "SOURCE-ETCSL-INANA-DESCENT",
+  "stance": "supports",
+  "evidence_type": "textual",
+  "locator": "ETCSL 1.4.1, lines 1–5",
+  "summary": "The scholarly translation explicitly opens with Inana abandoning heaven and earth and descending to the underworld.",
+  "analysis": "Direct textual attestation of the narrative proposition.",
+  "confidence": 0.99,
+  "status": "reviewed",
+  "schema_version": "evidence.v0.1",
+  "metadata": {
+    "created_at": "2026-09-07T18:26:10Z",
+    "updated_at": "2026-09-07T18:26:10Z"
+  }
+}

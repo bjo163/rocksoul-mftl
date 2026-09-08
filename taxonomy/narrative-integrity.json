@@ -1,0 +1,182 @@
+{
+  "schema_version": "integrity-taxonomy.v0.1",
+  "title": "MFTL Narrative Integrity / Epistemic Distortion Taxonomy",
+  "principle": "Classify claim status and evidence before inferring intent. Mythological status, factual veracity, persuasion strategy, deviation, and theological assessment are separate dimensions.",
+  "axes": {
+    "veracity": [
+      "unverified",
+      "supported",
+      "mixed",
+      "unsupported",
+      "false",
+      "indeterminate"
+    ],
+    "intent": [
+      "unknown",
+      "unintentional",
+      "possibly_deceptive",
+      "deceptive",
+      "strategic_persuasion",
+      "ambiguous"
+    ],
+    "review_state": [
+      "unreviewed",
+      "sourced",
+      "cross_checked",
+      "reviewed",
+      "disputed"
+    ]
+  },
+  "distortions": [
+    {
+      "code": "E01",
+      "key": "factual_error",
+      "group": "accuracy",
+      "intent_required": false
+    },
+    {
+      "code": "E02",
+      "key": "misinformation",
+      "group": "distribution",
+      "intent_required": false
+    },
+    {
+      "code": "E03",
+      "key": "disinformation",
+      "group": "distribution",
+      "intent_required": true
+    },
+    {
+      "code": "E04",
+      "key": "malinformation",
+      "group": "distribution",
+      "intent_required": true
+    },
+    {
+      "code": "E05",
+      "key": "fabricated_claim",
+      "group": "fabrication",
+      "intent_required": false
+    },
+    {
+      "code": "E06",
+      "key": "fabricated_source",
+      "group": "fabrication",
+      "intent_required": true
+    },
+    {
+      "code": "E07",
+      "key": "forged_document",
+      "group": "fabrication",
+      "intent_required": true
+    },
+    {
+      "code": "E08",
+      "key": "false_attribution",
+      "group": "provenance",
+      "intent_required": false
+    },
+    {
+      "code": "E09",
+      "key": "misleading_context",
+      "group": "context",
+      "intent_required": false
+    },
+    {
+      "code": "E10",
+      "key": "selective_evidence",
+      "group": "context",
+      "intent_required": false
+    },
+    {
+      "code": "E11",
+      "key": "quote_mining",
+      "group": "context",
+      "intent_required": false
+    },
+    {
+      "code": "E12",
+      "key": "mistranslation",
+      "group": "transmission",
+      "intent_required": false
+    },
+    {
+      "code": "E13",
+      "key": "anachronism",
+      "group": "historical_reasoning",
+      "intent_required": false
+    },
+    {
+      "code": "E14",
+      "key": "pseudohistory",
+      "group": "historical_reasoning",
+      "intent_required": false
+    },
+    {
+      "code": "E15",
+      "key": "pseudoarchaeology",
+      "group": "historical_reasoning",
+      "intent_required": false
+    },
+    {
+      "code": "E16",
+      "key": "rumor",
+      "group": "uncertainty",
+      "intent_required": false
+    },
+    {
+      "code": "E17",
+      "key": "conspiracy_narrative",
+      "group": "narrative",
+      "intent_required": false
+    },
+    {
+      "code": "E18",
+      "key": "propaganda",
+      "group": "persuasion",
+      "intent_required": false
+    },
+    {
+      "code": "E19",
+      "key": "manipulated_media",
+      "group": "media",
+      "intent_required": false
+    },
+    {
+      "code": "E20",
+      "key": "synthetic_media",
+      "group": "media",
+      "intent_required": false
+    },
+    {
+      "code": "E21",
+      "key": "impersonation",
+      "group": "identity",
+      "intent_required": true
+    },
+    {
+      "code": "E22",
+      "key": "satire_or_parody",
+      "group": "context",
+      "intent_required": false
+    },
+    {
+      "code": "E23",
+      "key": "legend_presented_as_fact",
+      "group": "category_error",
+      "intent_required": false
+    },
+    {
+      "code": "E24",
+      "key": "unsupported_causal_claim",
+      "group": "reasoning",
+      "intent_required": false
+    },
+    {
+      "code": "E25",
+      "key": "context_required",
+      "group": "review",
+      "intent_required": false
+    }
+  ]
+}

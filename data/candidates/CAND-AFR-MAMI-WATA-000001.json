@@ -1,0 +1,38 @@
+{
+  "schema_version": "candidate.v0.1",
+  "candidate_id": "CAND-AFR-MAMI-WATA-000001",
+  "name": "Mami Wata water-spirit traditions",
+  "aliases": ["Mami Wata", "Mother Water"],
+  "region": "Africa / West and Central Africa / African Atlantic",
+  "country": null,
+  "tradition": "Mami Wata and related African water-spirit traditions",
+  "candidate_type": "water spirit / deity tradition / visual and ritual culture",
+  "discovery": {
+    "summary": "Smithsonian National Museum of African Art sources document Mami Wata as a powerful water spirit recognized across diverse African communities and the African Atlantic world. Museum records also document modern visual forms in which older water-spirit concepts blended with widely circulated late-nineteenth- and twentieth-century snake-charmer imagery; regional meanings vary and should not be flattened into one universal tradition.",
+    "why_relevant": "This candidate adds African and African Atlantic coverage while providing unusually strong museum provenance for both iconography and the historical circulation of specific visual motifs. It is useful for separating long-standing water-spirit traditions from later transregional image transmission and local reinterpretation.",
+    "discovered_at": "2026-09-07T13:45:20Z",
+    "search_terms": ["Mami Wata Smithsonian", "Mami Wata water spirit Africa", "Mami Wata Anang Ibibio", "Mami Wata exhibition"]
+  },
+  "sources": [
+    {
+      "title": "Mami Wata figure - National Museum of African Art",
+      "locator": "https://africa.si.edu/collection/object/nmafa_2009-16-1",
+      "source_type": "museum_collection",
+      "authority": "institutional",
+      "notes": "Smithsonian collection record for a late-20th-century Anang/Ibibio Mami Wata figure from Nigeria. Supports recognition of Mami Wata as a powerful water spirit, local blending with earlier water spirits/deities, associations including wealth and infertility-related curing in this documented context, and the historical importance of circulated snake-charmer imagery. Accessed 2026-09-07T13:45:20Z."
+    },
+    {
+      "title": "Mami Wata: Arts for Water Spirits in Africa and Its Diasporas - Smithsonian Institution",
+      "locator": "https://www.si.edu/exhibitions/mami-wata-arts-water-spirits-africa-and-its-diasporas%3Aevent-exhib-2605",
+      "source_type": "museum_exhibition",
+      "authority": "institutional",
+      "notes": "Smithsonian exhibition record supports broad geographic presence in west/central Africa and the African Atlantic world and documents the diversity and adaptability of Mami Wata visual traditions. Accessed 2026-09-07T13:45:20Z."
+    }
+  ],
+  "duplicate_check": {
+    "checked": true,
+    "possible_matches": []
+  },
+  "status": "ready_for_record",
+  "notes": "Material claim mapping: broad African/African Atlantic recognition and visual diversity -> Smithsonian exhibition; Anang/Ibibio-specific meanings and snake-charmer image transmission -> NMAfA object record. The Smithsonian itself emphasizes adaptation and regional diversity, so canonicalization should avoid treating Mami Wata as a single fixed pan-African doctrine. Theological assessment intentionally not performed."
+}

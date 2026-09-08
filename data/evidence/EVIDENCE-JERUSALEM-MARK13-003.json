@@ -1,0 +1,17 @@
+{
+  "schema_version": "evidence.v0.1",
+  "id": "EVIDENCE-JERUSALEM-MARK13-003",
+  "target_id": "CLAIM-JERUSALEM-MARK13-002",
+  "source_id": "SOURCE-MET-JERUSALEM-70",
+  "stance": "contextualizes",
+  "evidence_type": "historical",
+  "locator": "Judaea section discussing the 70 CE siege and Temple destruction",
+  "summary": "Metropolitan Museum scholarship independently describes Titus's 70 CE siege ending in the sack of Jerusalem and destruction of the Temple.",
+  "analysis": "The evidence supports a real historical event corresponding to the narrative's subject matter. It does not determine whether Mark 13:2 was composed before the event or whether the correspondence is supernatural fulfillment.",
+  "confidence": 0.97,
+  "status": "reviewed",
+  "metadata": {
+    "created_at": "2026-09-07T21:28:21Z",
+    "updated_at": "2026-09-07T21:28:21Z"
+  }
+}

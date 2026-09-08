@@ -1,0 +1,52 @@
+{
+  "schema_version": "candidate.v0.1",
+  "candidate_id": "CAND-IRL-BEAN-SI-000001",
+  "name": "Bean Sí / Banshee traditions",
+  "aliases": ["Bean Sí", "Bean Sídhe", "Bean Sidhe", "Banshee"],
+  "region": "Europe / Ireland",
+  "country": "Ireland",
+  "tradition": "Irish oral folklore and supernatural-being traditions",
+  "candidate_type": "supernatural being / death-omen folklore / oral tradition",
+  "discovery": {
+    "summary": "The National Folklore Collection's Dúchas Schools' Collection preserves numerous locally recorded accounts of the Bean Sí/Banshee. Examples from Roscommon, Carlow, Longford, Kerry, Kilkenny, Clare, Meath, and Tipperary vary in appearance and family associations, but repeatedly record motifs of nocturnal keening or crying connected in local belief with impending or recent death. Because these are collected folklore reports, MFTL should model them as documented belief/narrative variants rather than as proof of a supernatural event. Source basis: Dúchas / National Folklore Collection, UCD, multiple Schools' Collection entries including Gort an Ghainimh, Árd Aitinn, Moyne, Danesfort, Inishcaltra, and Stackallen.",
+    "why_relevant": "This candidate fills a European folklore gap and provides unusually useful archival provenance: multiple localized testimony records can be compared for recurring motifs, contradictions, collector/informant metadata, geographic spread, and transmission without forcing one standardized banshee description.",
+    "discovered_at": "2026-09-07T15:41:39Z",
+    "search_terms": ["Bean Sí Dúchas", "Banshee Schools Collection Ireland", "Bean Sídhe National Folklore Collection", "Irish banshee oral folklore archive"]
+  },
+  "sources": [
+    {
+      "title": "The Banshee - Bean Sí — Gort an Ghainimh — The Schools' Collection",
+      "locator": "https://www.duchas.ie/en/cbes/4798685/4790113/4927934",
+      "source_type": "national folklore archive / collected oral tradition",
+      "authority": "institutional",
+      "notes": "National Folklore Collection, UCD archival record from Co. Roscommon documenting local belief that the Bean Sí warns certain families by wailing; useful as one localized variant, not a universal definition."
+    },
+    {
+      "title": "The Bean Sí — Árd Aitinn — The Schools' Collection",
+      "locator": "https://www.duchas.ie/en/cbes/5146062/5032519/5146079",
+      "source_type": "national folklore archive / collected oral tradition",
+      "authority": "institutional",
+      "notes": "Co. Carlow archival record with motifs of long hair, combing, family-following, and crying before death; differs in local naming/details and therefore supports variant modeling."
+    },
+    {
+      "title": "The Bean Sí — Danesfort — The Schools' Collection",
+      "locator": "https://www.duchas.ie/en/cbes/4758535/4752489",
+      "source_type": "national folklore archive / collected oral tradition",
+      "authority": "institutional",
+      "notes": "Co. Kilkenny Schools' Collection page containing multiple Bean Sí/Banshee entries and a locally recorded description of appearance, keening, family association, and comb motif."
+    },
+    {
+      "title": "Bean Sí — Stackallen — The Schools' Collection",
+      "locator": "https://www.duchas.ie/en/cbes/5009006/4976291/5113275",
+      "source_type": "national folklore archive / collected oral tradition",
+      "authority": "institutional",
+      "notes": "Co. Meath account recording a white-cloaked/red-shoe variant, combing, crying, and death association, demonstrating geographic and descriptive variation."
+    }
+  ],
+  "duplicate_check": {
+    "checked": true,
+    "possible_matches": []
+  },
+  "status": "ready_for_record",
+  "notes": "Canonicalization should model Dúchas records as folklore attestations with collector/informant/place metadata, not as empirical confirmation of supernatural causation. Family-name motifs and physical descriptions vary across records and should remain source-specific. No theological assessment has been made."
+}

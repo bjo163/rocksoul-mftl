@@ -1,0 +1,35 @@
+{
+  "schema_version": "corpus-index.v0.2",
+  "generated_at": "2026-09-07T21:28:21Z",
+  "counts": {
+    "canonical_records": 2,
+    "candidates": 16,
+    "merged_candidates": 1,
+    "entities": 5,
+    "claims": 8,
+    "sources": 7,
+    "evidence": 10,
+    "families": 18,
+    "regions": 2
+  },
+  "records": [
+    {
+      "id": "MYTH-MES-INANA-DESCENT-000001",
+      "title": "Inana's Descent to the Netherworld",
+      "family": "F01",
+      "record_type": "underworld_narrative",
+      "region": "Mesopotamia / Sumer",
+      "status": "reviewed",
+      "confidence": 0.97
+    },
+    {
+      "id": "MYTH-JERUSALEM-TEMPLE-DESTRUCTION-PROPHECY-000001",
+      "title": "Temple Destruction Prediction in Mark 13:2",
+      "family": "F01",
+      "record_type": "prophecy_narrative",
+      "region": "Jerusalem / Roman Judaea narrative setting",
+      "status": "reviewed",
+      "confidence": 0.97
+    }
+  ]
+}

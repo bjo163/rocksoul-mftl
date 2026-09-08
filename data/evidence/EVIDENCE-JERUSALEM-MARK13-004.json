@@ -1,0 +1,17 @@
+{
+  "schema_version": "evidence.v0.1",
+  "id": "EVIDENCE-JERUSALEM-MARK13-004",
+  "target_id": "CLAIM-JERUSALEM-MARK13-003",
+  "source_id": "SOURCE-CAMBRIDGE-MARK-DATE",
+  "stance": "contextualizes",
+  "evidence_type": "historical",
+  "locator": "New Testament Studies 7(2), pp. 126–141",
+  "summary": "Academic discussion places the common dating debate for Mark around the 65–75 CE period and explicitly treats the 70 CE destruction as central to the chronology question.",
+  "analysis": "This prevents the four-way integration from silently assuming a universally settled pre-70 composition date.",
+  "confidence": 0.93,
+  "status": "reviewed",
+  "metadata": {
+    "created_at": "2026-09-07T21:28:21Z",
+    "updated_at": "2026-09-07T21:28:21Z"
+  }
+}

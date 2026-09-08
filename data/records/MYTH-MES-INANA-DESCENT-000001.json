@@ -1,0 +1,292 @@
+{
+  "schema_version": "myth.v0.1",
+  "id": "MYTH-MES-INANA-DESCENT-000001",
+  "identity": {
+    "canonical_name": "Inana's Descent to the Netherworld",
+    "native_names": [
+      {
+        "name": "Inana",
+        "language": "Sumerian",
+        "script": null
+      }
+    ],
+    "aliases": [
+      "Inanna's Descent to the Underworld",
+      "Descent of Inanna",
+      "Inana's descent to the nether world"
+    ],
+    "record_type": "underworld_narrative"
+  },
+  "classification": {
+    "domain": "mythology_and_literary_tradition",
+    "tradition": "Sumerian literary and religious tradition",
+    "myth_family": "descent_to_underworld",
+    "status": "canonical_textual_record"
+  },
+  "geography": {
+    "origin": {
+      "country": "Iraq",
+      "region": "Mesopotamia / Sumer",
+      "locality": null,
+      "lat": null,
+      "lon": null
+    },
+    "spread": [
+      "Southern Mesopotamian textual tradition"
+    ]
+  },
+  "time": {
+    "earliest_attestation": {
+      "value": "ca. 1900–1600 BCE",
+      "precision": "range",
+      "era": "Old Babylonian"
+    },
+    "active_periods": [
+      {
+        "from": "Old Babylonian period",
+        "to": null,
+        "precision": "approximate"
+      }
+    ]
+  },
+  "narrative": {
+    "summary": "A Sumerian literary composition in which Inana descends to the underworld, passes through seven gates while regalia are removed, is judged and killed within the narrative, is restored through Enki's intervention, and must provide a substitute in order to ascend.",
+    "long_description": "This canonical record describes what the Sumerian textual tradition says. ETCSL provides the scholarly composite text and translation, while CDLI P275004 supplies an Old Babylonian physical manuscript witness from Nippur. The record intentionally separates textual/historical attestation from empirical verification of supernatural events, and it does not collapse the Sumerian composition into the related Akkadian Ištar descent tradition.",
+    "motifs": [
+      "descent_to_underworld",
+      "seven_gates",
+      "loss_of_regalia",
+      "death_and_restoration",
+      "substitution",
+      "divine_judgment"
+    ]
+  },
+  "entities": [
+    {
+      "entity_id": "ENTITY-MES-INANA",
+      "name": "Inana",
+      "entity_type": "deity",
+      "roles": [
+        "central figure",
+        "descender"
+      ]
+    },
+    {
+      "entity_id": "ENTITY-MES-ERESKIGALA",
+      "name": "Ereškigala",
+      "entity_type": "deity",
+      "roles": [
+        "underworld ruler",
+        "sister of Inana in the narrative"
+      ]
+    },
+    {
+      "entity_id": "ENTITY-MES-NETI",
+      "name": "Neti",
+      "entity_type": "underworld_gatekeeper",
+      "roles": [
+        "chief doorman"
+      ]
+    },
+    {
+      "entity_id": "ENTITY-MES-NINCUBURA",
+      "name": "Ninšubur",
+      "entity_type": "deity_or_divine_attendant",
+      "roles": [
+        "minister",
+        "escort",
+        "petitioner"
+      ]
+    },
+    {
+      "entity_id": "ENTITY-MES-DUMUZID",
+      "name": "Dumuzid",
+      "entity_type": "deity",
+      "roles": [
+        "husband of Inana",
+        "later substitute figure"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "CLAIM-MES-INANA-001",
+      "subject": "ENTITY-MES-INANA",
+      "predicate": "descends_to",
+      "object": "underworld",
+      "claim_type": "supernatural_narrative",
+      "source_basis": [
+        "SOURCE-ETCSL-INANA-DESCENT",
+        "SOURCE-CDLI-P275004"
+      ],
+      "confidence": 0.99
+    },
+    {
+      "id": "CLAIM-MES-INANA-002",
+      "subject": "ENTITY-MES-INANA",
+      "predicate": "passes_through",
+      "object": "seven gates where regalia are removed",
+      "claim_type": "textual_attestation",
+      "source_basis": [
+        "SOURCE-ETCSL-INANA-DESCENT"
+      ],
+      "confidence": 0.99
+    },
+    {
+      "id": "CLAIM-MES-INANA-003",
+      "subject": "ENTITY-MES-INANA",
+      "predicate": "is_judged_and_turned_into",
+      "object": "a corpse hung on a hook",
+      "claim_type": "supernatural_narrative",
+      "source_basis": [
+        "SOURCE-ETCSL-INANA-DESCENT"
+      ],
+      "confidence": 0.99
+    },
+    {
+      "id": "CLAIM-MES-INANA-004",
+      "subject": "ENTITY-MES-INANA",
+      "predicate": "is_restored_by",
+      "object": "life-giving plant and life-giving water used by Enki's created agents",
+      "claim_type": "supernatural_narrative",
+      "source_basis": [
+        "SOURCE-ETCSL-INANA-DESCENT"
+      ],
+      "confidence": 0.99
+    },
+    {
+      "id": "CLAIM-MES-INANA-005",
+      "subject": "ENTITY-MES-INANA",
+      "predicate": "must_provide",
+      "object": "a substitute in order to ascend from the underworld",
+      "claim_type": "supernatural_narrative",
+      "source_basis": [
+        "SOURCE-ETCSL-INANA-DESCENT"
+      ],
+      "confidence": 0.99
+    }
+  ],
+  "relations": [
+    {
+      "subject": "ENTITY-MES-INANA",
+      "predicate": "sister_of",
+      "object": "ENTITY-MES-ERESKIGALA",
+      "confidence": 0.98,
+      "source_basis": [
+        "SOURCE-ETCSL-INANA-DESCENT"
+      ]
+    },
+    {
+      "subject": "ENTITY-MES-NETI",
+      "predicate": "gatekeeper_for",
+      "object": "underworld",
+      "confidence": 0.99,
+      "source_basis": [
+        "SOURCE-ETCSL-INANA-DESCENT"
+      ]
+    },
+    {
+      "subject": "ENTITY-MES-NINCUBURA",
+      "predicate": "minister_of",
+      "object": "ENTITY-MES-INANA",
+      "confidence": 0.99,
+      "source_basis": [
+        "SOURCE-ETCSL-INANA-DESCENT"
+      ]
+    },
+    {
+      "subject": "ENTITY-MES-DUMUZID",
+      "predicate": "husband_of",
+      "object": "ENTITY-MES-INANA",
+      "confidence": 0.98,
+      "source_basis": [
+        "SOURCE-ETCSL-INANA-DESCENT"
+      ]
+    },
+    {
+      "subject": "ENTITY-MES-INANA",
+      "predicate": "selects_as_substitute",
+      "object": "ENTITY-MES-DUMUZID",
+      "confidence": 0.96,
+      "source_basis": [
+        "SOURCE-ETCSL-INANA-DESCENT"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "SOURCE-ETCSL-INANA-DESCENT",
+      "source_type": "reference_work",
+      "title": "Inana's descent to the nether world: translation",
+      "author": "The Electronic Text Corpus of Sumerian Literature (ETCSL)",
+      "date": "2000-01-21",
+      "language": "English / Sumerian",
+      "primary_source": false,
+      "locator": "https://etcsl.orinst.ox.ac.uk/section1/tr141.htm",
+      "accessed_at": "2026-09-07T18:26:10Z",
+      "notes": "Scholarly composite text/translation with manuscript-variation markers."
+    },
+    {
+      "id": "SOURCE-CDLI-P275004",
+      "source_type": "primary_text",
+      "title": "CDLI P275004 — literary tablet witness to Inanna's Descent",
+      "author": null,
+      "date": "Old Babylonian (ca. 1900-1600 BCE)",
+      "language": "Sumerian",
+      "primary_source": true,
+      "locator": "https://cdli.earth/artifacts/275004",
+      "accessed_at": "2026-09-07T18:26:10Z",
+      "notes": "Clay tablet from Nippur, Penn Museum N 2986; CDLI identifies it as a witness to ETCSL 1.04.01."
+    },
+    {
+      "id": "SOURCE-ORACC-INANA-ISHTAR",
+      "source_type": "reference_work",
+      "title": "Ancient Mesopotamian Gods and Goddesses — Inana/Ištar (goddess)",
+      "author": "Ancient Mesopotamian Gods and Goddesses project",
+      "date": null,
+      "language": "English",
+      "primary_source": false,
+      "locator": "https://oracc.museum.upenn.edu/amgg/listofdeities/inanaitar/",
+      "accessed_at": "2026-09-07T18:26:10Z",
+      "notes": "Context for deity identity and Mesopotamian tradition."
+    }
+  ],
+  "evidence": {
+    "source_quality": 0.98,
+    "historical_attestation": 0.99,
+    "notes": "Scores represent confidence in the existence, manuscript attestation, and scholarly reconstruction of the composition—not empirical truth of its supernatural events. Evidence edges are stored separately under data/evidence/."
+  },
+  "historicity": {
+    "entity_historical_person": null,
+    "belief_historically_attested": true,
+    "ritual_historically_attested": null,
+    "confidence": 0.97
+  },
+  "assessments": {
+    "academic": {
+      "classification": [
+        "Sumerian literary composition",
+        "underworld descent narrative",
+        "mythological text",
+        "cuneiform textual tradition"
+      ]
+    },
+    "theological": {
+      "status": "not_assessed",
+      "framework": null,
+      "shirk_analysis": null
+    }
+  },
+  "quality": {
+    "record_status": "reviewed",
+    "confidence": 0.97,
+    "needs_review": true
+  },
+  "metadata": {
+    "created_at": "2026-09-07T18:26:10Z",
+    "updated_at": "2026-09-07T18:26:10Z",
+    "dataset": "world-myth-corpus",
+    "created_by": "MFTL canonicalization workflow",
+    "last_research_run": "2026-09-07T18:26:10Z"
+  }
+}

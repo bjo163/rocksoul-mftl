@@ -1,0 +1,17 @@
+{
+  "schema_version": "evidence.v0.1",
+  "id": "EVIDENCE-JERUSALEM-MARK13-001",
+  "target_id": "CLAIM-JERUSALEM-MARK13-001",
+  "source_id": "SOURCE-RGBL-SBLGNT-MARK-13-2",
+  "stance": "supports",
+  "evidence_type": "textual",
+  "locator": "rgbl:mw:content:sblgnt:v1-2:mark:13:2",
+  "summary": "RGBL's canonical SBLGNT record preserves Mark 13:2 in Greek and targets the exact passage ID.",
+  "analysis": "This establishes textual attestation of the prediction wording in the SBLGNT expression only.",
+  "confidence": 0.99,
+  "status": "reviewed",
+  "metadata": {
+    "created_at": "2026-09-07T21:28:21Z",
+    "updated_at": "2026-09-07T21:28:21Z"
+  }
+}

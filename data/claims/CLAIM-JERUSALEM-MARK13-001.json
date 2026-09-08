@@ -1,0 +1,23 @@
+{
+  "schema_version": "claim.v0.1",
+  "id": "CLAIM-JERUSALEM-MARK13-001",
+  "subject": "MYTH-JERUSALEM-TEMPLE-DESTRUCTION-PROPHECY-000001",
+  "predicate": "contains_prediction",
+  "object": "the Temple's great buildings will be thrown down so that no stone remains upon another",
+  "claim_type": "textual_attestation",
+  "source_basis": [
+    "SOURCE-RGBL-SBLGNT-MARK-13-2",
+    "SOURCE-RGBL-WEB-MARK-13-2"
+  ],
+  "evidence_ids": [
+    "EVIDENCE-JERUSALEM-MARK13-001",
+    "EVIDENCE-JERUSALEM-MARK13-002"
+  ],
+  "epistemic_status": "supported_as_textual_attestation",
+  "confidence": 0.99,
+  "notes": "Confidence concerns what the Mark 13:2 textual tradition says, not the historical attribution or supernatural truth of the prediction.",
+  "metadata": {
+    "created_at": "2026-09-07T21:28:21Z",
+    "updated_at": "2026-09-07T21:28:21Z"
+  }
+}

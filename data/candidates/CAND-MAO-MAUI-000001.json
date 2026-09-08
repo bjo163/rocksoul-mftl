@@ -1,0 +1,45 @@
+{
+  "schema_version": "candidate.v0.1",
+  "candidate_id": "CAND-MAO-MAUI-000001",
+  "name": "Māui",
+  "aliases": ["Maui"],
+  "region": "Polynesia / Aotearoa New Zealand",
+  "country": "New Zealand",
+  "tradition": "Māori traditions",
+  "candidate_type": "culture hero / trickster",
+  "discovery": {
+    "summary": "Te Ara, the Encyclopedia of New Zealand, documents Māui as a major figure in Māori traditions. Its entries preserve several distinct narrative cycles, including Māui slowing the sun, fishing up the North Island, obtaining fire from Mahuika, and pursuing immortality. Te Ara also places these stories within broader Māori oral-tradition and landscape traditions rather than treating them as a single historically literal account.",
+    "why_relevant": "This is a strong candidate for testing cross-record motif relations, oral transmission, landscape mythology, and the distinction between narrative attestation and historical/supernatural truth claims.",
+    "discovered_at": "2026-09-07T12:45:45Z",
+    "search_terms": ["Māui Māori", "Maui Te Ara", "Maui sun", "Te Ika-a-Maui"]
+  },
+  "sources": [
+    {
+      "title": "Māui | Hawaiki | Te Ara Encyclopedia of New Zealand",
+      "locator": "https://teara.govt.nz/en/document/3802/maui",
+      "source_type": "reference_work",
+      "authority": "reference",
+      "notes": "Supports Māui as a renowned figure of Hawaiki and the fire-acquisition tradition involving Mahuika; Te Ara identifies the story as drawn from Sir George Grey's collection of Māori traditions. Accessed 2026-09-07T12:45:45Z."
+    },
+    {
+      "title": "Ranginui – the sky | Te Ara Encyclopedia of New Zealand",
+      "locator": "https://teara.govt.nz/en/ranginui-the-sky",
+      "source_type": "reference_work",
+      "authority": "reference",
+      "notes": "Supports the Māori tradition in which Māui slows the sun and situates the episode within Māori celestial traditions. Accessed 2026-09-07T12:45:45Z."
+    },
+    {
+      "title": "First peoples in Māori tradition | Te Ara Encyclopedia of New Zealand",
+      "locator": "https://teara.govt.nz/en/first-peoples-in-maori-tradition",
+      "source_type": "reference_work",
+      "authority": "reference",
+      "notes": "Supports Te Ika-a-Māui as the Māori name/tradition for the North Island and notes other Māui cycles including fire, the sun, and pursuit of immortality. Accessed 2026-09-07T12:45:45Z."
+    }
+  ],
+  "duplicate_check": {
+    "checked": true,
+    "possible_matches": []
+  },
+  "status": "ready_for_record",
+  "notes": "Material claim mapping: Hawaiki/fire narrative -> Māui | Hawaiki; slowing-the-sun narrative -> Ranginui – the sky; North Island/Te Ika-a-Māui and broader Māui cycles -> First peoples in Māori tradition. Different iwi/tradition variants must be preserved during canonicalization rather than collapsed into one universal Māori version. Theological assessment intentionally not performed."
+}

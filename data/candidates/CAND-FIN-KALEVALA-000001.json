@@ -1,0 +1,46 @@
+{
+  "schema_version": "candidate.v0.1",
+  "candidate_id": "CAND-FIN-KALEVALA-000001",
+  "name": "Kalevala",
+  "aliases": [
+    "Old Kalevala",
+    "New Kalevala"
+  ],
+  "region": "Europe / Finland and Karelia",
+  "country": "Finland",
+  "tradition": "Karelian, Finnish, and Ingrian oral-poetry traditions / 19th-century oral-literary epic",
+  "candidate_type": "oral-literary epic / folk-poetry compilation / mythic narrative tradition",
+  "discovery": {
+    "summary": "The Kalevala is a 19th-century epic compiled and edited by Elias Lönnrot from extensive oral folk-poetry materials, especially Karelian and Finnish traditions. The Finnish Literature Society states that the 1849 Kalevala is based on Karelian and Finnish folk poems, while its research material emphasizes that Lönnrot actively shaped the source material into a cohesive literary narrative rather than simply transcribing a single pre-existing epic [S1][S2]. The Old Kalevala appeared in 1835 and the New Kalevala in 1849; the latter drew on a broader body of Karelian, Finnish, and Ingrian poems [S1].",
+    "why_relevant": "This candidate is valuable for MFTL because it directly tests the separation between oral tradition, later literary compilation, national reception, and mythic content. It is also a strong future case for source-lineage and deviation analysis: SKS explicitly notes that Lönnrot created characters, plot structure, and edited language, and that the resulting Kalevala differs in important ways from the folk poems used as its sources [S1]. The project should therefore avoid treating the printed Kalevala as a transparent record of a single uniform ancient tradition.",
+    "discovered_at": "2026-09-07T16:40:00Z",
+    "search_terms": [
+      "Kalevala oral tradition",
+      "Kalevala Karelian folk poems",
+      "Elias Lönnrot source poems",
+      "Old Kalevala 1835 New Kalevala 1849"
+    ]
+  },
+  "sources": [
+    {
+      "title": "Kalevala – European Heritage Label",
+      "locator": "https://www.finlit.fi/en/about-us/kalevala-european-heritage-label/",
+      "source_type": "institutional cultural-heritage and research overview",
+      "authority": "institutional",
+      "notes": "[S1] Finnish Literature Society (SKS). Supports the 1835/1849 publication distinction, the Karelian/Finnish/Ingrian oral-poetry source base, Lönnrot's editorial construction of characters/plot/language, and the warning that the literary epic differs from its source folk poems."
+    },
+    {
+      "title": "Is the Kalevala oral tradition or literature?",
+      "locator": "https://tietava.finlit.fi/en/kalevala/is-the-kalevala-oral-tradition-or-literature/",
+      "source_type": "institutional research and education resource",
+      "authority": "institutional",
+      "notes": "[S2] Finnish Literature Society research-based learning resource. Supports classification of the Kalevala as both oral tradition and literary work, with extensive 19th-century folk-poetry material, especially from Karelia, reshaped into a cohesive epic."
+    }
+  ],
+  "duplicate_check": {
+    "checked": true,
+    "possible_matches": []
+  },
+  "status": "ready_for_record",
+  "notes": "No theological assessment has been made. Before canonicalization, MFTL should model the printed epic separately from individual archived folk poems, and should preserve disputes about Finnish/Karelian cultural framing rather than forcing a single national ownership narrative. Material claims in this candidate are keyed to [S1] and [S2] in the source notes because candidate.v0.1 does not yet expose a dedicated source_basis field."
+}

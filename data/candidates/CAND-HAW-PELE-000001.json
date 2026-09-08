@@ -1,0 +1,45 @@
+{
+  "schema_version": "candidate.v0.1",
+  "candidate_id": "CAND-HAW-PELE-000001",
+  "name": "Pelehonuamea (Pele)",
+  "aliases": ["Pele"],
+  "region": "Polynesia / Hawaiʻi",
+  "country": "United States",
+  "tradition": "Native Hawaiian moʻolelo",
+  "candidate_type": "deity / volcano tradition",
+  "discovery": {
+    "summary": "Native Hawaiian moʻolelo documented by the U.S. National Park Service describe Pelehonuamea as a volcano deity associated with volcanic activity and landscape creation. NPS materials also document Halemaʻumaʻu at Kīlauea as Pele's traditional home and note that versions of moʻolelo can vary significantly through oral transmission.",
+    "why_relevant": "High-quality institutional documentation supports a provenance-first record that can separate cultural narrative, place association, oral transmission, and documented cultural practice without making a supernatural truth judgment.",
+    "discovered_at": "2026-09-07T12:45:45Z",
+    "search_terms": ["Pelehonuamea", "Pele Hawaiian volcano deity", "Halemaumau Pele", "Hawaiian moolelo"]
+  },
+  "sources": [
+    {
+      "title": "Deities - Haleakalā National Park",
+      "locator": "https://www.nps.gov/hale/learn/historyculture/deities.htm",
+      "source_type": "institutional",
+      "authority": "institutional",
+      "notes": "Supports the documented cultural description of Pele as a respected Hawaiian volcano goddess, creator/destroyer of lands, and traditions concerning her journey and forms. Accessed 2026-09-07T12:45:45Z."
+    },
+    {
+      "title": "Moʻolelo (Stories) - Hawaiʻi Volcanoes National Park",
+      "locator": "https://www.nps.gov/havo/learn/historyculture/moolelo.htm",
+      "source_type": "institutional",
+      "authority": "institutional",
+      "notes": "Supports classification as moʻolelo, the oral-tradition context, the Pelehonuamea/Kīlauea narrative association, and explicit caution that transmitted versions may vary. Accessed 2026-09-07T12:45:45Z."
+    },
+    {
+      "title": "Uēkahuna - Hawaiʻi Volcanoes National Park",
+      "locator": "https://home.nps.gov/havo/learn/historyculture/uekahuna.htm",
+      "source_type": "institutional",
+      "authority": "institutional",
+      "notes": "Supports Uēkahuna/Kīlauea as a Native Hawaiian cultural-practice landscape associated with honoring Pelehonuamea. Accessed 2026-09-07T12:45:45Z."
+    }
+  ],
+  "duplicate_check": {
+    "checked": true,
+    "possible_matches": []
+  },
+  "status": "ready_for_record",
+  "notes": "Material claim mapping: cultural identity/volcanic association -> Deities - Haleakalā National Park; oral-transmission and variant-warning -> Moʻolelo (Stories); documented place/practice association -> Uēkahuna. Theological assessment intentionally not performed."
+}

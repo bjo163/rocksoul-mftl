@@ -1,0 +1,45 @@
+{
+  "schema_version": "candidate.v0.1",
+  "candidate_id": "CAND-SAKHA-OLONKHO-000001",
+  "name": "Olonkho, Sakha (Yakut) heroic epos",
+  "aliases": [
+    "Olonkho",
+    "Yakut heroic epos"
+  ],
+  "region": "North Asia / Sakha Republic (Yakutia)",
+  "country": "Russian Federation",
+  "tradition": "Sakha (Yakut) oral heroic-epic tradition",
+  "candidate_type": "oral heroic epic / mythic narrative cycle / performed folklore",
+  "discovery": {
+    "summary": "Olonkho denotes the Sakha/Yakut epic tradition and its central heroic epics. UNESCO documents performances that alternate sung verse and prose recitative and describes narratives involving ancient warriors, deities, spirits and animals [S1]. UNESCO also notes that many versions circulated because communities had their own narrators and repertoires, making variation part of the tradition rather than a defect to normalize away [S1].",
+    "why_relevant": "Olonkho is especially useful for MFTL's transmission and version-drift work because the tradition is performance-based, improvisatory and explicitly multi-version. A future canonical model should distinguish recurring motifs and cosmological elements from individual narrated versions and later recorded texts.",
+    "discovered_at": "2026-09-07T17:46:00Z",
+    "search_terms": [
+      "Olonkho Sakha Yakut epic",
+      "Olonkho UNESCO",
+      "Yakut heroic epos variants"
+    ]
+  },
+  "sources": [
+    {
+      "title": "Olonkho, Yakut heroic epos",
+      "locator": "https://f5vip11.unesco.org/en/RL/olonkho-yakut-heroic-epos-00145",
+      "source_type": "UNESCO intangible-cultural-heritage record",
+      "authority": "institutional",
+      "notes": "[S1] Supports Sakha Republic provenance, oral performance structure, the presence of warriors/deities/spirits/animals, community-specific narrators, numerous circulating versions and safeguarding context."
+    },
+    {
+      "title": "The Olonkho, Yakut Heroic Epos",
+      "locator": "https://www.unesco.org/archives/multimedia/document-1754",
+      "source_type": "UNESCO multimedia archive / ethnographic heritage documentation",
+      "authority": "institutional",
+      "notes": "[S2] Corroborates performance form, epic scale, mythic characters and documentary provenance; archive metadata identifies a 2004 production by NBC Sakha."
+    }
+  ],
+  "duplicate_check": {
+    "checked": true,
+    "possible_matches": []
+  },
+  "status": "ready_for_record",
+  "notes": "No theological assessment has been made. Canonicalization should model specific Olonkho versions and named narrators separately where sources permit. Broad claims about antiquity should remain carefully qualified unless supported by stronger historical or philological evidence. Material claims are keyed to [S1] and [S2] because candidate.v0.1 has no dedicated source_basis field."
+}

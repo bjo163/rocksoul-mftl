@@ -1,0 +1,57 @@
+{
+  "schema_version": "candidate.v0.1",
+  "candidate_id": "CAND-MES-INANNA-DESCENT-000001",
+  "name": "Inana's Descent to the Netherworld",
+  "aliases": [
+    "Inanna's Descent to the Underworld",
+    "Descent of Inanna",
+    "Inana's descent to the nether world"
+  ],
+  "region": "Middle East / Mesopotamia / Sumer",
+  "country": "Iraq",
+  "tradition": "Sumerian literary and religious tradition",
+  "candidate_type": "underworld narrative / deity tradition / cuneiform literary text",
+  "discovery": {
+    "summary": "The Electronic Text Corpus of Sumerian Literature preserves a scholarly translation of a Sumerian composition in which Inana leaves the upper world and descends to the netherworld, passing through gates where regalia are removed. ORACC independently documents Inana/Ištar in Mesopotamian tradition, and CDLI provides an Old Babylonian physical tablet witness (P275004) to the composition.",
+    "why_relevant": "Strong provenance-first record with scholarly composite text, primary manuscript witness, explicit manuscript variation, reusable entities, atomic claims, and evidence edges.",
+    "discovered_at": "2026-09-07T14:39:24Z",
+    "search_terms": [
+      "Inana descent netherworld",
+      "Inanna underworld Sumerian",
+      "Inana Ishtar ORACC",
+      "ETCSL 1.4.1",
+      "CDLI P275004"
+    ]
+  },
+  "sources": [
+    {
+      "title": "Inana's descent to the nether world: translation",
+      "locator": "https://etcsl.orinst.ox.ac.uk/section1/tr141.htm",
+      "source_type": "academic text corpus / scholarly translation",
+      "authority": "academic",
+      "notes": "Canonical source ID: SOURCE-ETCSL-INANA-DESCENT."
+    },
+    {
+      "title": "CDLI P275004 — literary tablet witness to Inanna's Descent",
+      "locator": "https://cdli.earth/artifacts/275004",
+      "source_type": "primary manuscript witness",
+      "authority": "primary",
+      "notes": "Canonical source ID: SOURCE-CDLI-P275004; Old Babylonian tablet from Nippur."
+    },
+    {
+      "title": "Ancient Mesopotamian Gods and Goddesses — Inana/Ištar (goddess)",
+      "locator": "https://oracc.museum.upenn.edu/amgg/listofdeities/inanaitar/",
+      "source_type": "university research reference",
+      "authority": "academic",
+      "notes": "Canonical source ID: SOURCE-ORACC-INANA-ISHTAR."
+    }
+  ],
+  "duplicate_check": {
+    "checked": true,
+    "possible_matches": [
+      "MYTH-MES-INANA-DESCENT-000001"
+    ]
+  },
+  "status": "merged",
+  "notes": "Merged into canonical record MYTH-MES-INANA-DESCENT-000001 on 2026-09-07T18:26:10Z. Candidate retained as discovery provenance. The canonical record preserves the distinction between Sumerian Inana and related Akkadian Ištar descent traditions. No theological assessment has been made."
+}

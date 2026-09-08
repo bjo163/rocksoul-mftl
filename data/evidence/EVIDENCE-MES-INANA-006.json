@@ -1,0 +1,17 @@
+{
+  "id": "EVIDENCE-MES-INANA-006",
+  "target_id": "MYTH-MES-INANA-DESCENT-000001",
+  "source_id": "SOURCE-CDLI-P275004",
+  "stance": "supports",
+  "evidence_type": "historical",
+  "locator": "CDLI P275004 / Penn Museum N 2986",
+  "summary": "CDLI catalogues a Sumerian clay literary tablet from Nippur, dated Old Babylonian (ca. 1900–1600 BCE), as a witness to ETCSL 1.04.01 Inanna's Descent.",
+  "analysis": "Supports historical attestation of the composition in the Old Babylonian manuscript tradition; it does not verify the supernatural events narrated.",
+  "confidence": 0.99,
+  "status": "reviewed",
+  "schema_version": "evidence.v0.1",
+  "metadata": {
+    "created_at": "2026-09-07T18:26:10Z",
+    "updated_at": "2026-09-07T18:26:10Z"
+  }
+}

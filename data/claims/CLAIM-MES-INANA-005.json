@@ -1,0 +1,21 @@
+{
+  "id": "CLAIM-MES-INANA-005",
+  "subject": "ENTITY-MES-INANA",
+  "predicate": "must_provide",
+  "object": "a substitute in order to ascend from the underworld",
+  "claim_type": "supernatural_narrative",
+  "source_basis": [
+    "SOURCE-ETCSL-INANA-DESCENT"
+  ],
+  "evidence_ids": [
+    "EVIDENCE-MES-INANA-005"
+  ],
+  "epistemic_status": "supported_as_textual_attestation",
+  "confidence": 0.99,
+  "notes": "ETCSL lines 282–289 state the substitute condition; later lines develop Dumuzid's role.",
+  "schema_version": "claim.v0.1",
+  "metadata": {
+    "created_at": "2026-09-07T18:26:10Z",
+    "updated_at": "2026-09-07T18:26:10Z"
+  }
+}

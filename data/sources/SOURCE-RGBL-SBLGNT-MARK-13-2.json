@@ -1,0 +1,36 @@
+{
+  "schema_version": "source.v0.1",
+  "id": "SOURCE-RGBL-SBLGNT-MARK-13-2",
+  "source_type": "primary_text",
+  "title": "RGBL SBLGNT v1.2 — Mark 13:2",
+  "creator": "SBLGNT / Rocksoul RGBL",
+  "publisher": "rocksoul-rgbl canonical corpus",
+  "date": "SBLGNT v1.2 corpus expression",
+  "languages": [
+    "grc"
+  ],
+  "locators": [
+    {
+      "type": "url",
+      "value": "https://github.com/bjo163/rocksoul-rgbl/blob/main/datasets/sblgnt-v1-2/data/core/resources/sblgnt-v1-2.jsonl",
+      "accessed_at": "2026-09-07T21:28:21Z"
+    },
+    {
+      "type": "other",
+      "value": "rgbl:mw:passage:sblgnt:v1-2:mark:13:2",
+      "accessed_at": "2026-09-07T21:28:21Z"
+    }
+  ],
+  "authority": "primary",
+  "reliability": {
+    "score": 0.99,
+    "notes": "Exact source-preserving Greek passage identity already validated inside RGBL."
+  },
+  "rights": null,
+  "notes": "Use the RGBL passage/content IDs as the exact-text reference. MFTL does not duplicate the scripture text.",
+  "status": "active",
+  "metadata": {
+    "created_at": "2026-09-07T21:28:21Z",
+    "updated_at": "2026-09-07T21:28:21Z"
+  }
+}

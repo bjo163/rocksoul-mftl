@@ -1,0 +1,41 @@
+{
+  "schema_version": "source.v0.1",
+  "id": "SOURCE-CDLI-P275004",
+  "source_type": "manuscript",
+  "title": "CDLI P275004 — literary tablet witness to Inanna's Descent",
+  "creator": null,
+  "publisher": "Cuneiform Digital Library Initiative",
+  "date": "Old Babylonian (ca. 1900-1600 BCE)",
+  "languages": [
+    "Sumerian"
+  ],
+  "locators": [
+    {
+      "type": "url",
+      "value": "https://cdli.earth/artifacts/275004",
+      "accessed_at": "2026-09-07T18:26:10Z"
+    },
+    {
+      "type": "museum_id",
+      "value": "Penn Museum N 2986",
+      "accessed_at": null
+    },
+    {
+      "type": "catalog_id",
+      "value": "CDLI P275004",
+      "accessed_at": null
+    }
+  ],
+  "authority": "primary",
+  "reliability": {
+    "score": 0.99,
+    "notes": "Artifact-level catalogue entry for a clay tablet excavated at Nippur; explicitly identified as a witness to ETCSL 1.04.01 Inanna's Descent."
+  },
+  "rights": "Artifact/image rights remain with the cited collection and CDLI metadata providers.",
+  "notes": "This is one physical textual witness and should not be treated as the entire composition.",
+  "status": "active",
+  "metadata": {
+    "created_at": "2026-09-07T18:26:10Z",
+    "updated_at": "2026-09-07T18:26:10Z"
+  }
+}

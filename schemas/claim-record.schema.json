@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mftl.dev/schemas/claim-record.schema.json",
+  "title": "MFTL Claim Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "id",
+    "subject",
+    "predicate",
+    "object",
+    "claim_type",
+    "source_basis",
+    "epistemic_status",
+    "confidence",
+    "metadata"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "claim.v0.1"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^CLAIM-[A-Z0-9-]+$"
+    },
+    "subject": {
+      "type": "string",
+      "minLength": 1
+    },
+    "predicate": {
+      "type": "string",
+      "minLength": 1
+    },
+    "object": {
+      "type": [
+        "string",
+        "number",
+        "boolean"
+      ]
+    },
+    "claim_type": {
+      "enum": [
+        "textual_attestation",
+        "historical_attestation",
+        "identity_relation",
+        "practice_report",
+        "supernatural_narrative",
+        "causal_claim",
+        "chronology_claim",
+        "other"
+      ]
+    },
+    "source_basis": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^EVIDENCE-[A-Z0-9-]+$"
+      }
+    },
+    "epistemic_status": {
+      "enum": [
+        "supported_as_textual_attestation",
+        "supported_as_historical_attestation",
+        "supported",
+        "probable",
+        "plausible",
+        "unverified",
+        "insufficient_evidence",
+        "disputed",
+        "contradicted",
+        "false",
+        "fabricated",
+        "indeterminate",
+        "not_empirically_testable"
+      ]
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "metadata": {
+      "type": "object",
+      "required": [
+        "created_at",
+        "updated_at"
+      ],
+      "properties": {
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

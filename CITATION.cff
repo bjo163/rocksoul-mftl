@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use the MFTL corpus in research, please cite this repository and the underlying sources attached to each record."
+title: "From Myth Fades To Legend (MFTL)"
+type: dataset
+authors:
+  - name: "MFTL / rocksoul research"
+repository-code: "https://github.com/bjo163/rocksoul-mftl"
+url: "https://github.com/bjo163/rocksoul-mftl"
+version: "0.1.0"
+date-released: "2026-09-07"
+keywords:
+  - mythology
+  - folklore
+  - provenance
+  - knowledge-graph
+  - comparative-religion
+  - evidence

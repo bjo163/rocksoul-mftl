@@ -1,0 +1,31 @@
+{
+  "schema_version": "source.v0.1",
+  "id": "SOURCE-MET-JERUSALEM-70",
+  "source_type": "museum",
+  "title": "The World between Empires: Art and Identity in the Ancient Middle East — Judaea",
+  "creator": "The Metropolitan Museum of Art",
+  "publisher": "The Metropolitan Museum of Art",
+  "date": "2019",
+  "languages": [
+    "en"
+  ],
+  "locators": [
+    {
+      "type": "url",
+      "value": "https://resources.metmuseum.org/resources/metpublications/pdf/The_World_between_Empires_Art_and_Identity_in_the_Ancient_Middle_East.pdf",
+      "accessed_at": "2026-09-07T21:28:21Z"
+    }
+  ],
+  "authority": "institutional",
+  "reliability": {
+    "score": 0.97,
+    "notes": "Museum scholarship summarizing the Roman siege, the 70 CE destruction of the Temple, and Josephus as a critical ancient source."
+  },
+  "rights": null,
+  "notes": "Historical context only. LEGEND owns the canonical event record.",
+  "status": "active",
+  "metadata": {
+    "created_at": "2026-09-07T21:28:21Z",
+    "updated_at": "2026-09-07T21:28:21Z"
+  }
+}
