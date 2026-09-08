@@ -28,6 +28,9 @@
     "folklore",
     "urban_legend",
     "religious_claim",
-    "supernatural_claim"
+    "supernatural_claim",
+    "conspiracy_narrative",
+    "rumor_narrative",
+    "pseudohistory_narrative"
   ]
 }
