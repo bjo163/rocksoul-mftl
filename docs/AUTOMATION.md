@@ -2,57 +2,44 @@
 
 > Branch policy: **main-only**.
 
-MFTL research discovery is autonomous and repository-local.
+MFTL uses one research-maintenance loop: **MFTL Steward**. Discovery is **issue-first**; browsing does not directly write or canonicalize corpus data.
 
-## Daily schedule
-
-`02:17 UTC / 09:17 Asia/Jakarta`
-
-Seven Scout lanes run in parallel:
-
-1. myth / ritual / narrative transmission
-2. sacred-place legend
-3. prophecy / apocalyptic narrative
-4. pseudohistory / pseudoarchaeology
-5. conspiracy narrative
-6. urban legend / rumor
-7. supernatural claim
-
-Each lane may open at most one new scholarly lead per daily run. The Scout searches OpenAlex and Crossref metadata and de-duplicates by fingerprint.
-
-After all Scout lanes finish, **MFTL Steward** automatically performs the second pass:
+## Steward loop
 
 ```text
-PARALLEL SCOUTS
-      ↓
-AUTO-RESEARCH ISSUES
-      ↓
-MFTL STEWARD
-      ├── duplicate check
-      ├── source/locator signal
-      ├── rule-based score
-      └── decision
-             ↓
-      stage_candidate / needs_sources / hold / duplicate
-             ↓
-      VALIDATE + TEST + BUILD
-             ↓
-      COMMIT STAGING DATA
+REVIEW MAIN + OPEN RESEARCH ISSUES
+              ↓
+        DE-DUPLICATE
+              ↓
+   BROWSE STRONG SOURCES
+              ↓
+      RESEARCH ISSUE
+              ↓
+  REPO HYGIENE / SMALL FIX
+              ↓
+   VALIDATE + TEST + BUILD
+              ↓
+         INSPECT CI
 ```
 
-## Steward scope
+## Research contract
 
-The Steward is the automated reviewer for discovery intake. It may stage a candidate as `needs_sources` after review, but it does not write `data/records` or fabricate claim-level evidence.
+- Prefer primary, academic, museum, library, archive, and institutional sources.
+- Create or update a `[RESEARCH]` Issue only when a lead is defensible and non-duplicate.
+- Record topic, region/tradition, concise summary, source links, uncertainty/conflicting scholarship, and a suggested next action.
+- Treat supernatural efficacy as a historical claim or belief unless independently demonstrated.
+- Do **not** add research discovered during browsing directly to `data/records` or silently promote it into canonical corpus truth.
+- Candidate/canonical work happens only in a later explicit review step.
 
-A candidate becomes canonical only when structured evidence is strong enough for the canonical schemas and gates. Automation is allowed to leave material unresolved indefinitely rather than force a conclusion.
+## Maintenance contract
 
-## Conspiracy narratives
-
-`E17 conspiracy_narrative` is a first-class integrity category. The research object is the narrative, provenance, transmission, invoked evidence, counterevidence, and effects. Popularity is never evidence that the alleged conspiracy occurred.
+- `main` is the only canonical remote working branch.
+- Keep GitHub Actions simple: `.github/workflows/validate.yml` is the single repository workflow.
+- Small README/docs, navigation, badge, Mermaid, broken-link, counter/index, or stale-wording fixes are allowed when low-risk and clearly useful.
+- Do not expand schemas or taxonomies merely to create work.
+- Run the repository CI contract (`npm run ci`) when relevant and inspect GitHub Actions after maintenance commits.
+- If neither a useful research issue nor a meaningful maintenance fix exists, make no repository change.
 
 ## Failure behavior
 
-- One failed Scout lane does not cancel the other lanes.
-- Steward runs after the Scout matrix completes.
-- Validation/build occurs before automated staging data is pushed.
-- No useful lead is a valid outcome; the system need not invent work.
+Uncertainty is a valid outcome. The Steward should preserve conflicting interpretations and leave material unresolved rather than invent evidence or force canonicalization.
