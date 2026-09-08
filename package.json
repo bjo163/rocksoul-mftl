@@ -13,7 +13,10 @@
     "build": "npm run validate && npm run index && npm --workspace @mftl/web run build",
     "api:build": "npm --workspace @mftl/web run api:build",
     "test": "npm run index && npm run api:build && node --test tests/*.test.mjs",
-    "ci": "npm run validate && npm run test && npm --workspace @mftl/web run build"
+    "ci": "npm run validate && npm run test && npm --workspace @mftl/web run build",
+    "research:scout": "node scripts/research-scout.mjs",
+    "research:steward": "node scripts/research-steward.mjs",
+    "research:dry": "RESEARCH_SCOUT_DRY_RUN=1 node scripts/research-scout.mjs"
   },
   "devDependencies": {
     "ajv": "^8.17.1",
