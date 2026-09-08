@@ -1,0 +1,78 @@
+{
+  "schema_version": "research-scout-topics.v0.1",
+  "max_new_issues_per_run": 4,
+  "minimum_publication_year": 2018,
+  "topics": [
+    {
+      "id": "myth-ritual-transmission",
+      "candidate_type": "myth / ritual / narrative transmission",
+      "region_hint": "global",
+      "tradition_hint": "comparative mythology and folklore",
+      "queries": [
+        "myth ritual narrative transmission folklore archaeology",
+        "oral tradition myth ritual historical evidence"
+      ]
+    },
+    {
+      "id": "sacred-place-legend",
+      "candidate_type": "sacred_place / legend",
+      "region_hint": "global",
+      "tradition_hint": "sacred geography",
+      "queries": [
+        "sacred place legend archaeology ritual tradition",
+        "pilgrimage sacred spring legend historical evidence"
+      ]
+    },
+    {
+      "id": "prophecy-apocalyptic",
+      "candidate_type": "prophecy_narrative / religious_claim",
+      "region_hint": "global",
+      "tradition_hint": "prophecy and apocalyptic narrative",
+      "queries": [
+        "prophecy narrative historical event textual dating",
+        "apocalyptic prediction textual transmission historical interpretation"
+      ]
+    },
+    {
+      "id": "pseudoarchaeology-pseudohistory",
+      "candidate_type": "pseudohistory / pseudoarchaeology",
+      "region_hint": "global",
+      "tradition_hint": "contested historical narratives",
+      "queries": [
+        "pseudoarchaeology pseudohistory misinformation archaeology narrative",
+        "archaeological misinformation heritage pseudoscience narrative"
+      ]
+    },
+    {
+      "id": "conspiracy-narrative",
+      "candidate_type": "conspiracy_narrative",
+      "region_hint": "global",
+      "tradition_hint": "conspiracy, rumor, and misinformation studies",
+      "queries": [
+        "conspiracy narrative misinformation rumor historical transmission",
+        "conspiracy theory narrative evidence misinformation social history"
+      ],
+      "guardrail": "Study the existence, transmission, evidence, counterevidence, and social history of the narrative. Never treat the conspiracy claim as established merely because it is widespread."
+    },
+    {
+      "id": "urban-legend-rumor",
+      "candidate_type": "urban_legend / rumor",
+      "region_hint": "global",
+      "tradition_hint": "contemporary folklore",
+      "queries": [
+        "urban legend rumor folklore transmission evidence",
+        "contemporary legend rumor narrative folklore digital"
+      ]
+    },
+    {
+      "id": "supernatural-claim",
+      "candidate_type": "supernatural_claim",
+      "region_hint": "global",
+      "tradition_hint": "documented supernatural claims",
+      "queries": [
+        "supernatural claim historical evidence folklore religious studies",
+        "apparition miracle claim source criticism historical"
+      ]
+    }
+  ]
+}
