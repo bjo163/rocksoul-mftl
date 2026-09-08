@@ -1,18 +1,20 @@
 # Branching Contract
 
-This repository uses **`main` as the single canonical remote working branch**.
+MFTL uses a two-stage release flow:
 
 ```text
-main  ← research + maintenance + stable repository state
+dev   ← integration + autonomous research staging
+  ↓ validated fast-forward / reviewed PR
+main  ← stable + production + release source
+  ↓
+release/vX.Y.Z ← release snapshot
 ```
 
 ## Rules
 
-- All implementation, research metadata, docs, CI, and maintenance work lands directly in `main`.
-- Research discovered by automation remains **issue-first** and must not be canonicalized directly from browsing.
-- Do not create or rely on persistent `dev`, `feature/*`, `fix/*`, `hotfix/*`, `release/*`, `chore/*`, `experiment/*`, `agent/*`, or `phase*` branches.
-- Temporary local branches are allowed for private experimentation, but `main` is the only canonical remote branch.
-- Validate/build before or immediately after a maintenance commit when relevant, and inspect CI.
-- Release automation may create tags/releases, never additional canonical branches.
-
-If an older document, badge, or inherited workflow describes a `dev → main` model, that wording is stale; this main-only contract wins.
+- New implementation and automatic Steward staging land on `dev`.
+- CI runs on both `dev` and `main`, plus pull requests targeting `main`.
+- `main` only receives state after `npm run ci` passes.
+- Autonomous research never force-pushes `main`; if main diverges, automatic promotion fails safely.
+- Release snapshots branch from the verified `main` commit.
+- Discovery popularity is never sufficient for canonical corpus promotion.
