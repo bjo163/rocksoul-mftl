@@ -12,11 +12,11 @@ function short(v){return crypto.createHash("sha256").update(v).digest("hex").sli
 async function jfetch(url,options={}){const r=await fetch(url,{...options,headers:{"accept":"application/json","user-agent":"rocksoul-mftl-steward/0.1",...(options.headers??{})},signal:AbortSignal.timeout(15000)});if(!r.ok)throw new Error(`HTTP ${r.status} ${url}`);return r.json()}
 function walk(dir){if(!fs.existsSync(dir))return[];return fs.readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(path.join(dir,e.name)):[path.join(dir,e.name)])}
 const existing=walk(path.join(root,"data")).filter(f=>f.endsWith(".json")).map(f=>{try{const x=JSON.parse(fs.readFileSync(f,"utf8"));return clean(x.name??x.identity?.canonical_name??x.title??"").toLowerCase()}catch{return""}}).filter(Boolean);
-function meta(body,key){return body.match(new RegExp(`${key}:([^\\n]+)`))?.[1]?.trim()??null}
+function meta(body,key){const matches=[...String(body).matchAll(new RegExp(`${key}:([^\\n]+)`,"g"))];return matches.at(-1)?.[1]?.trim()??null}
 function valueLine(body,label){return body.match(new RegExp(`\\*\\*${label}:\\*\\* ([^\\n]+)`))?.[1]?.trim()??null}
 function duplicate(title){const n=clean(title).toLowerCase();return existing.some(x=>x===n||x.includes(n)||n.includes(x))}
 function decision(issue){
-  const body=String(issue.body??""); const base=Number(meta(body,"AUTO-RESEARCH-SCORE")??0); const title=valueLine(body,"Title")??issue.title.replace(/^\[AUTO-RESEARCH\]\s*/,""); const locator=valueLine(body,"Locator");
+  const body=String(issue.body??""); const base=Number(meta(body,"AUTO-RESEARCH-SCORE")??0); const title=valueLine(body,"Title")??issue.title.replace(/^\[AUTO-RESEARCH\](?:\s+STORY\s+·)?\s*/,""); const locator=valueLine(body,"Locator");
   const dup=duplicate(title); let score=base+(locator&&locator!=="unknown"?10:0)-(dup?50:0); score=Math.max(0,Math.min(100,score));
   const action=dup?"duplicate":score>=65?"stage_candidate":score>=45?"needs_sources":"hold";
   return {title,locator,lane:meta(body,"AUTO-RESEARCH-LANE")??"unknown",score,duplicate:dup,action};
@@ -27,7 +27,7 @@ function candidate(issue,d){
 }
 async function patchIssue(issue,d){
   const marker="## MFTL Steward review"; let body=String(issue.body??"").split(marker)[0].trim();
-  body+=`\n\n${marker}\n\n- **Steward score:** ${d.score}/100\n- **Duplicate:** ${d.duplicate}\n- **Decision:** ${d.action}\n- **Reviewed at:** ${new Date().toISOString()}\n\nAUTO-RESEARCH-STATE:${d.action}`;
+  body+=`\n\n${marker}\n\n- **Steward score:** ${d.score}/100\n- **Duplicate:** ${d.duplicate}\n- **Decision:** ${d.action}\n- **Reviewed at:** ${new Date().toISOString()}\n\nROCKSOUL-RESEARCH-STATE:${d.action}\nAUTO-RESEARCH-STATE:${d.action}`;
   const [owner,name]=repo.split("/");
   await jfetch(`https://api.github.com/repos/${owner}/${name}/issues/${issue.number}`,{method:"PATCH",headers:{authorization:`Bearer ${token}`,"content-type":"application/json","x-github-api-version":"2022-11-28"},body:JSON.stringify({body})});
 }
@@ -35,6 +35,8 @@ const [owner,name]=repo.split("/");
 const issues=await jfetch(`https://api.github.com/repos/${owner}/${name}/issues?state=open&per_page=100`,{headers:{authorization:`Bearer ${token}`,"x-github-api-version":"2022-11-28"}});
 let staged=0,reviewed=0;
 for(const issue of issues.filter(i=>!i.pull_request&&i.title.startsWith("[AUTO-RESEARCH]"))){
+  const currentState=meta(issue.body,"ROCKSOUL-RESEARCH-STATE")??meta(issue.body,"AUTO-RESEARCH-STATE");
+  if(currentState&&currentState!=="discovered") continue;
   const d=decision(issue); await patchIssue(issue,d); reviewed++;
   if(d.action==="stage_candidate"){
     const c=candidate(issue,d); const file=path.join(root,"data/candidates",`${c.candidate_id}.json`);
