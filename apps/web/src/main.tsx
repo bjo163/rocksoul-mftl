@@ -300,13 +300,16 @@ function EvidenceTrail({ record }: { record: CorpusRecord }) {
 function RecordDetail({ record }: { record: CorpusRecord }) {
   return (
     <section className="record-detail" id="record-detail" aria-labelledby="record-detail-title">
-      <div className="detail-hero">
-        <div>
+      <div className="detail-hero dossier-hero">
+        <MoonWitnessAssetImage className="dossier-hero-art" pack="editorial" file="svg/archive-dossier.svg" alt="" aria-hidden="true"/>
+        <div className="dossier-hero-scrim"/>
+        <div className="dossier-hero-copy">
           <p className="mw-eyebrow">{record.family} / {record.record_type}</p>
           <h2 id="record-detail-title">{record.title}</h2>
           <p className="detail-summary">{record.detail.summary ?? "Canonical record detail."}</p>
+          <span className="dossier-ref">{record.id}</span>
         </div>
-        <div className="detail-meta">
+        <div className="detail-meta dossier-meta">
           <Badge variant={confidenceVariant(record.confidence)}>confidence {pct(record.confidence)}</Badge>
           <Badge variant="neutral">{record.status}</Badge>
           <span>{record.region ?? "GLOBAL / UNKNOWN"}</span>
@@ -434,9 +437,16 @@ function ClaimEvidenceMatrix({ records }: { records:CorpusRecord[] }) {
     const count=(stance:string)=>edges.filter(e=>e.stance===stance).length;
     return {record,claim,edges,supports:count("supports"),contradicts:count("contradicts"),context:count("contextualizes"),alternative:count("alternative_explanation")};
   }));
-  return <section className="obs-card obs-span-2"><div className="obs-title"><p className="mw-eyebrow">P0 / CLAIM × EVIDENCE MATRIX</p><h3>Coverage and disagreement</h3></div>
+  const totals={
+    support:rows.reduce((n,r)=>n+r.supports,0),
+    counter:rows.reduce((n,r)=>n+r.contradicts,0),
+    context:rows.reduce((n,r)=>n+r.context,0),
+    alternatives:rows.reduce((n,r)=>n+r.alternative,0)
+  };
+  return <section className="obs-card obs-span-2 matrix-feature"><div className="obs-title matrix-title"><div><p className="mw-eyebrow">P0 / CLAIM × EVIDENCE MATRIX</p><h3>Coverage and disagreement</h3></div>
+    <div className="matrix-summary"><span><strong>{totals.support}</strong> support</span><span><strong>{totals.counter}</strong> counter</span><span><strong>{totals.context}</strong> context</span><span><strong>{totals.alternatives}</strong> alternative</span></div></div>
     <div className="matrix-scroll"><table className="evidence-matrix"><thead><tr><th>Claim</th><th>Epistemic</th><th>Support</th><th>Counter</th><th>Context</th><th>Alternative</th><th>Sources</th></tr></thead>
-    <tbody>{rows.map(r=><tr key={r.claim.id}><td><strong>{r.claim.predicate??r.claim.id}</strong><small>{r.record.title}</small></td><td>{r.claim.epistemic_status??"—"}</td>
+    <tbody>{rows.map(r=><tr key={r.claim.id} tabIndex={0} aria-label={`${r.claim.predicate??r.claim.id}: ${r.supports} support, ${r.contradicts} counter, ${r.context} context, ${r.alternative} alternative evidence`}><td><strong>{r.claim.predicate??r.claim.id}</strong><small>{r.record.title}</small></td><td>{r.claim.epistemic_status??"—"}</td>
       {[r.supports,r.contradicts,r.context,r.alternative].map((v,i)=><td key={i}><span className={`matrix-cell level-${Math.min(3,v)}`}>{v}</span></td>)}
       <td>{new Set(r.edges.map(e=>e.source_id)).size}</td></tr>)}</tbody></table></div>
   </section>;
@@ -591,6 +601,52 @@ function DashboardAssetStrip() {
   return <div className="asset-strip">{items.map(([pack,file,label])=><div key={file}><MoonWitnessAssetImage pack={pack} file={file} alt="" aria-hidden="true"/><span>{label}</span></div>)}</div>;
 }
 
+
+function ObservatorySectionNav() {
+  const items=[
+    ["observatory","Research Desk"],["matrix-focus","Evidence"],["benchmark","Benchmark"],["map","Atlas"],["conspiracy","Conspiracy"],["explorer","Dossiers"],["method","Method"]
+  ] as const;
+  const [active,setActive]=useState("observatory");
+  useEffect(()=>{
+    const nodes=items.map(([id])=>document.getElementById(id)).filter(Boolean) as HTMLElement[];
+    const observer=new IntersectionObserver(entries=>{
+      const visible=entries.filter(entry=>entry.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];
+      if(visible?.target.id)setActive(visible.target.id);
+    },{rootMargin:"-110px 0px -72% 0px",threshold:[0,.15,.4,.7]});
+    nodes.forEach(node=>observer.observe(node));
+    return()=>observer.disconnect();
+  },[]);
+  return <nav className="section-rail" aria-label="Research observatory sections">
+    <span className="section-rail-label">INDEX /</span>
+    <div>{items.map(([id,label])=><a key={id} href={`#${id}`} className={active===id?"is-active":""}>{label}</a>)}</div>
+  </nav>;
+}
+
+function ResearchDivider({ label, note }: { label:string; note?:string }) {
+  return <div className="research-divider" aria-hidden="true">
+    <MoonWitnessAssetImage pack="texture-material" file="svg/red-thread.svg" alt="" aria-hidden="true"/>
+    <span>{label}</span>{note?<small>{note}</small>:null}
+  </div>;
+}
+
+function AtlasBand({ obs }: { obs:Observatory }) {
+  const xy=(lat:number,lon:number)=>({left:`${((lon+180)/360)*100}%`,top:`${((90-lat)/180)*100}%`});
+  const regions=[...new Map(obs.coverage_points.map(p=>[p.region,p])).values()].slice(0,10);
+  return <section className="atlas-band" id="map">
+    <div className="atlas-head"><div><p className="mw-eyebrow">P1 / WORLD RESEARCH ATLAS</p><h3>Where the corpus is looking.</h3></div>
+      <p>Canonical and candidate coverage is shown as a research footprint. Region centroids are used when exact coordinates are not yet encoded.</p></div>
+    <div className="atlas-layout">
+      <div className="atlas-map">
+        <MoonWitnessAssetImage pack="dashboard" file="widgets/world-map.svg" alt="Rocksoul world research map"/>
+        {obs.coverage_points.map(p=><button key={p.id} type="button" className={`atlas-point is-${p.kind}`} style={xy(p.lat,p.lon)} title={`${p.label} · ${p.region}`}><span/></button>)}
+        <div className="atlas-grid-overlay"/>
+      </div>
+      <div className="atlas-regions">{regions.map((p,i)=><div key={p.region}><span>{String(i+1).padStart(2,"0")}</span><strong>{p.region}</strong><small>{p.kind} coverage</small></div>)}</div>
+    </div>
+    <div className="chart-legend"><span><i className="legend-red"/>canonical</span><span><i className="legend-amber"/>candidate / regional coverage</span></div>
+  </section>;
+}
+
 function CommandCenter({ index, selectedRecord }: { index:CorpusIndex; selectedRecord:CorpusRecord|null }) {
   const analytics=index.analytics;
   const obs=analytics?.observatory;
@@ -598,7 +654,7 @@ function CommandCenter({ index, selectedRecord }: { index:CorpusIndex; selectedR
   return <section className="command-center" id="observatory">
     <div className="command-intro">
       <div><p className="mw-eyebrow">MFTL / LIVE RESEARCH DESK</p><h2>TRACE THE CLAIM.<br/><span>OPEN THE EVIDENCE.</span></h2></div>
-      <p>Every visual below is a Rocksoul asset-backed research surface. The interface separates narrative, source, evidence, counterevidence and confidence instead of collapsing them into one score.</p>
+      <p>Every research surface below separates narrative, source, evidence, counterevidence and confidence. The page alternates between cinematic context, analytical inspection and dossier reading instead of treating every block as the same dashboard card.</p>
     </div>
 
     <div className="command-grid-top">
@@ -608,14 +664,22 @@ function CommandCenter({ index, selectedRecord }: { index:CorpusIndex; selectedR
       <CoverageWidget obs={obs}/>
     </div>
 
+    <ResearchDivider label="FOLLOW THE TRACE" note="source → claim → evidence → counterevidence"/>
+    <AtlasBand obs={obs}/>
     <DashboardAssetStrip/>
+    <ResearchDivider label="ANALYZE THE CLAIM" note="coverage, disagreement, drift and benchmark"/>
 
     <div className="observatory-grid command-observatory">
       <NarrativeDriftTimeline drift={obs.drift_records[0]}/>
-      <ClaimEvidenceMatrix records={index.records}/>
+      <div id="matrix-focus" className="obs-span-2"><ClaimEvidenceMatrix records={index.records}/></div>
       <EvidenceCoverage records={index.records}/>
       <BenchmarkGrid slots={obs.benchmark_slots}/>
       <ResearchPipeline obs={obs} pipeline={analytics.candidate_pipeline}/>
+    </div>
+
+    <ResearchDivider label="QUESTION THE INTERPRETATION" note="provenance, alternatives, freshness and ownership"/>
+
+    <div className="observatory-grid command-observatory command-observatory-secondary">
       <ConspiracyResearch conspiracy={obs.conspiracy}/>
       <SourceLineage record={selectedRecord}/>
       <FreshnessTimeline events={obs.freshness_events}/>
@@ -703,6 +767,7 @@ function App() {
       <div className="metric-mantra"><strong>HUMAN CURIOSITY.<br/>MACHINE CLARITY.</strong><span>A MORE TRUTHFUL TOMORROW.</span></div>
     </section>
 
+    <ObservatorySectionNav/>
     {index?<CommandCenter index={index} selectedRecord={selectedRecord}/>:null}
 
     <section className="archive-explorer section" id="explorer">
