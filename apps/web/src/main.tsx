@@ -48,6 +48,16 @@ type Evidence = {
   status: string | null;
 };
 
+
+type ClaimChallenge = {
+  claim_id: string;
+  current_epistemic_status: string | null;
+  strongest_counterevidence: Evidence | null;
+  alternative_explanations: string[];
+  what_would_change_this: string[];
+  guardrail: string;
+};
+
 type CorpusRecord = {
   id: string;
   title: string;
@@ -146,10 +156,21 @@ function confidenceVariant(value: number | null) {
 
 function EvidenceTrail({ record }: { record: CorpusRecord }) {
   const [selectedClaimId, setSelectedClaimId] = useState(record.detail.claims[0]?.id ?? null);
+  const [challenge, setChallenge] = useState<ClaimChallenge | null>(null);
 
   useEffect(() => {
     setSelectedClaimId(record.detail.claims[0]?.id ?? null);
   }, [record.id]);
+
+  useEffect(() => {
+    if (!selectedClaimId) { setChallenge(null); return; }
+    let active = true;
+    fetch(`/api/v1/claims/${encodeURIComponent(selectedClaimId)}/challenge`)
+      .then((response) => response.ok ? response.json() : Promise.reject(new Error("challenge unavailable")))
+      .then((payload) => { if (active) setChallenge(payload.data ?? null); })
+      .catch(() => { if (active) setChallenge(null); });
+    return () => { active = false; };
+  }, [selectedClaimId]);
 
   const activeEvidence = selectedClaimId
     ? record.detail.evidence.filter((edge) => edge.target_id === selectedClaimId)
@@ -235,6 +256,24 @@ function EvidenceTrail({ record }: { record: CorpusRecord }) {
           ? `${selectedClaimId} has ${activeEvidence.length} evidence edge(s) linked to ${activeSourceIds.size} source record(s).`
           : `${record.id} has ${record.detail.claims.length} claims and ${record.detail.evidence.length} evidence edges.`}
       </div>
+
+      {challenge ? (
+        <div className="challenge-panel">
+          <div>
+            <p className="mw-eyebrow">STRONGEST CASE AGAINST</p>
+            <strong>{challenge.strongest_counterevidence?.summary ?? "No explicit counterevidence edge recorded yet."}</strong>
+          </div>
+          <div>
+            <p className="mw-eyebrow">ALTERNATIVE EXPLANATIONS</p>
+            <ul>{challenge.alternative_explanations.length ? challenge.alternative_explanations.map((item) => <li key={item}>{item}</li>) : <li>None encoded yet.</li>}</ul>
+          </div>
+          <div>
+            <p className="mw-eyebrow">WHAT WOULD CHANGE THIS?</p>
+            <ul>{challenge.what_would_change_this.map((item) => <li key={item}>{item}</li>)}</ul>
+          </div>
+          <p className="challenge-guardrail">{challenge.guardrail}</p>
+        </div>
+      ) : null}
     </section>
   );
 }
