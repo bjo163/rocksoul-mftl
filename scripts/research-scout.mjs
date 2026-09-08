@@ -40,7 +40,7 @@ async function seenFingerprints(){
   const [owner,name]=repo.split("/");
   for(let page=1;page<=5;page++){
     const items=await jfetch(`https://api.github.com/repos/${owner}/${name}/issues?state=all&per_page=100&page=${page}`,{headers:{authorization:`Bearer ${token}`,"x-github-api-version":"2022-11-28"}});
-    for(const i of items){for(const m of String(i.body??"").matchAll(/AUTO-RESEARCH-FP:([a-f0-9]{16})/g))seen.add(m[1])}
+    for(const i of items){for(const m of String(i.body??"").matchAll(/(?:ROCKSOUL-RESEARCH-FP|AUTO-RESEARCH-FP):([a-f0-9]{16})/g))seen.add(m[1])}
     if(items.length<100)break;
   }
   return seen;
@@ -48,11 +48,106 @@ async function seenFingerprints(){
 function score(x){return (x.doi?20:0)+Math.min(25,Math.log10(1+x.citations)*10)+(x.year&&x.year>=minYear?10:0)+(x.venue?5:0)}
 function body(topic,query,x,fp){
   const conspiracy=topic.candidate_type==="conspiracy_narrative";
-  return [`## Auto research lead`,``,`**Lane:** ${topic.id}  `,`**Suggested candidate type:** ${topic.candidate_type}  `,`**Query:** ${query}  `,``,`## Scholarly metadata`,``,`- **Title:** ${clean(x.title)}`,`- **Year:** ${x.year??"unknown"}`,`- **Venue:** ${clean(x.venue??"unknown")}`,`- **Provider:** ${x.provider}`,`- **Locator:** ${locator(x)??"unknown"}`,`- **Citation signal:** ${x.citations}`,``,`## Steward boundary`,``,`This is a discovery lead, not canonical truth. The Steward must still check duplication, source authority, counterevidence, alternative explanations, and whether the paper actually supports the inferred research topic.`,conspiracy?`\n**Conspiracy guardrail:** research the narrative, provenance, evidence claims, counterevidence, and transmission. Popularity is not evidence that the alleged conspiracy occurred.`:"",``,`AUTO-RESEARCH-FP:${fp}`,`AUTO-RESEARCH-LANE:${topic.id}`,`AUTO-RESEARCH-SCORE:${Math.round(score(x))}`,`AUTO-RESEARCH-STATE:discovered`].join("\n");
+  return [
+    "![ROCKSOUL STORY research](https://raw.githubusercontent.com/bjo163/rocksoul-assets/main/moonwitness/cinematic-hero-pack/png/archive-room.png)",
+    "",
+    "## Research Card",
+    "",
+    "| Field | Value |",
+    "|---|---|",
+    "| Domain | **STORY** |",
+    "| Canonical owner | \`rocksoul-mftl\` |",
+    "| State | \`discovered\` |",
+    `| Lane | \`${topic.id}\` |`,
+    "| Origin | \`mftl-scout\` |",
+    "",
+    "## Research Question",
+    "",
+    "> **What was told?**",
+    "",
+    `Investigate whether the discovered scholarly work materially informs the STORY lane **${topic.id}** without treating metadata as evidence.`,
+    "",
+    "## Why This Matters",
+    "",
+    `Potential source for a reviewable ${topic.candidate_type} lead. It must be inspected before claim-level or narrative extraction.`,
+    "",
+    "## Discovery Snapshot",
+    "",
+    `- **Title:** ${clean(x.title)}`,
+    `- **Year:** ${x.year??"unknown"}`,
+    `- **Venue:** ${clean(x.venue??"unknown")}`,
+    `- **Provider:** ${x.provider}`,
+    `- **Locator:** ${locator(x)??"unknown"}`,
+    `- **Citation signal:** ${x.citations}`,
+    `- **Query:** ${query}`,
+    "",
+    "## Source Candidates",
+    "",
+    "| Source | Type | Date | Link / locator | What it may support |",
+    "|---|---|---|---|---|",
+    `| ${clean(x.title).replace(/\\|/g,"\\\\|")} | ${x.source_type??"academic_work"} | ${x.year??"unknown"} | ${locator(x)??"unknown"} | STORY research lead; source inspection required |`,
+    "",
+    "## STORY Lens",
+    "",
+    `Suggested candidate type: **${topic.candidate_type}**. Examine narrative provenance, variants, motifs, transmission, and how claims are framed. Do not infer EVENT truth from STORY evidence.`,
+    conspiracy?"\n**Conspiracy guardrail:** document provenance, evidence claims, counterevidence and transmission. Popularity is not evidence that the alleged conspiracy occurred.":"",
+    "",
+    "## Counterevidence & Uncertainty",
+    "",
+    "- Source content not yet inspected.",
+    "- Topic inference is based on discovery metadata.",
+    "- Competing interpretations and counterevidence remain unreviewed.",
+    "",
+    "## Coverage Gaps / Missing Voices",
+    "",
+    "- Check primary/traditional sources, alternative versions, relevant languages and regional scholarship.",
+    "",
+    "## Duplicate Check",
+    "",
+    "- [ ] Existing research issues checked",
+    "- [ ] Existing candidates checked",
+    "- [ ] Existing STORY records checked",
+    "",
+    "## Cross-Domain Routing",
+    "",
+    "Route EVENT/PERSON/TEXT/LAW/PERSPECTIVE questions to their canonical owners; do not mint them here.",
+    "",
+    "## Steward Gate",
+    "",
+    "- [x] Issue exists before candidate work",
+    "- [ ] Actual source content inspected",
+    "- [x] Discovery metadata marked non-canonical",
+    "- [x] STORY ownership boundary preserved",
+    "",
+    "## Suggested Next Action",
+    "",
+    "- [x] Steward triage required",
+    "- [ ] Stage needs_sources candidate",
+    "- [ ] Inspect source",
+    "- [ ] Prepare reviewable STORY extraction",
+    "- [ ] Reject / duplicate",
+    "",
+    "## Machine Metadata",
+    "",
+    "\`\`\`text",
+    "ROCKSOUL-RESEARCH-CONTRACT:v1",
+    "ROCKSOUL-RESEARCH-DOMAIN:STORY",
+    "ROCKSOUL-RESEARCH-OWNER:rocksoul-mftl",
+    "ROCKSOUL-RESEARCH-ORIGIN:mftl-scout",
+    `ROCKSOUL-RESEARCH-FP:${fp}`,
+    "ROCKSOUL-RESEARCH-STATE:discovered",
+    `AUTO-RESEARCH-FP:${fp}`,
+    `AUTO-RESEARCH-LANE:${topic.id}`,
+    `AUTO-RESEARCH-SCORE:${Math.round(score(x))}`,
+    "AUTO-RESEARCH-STATE:discovered",
+    "\`\`\`",
+    "",
+    "> **ISSUE FIRST. SOURCE SECOND. CANON LAST.**"
+  ].join("\\n");
 }
 async function createIssue(topic,query,x,fp){
   if(outputPath){findings.push({topic,query,item:x,fingerprint:fp,score:score(x)});return}
-  const payload={title:`[AUTO-RESEARCH] ${clean(x.title).slice(0,110)}`,body:body(topic,query,x,fp)};
+  const payload={title:`[AUTO-RESEARCH] STORY · ${clean(x.title).slice(0,100)}`,body:body(topic,query,x,fp)};
   if(dryRun){console.log(JSON.stringify(payload,null,2));return}
   const [owner,name]=repo.split("/");
   await jfetch(`https://api.github.com/repos/${owner}/${name}/issues`,{method:"POST",headers:{authorization:`Bearer ${token}`,"content-type":"application/json","x-github-api-version":"2022-11-28"},body:JSON.stringify(payload)});
