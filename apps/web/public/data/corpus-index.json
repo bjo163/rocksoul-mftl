@@ -1,6 +1,6 @@
 {
-  "schema_version": "corpus-index.v0.3",
-  "generated_at": "2026-09-08T02:32:00Z",
+  "schema_version": "corpus-index.v0.4",
+  "generated_at": "2026-09-08T03:07:00Z",
   "counts": {
     "canonical_records": 2,
     "candidates": 16,
@@ -241,7 +241,8 @@
             "status": "reviewed"
           }
         ]
-      }
+      },
+      "qualified_ref": "mftl:MYTH-MES-INANA-DESCENT-000001"
     },
     {
       "id": "MYTH-JERUSALEM-TEMPLE-DESTRUCTION-PROPHECY-000001",
@@ -378,7 +379,8 @@
             "status": "reviewed"
           }
         ]
-      }
+      },
+      "qualified_ref": "mftl:MYTH-JERUSALEM-TEMPLE-DESTRUCTION-PROPHECY-000001"
     }
   ]
 }
