@@ -443,7 +443,7 @@ function ClaimEvidenceMatrix({ records }: { records:CorpusRecord[] }) {
 }
 
 function BenchmarkGrid({ slots }: { slots:Observatory["benchmark_slots"] }) {
-  return <section className="obs-card obs-span-2"><div className="obs-title"><p className="mw-eyebrow">P0 / EPISTEMIC BENCHMARK 25</p><h3>Failure-mode coverage</h3></div>
+  return <section className="obs-card obs-span-2" id="benchmark"><div className="obs-title"><p className="mw-eyebrow">P0 / EPISTEMIC BENCHMARK 25</p><h3>Failure-mode coverage</h3></div>
     <div className="benchmark-grid">{slots.map(slot=><div className={`benchmark-slot is-${slot.status.replaceAll("_","-")}`} key={slot.id}><span>{slot.id}</span><strong>{slot.failure_mode.replaceAll("_"," ")}</strong><small>{slot.status} · {slot.ref}</small></div>)}</div>
   </section>;
 }
@@ -481,7 +481,7 @@ function WorldEvidenceMap({ points }: { points:Observatory["coverage_points"] })
 }
 
 function ConspiracyResearch({ conspiracy }: { conspiracy:Observatory["conspiracy"] }) {
-  return <section className="obs-card"><div className="obs-title"><p className="mw-eyebrow">P1 / CONSPIRACY NARRATIVE</p><h3>{conspiracy.integrity_code} research lane</h3></div>
+  return <section className="obs-card" id="conspiracy"><div className="obs-title"><p className="mw-eyebrow">P1 / CONSPIRACY NARRATIVE</p><h3>{conspiracy.integrity_code} research lane</h3></div>
     <div className="conspiracy-flow"><span>ALLEGED CLAIM</span><b>→</b><span>PROVENANCE</span><b>→</b><span>PROPONENT EVIDENCE</span><b>→</b><span>COUNTEREVIDENCE</span><b>→</b><span>ALTERNATIVES</span></div>
     <p className="obs-copy">{conspiracy.lane_active?"Automatic lane is active.":"Lane inactive."} Popularity or repetition never upgrades an alleged conspiracy into fact.</p>
     <div className="mini-list">{conspiracy.staged_candidates.length?conspiracy.staged_candidates.map(c=><div key={c.id}><strong>{c.name}</strong><small>{c.status} · {c.region}</small></div>):<span className="muted">No conspiracy candidate staged yet — the lane remains active and searchable.</span>}</div>
@@ -571,7 +571,7 @@ function EditorialPrinciple() {
 function CoverageWidget({ obs }: { obs: Observatory }) {
   const canonical=obs.coverage_points.filter(p=>p.kind==="canonical").length;
   const candidate=obs.coverage_points.filter(p=>p.kind==="candidate").length;
-  return <section className="command-card coverage-card">
+  return <section className="command-card coverage-card" id="map">
     <div className="command-card-head"><div><p className="mw-eyebrow">WORLD COVERAGE</p><h3>{obs.coverage_points.length} mapped signals</h3></div><span>{canonical} canonical · {candidate} candidate</span></div>
     <div className="coverage-asset-wrap">
       <MoonWitnessAssetImage pack="dashboard" file="widgets/world-map.svg" alt="Rocksoul world coverage dashboard asset"/>
