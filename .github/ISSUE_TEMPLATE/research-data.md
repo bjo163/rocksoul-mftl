@@ -1,6 +1,6 @@
 ---
 name: Research Lead
-about: Add a sourced mythology, folklore, supernatural-claim, or ritual research lead
+about: Add a sourced mythology, folklore, conspiracy-narrative, supernatural-claim, or ritual research lead
 title: "[RESEARCH] "
 labels: ""
 assignees: ""
@@ -8,7 +8,7 @@ assignees: ""
 
 ## Topic
 
-<!-- Name of the myth, folklore, claim, ritual, text, entity, or tradition. -->
+<!-- Name of the myth, folklore, conspiracy narrative, rumor, claim, ritual, text, entity, or tradition. -->
 
 ## Region / tradition
 
