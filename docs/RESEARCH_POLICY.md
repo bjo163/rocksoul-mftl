@@ -53,4 +53,8 @@ Assessment codes describe **claim patterns and documented practices**. A histori
 
 ## Automation rule
 
-Automated runs may discover and draft records. They may not fabricate citations or upgrade uncertain evidence to certainty. When evidence is insufficient, mark `needs_review: true`.
+Automated scheduled Scout runs may discover research leads. MFTL Steward automatically reviews discovery intake and may stage `needs_sources` candidates, but neither Scout nor Steward may fabricate citations, manufacture claim-level evidence, or upgrade uncertainty to certainty. Canonical data must satisfy the canonical schemas and evidence gates; unresolved material may remain staged indefinitely.
+
+## Conspiracy narratives
+
+Conspiracy narratives are in scope as narrative and epistemic research objects. Document provenance, transmission, sources invoked by proponents, counterevidence, alternative explanations, and historical/social effects. Do not treat the existence or popularity of a conspiracy narrative as evidence that the alleged conspiracy occurred. Do not infer deceptive intent without evidence of intent.
