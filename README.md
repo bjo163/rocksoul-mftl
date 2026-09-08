@@ -10,7 +10,7 @@
 
 A provenance-first **Narrative & Belief Intelligence Corpus** for mythology, folklore, supernatural claims, historical ritual traditions, information integrity, deviation, and explainable comparative analysis.
 
-**ROCKSOUL RESEARCH · STORY × EVENT × PERSON × TEXT**
+**MOONWITNESS · ROCKSOUL RESEARCH · STORY × EVENT × PERSON × TEXT × LAW**
 
 <br/>
 
@@ -18,6 +18,7 @@ A provenance-first **Narrative & Belief Intelligence Corpus** for mythology, fol
 ![Workflow](https://img.shields.io/badge/workflow-main--only-111111)
 ![Runtime](https://img.shields.io/badge/Node.js-22-3C873A)
 ![Language](https://img.shields.io/badge/TypeScript-strict-3178C6)
+![Domain](https://img.shields.io/badge/domain-STORY-6F6F6F)
 ![Corpus](https://img.shields.io/badge/corpus-provenance--first-B43A32)
 ![Families](https://img.shields.io/badge/record_families-18-6F6F6F)
 
@@ -25,11 +26,7 @@ A provenance-first **Narrative & Belief Intelligence Corpus** for mythology, fol
 
 **WORLD CORPUS · EVIDENCE GRAPH · SOURCE LINEAGE · NARRATIVE INTEGRITY · MIZAN**
 
-[Explore the architecture](#the-intelligence-graph) ·
-[Browse the corpus](#corpus-snapshot) ·
-[Research queue](#research-queue) ·
-[Read the method](docs/INDEX.md) ·
-[View roadmap](docs/ROADMAP.md)
+[Architecture](#the-intelligence-graph) · [Corpus](#corpus-snapshot) · [Research queue](#research-queue) · [Documentation](#documentation) · [Roadmap](docs/ROADMAP.md)
 
 </div>
 
@@ -46,23 +43,25 @@ A textual attestation is not the same thing as empirical proof.
 
 That separation is the foundation of MFTL.
 
-## Rocksoul Research ownership
+## MoonWitness / Rocksoul research map
 
 ```text
 MFTL       → STORY / NARRATIVE
 LEGEND     → CANONICAL EVENT / HISTORICAL CORE
 SUPERHERO  → PERSON / HUMAN AGENCY
 RGBL       → TEXT / SCRIPTURE / REVELATION-REFERENCE
+AWS        → LAW / APPLICABILITY / LEGAL ANALYSIS
 ```
 
-| Repository | Domain | Question | Mantra |
+| Repository | Domain | Core question | Mantra |
 |---|---|---|---|
-| **rocksoul-mftl** | Narrative Intelligence | What was told? | TRACE THE STORY. |
-| **rocksoul-legend** | Historical & Event Intelligence | What happened? | TRACE THE EVENT. |
-| **rocksoul-superhero** | Actor & Transmission Intelligence | Who was involved? | TRACE THE PERSON. |
-| **rocksoul-rgbl** | Scripture & Revelation Reference | What does the exact text say? | TRACE THE TEXT. |
+| **`rocksoul-mftl`** | STORY | What was told? | TRACE THE STORY. |
+| [`rocksoul-legend`](https://github.com/bjo163/rocksoul-legend) | EVENT | What happened? | TRACE THE EVENT. |
+| [`rocksoul-superhero`](https://github.com/bjo163/rocksoul-superhero) | PERSON | Who was involved? | TRACE THE PERSON. |
+| [`rocksoul-rgbl`](https://github.com/bjo163/rocksoul-rgbl) | TEXT | What does the exact text say? | TRACE THE TEXT. |
+| [`rocksoul-aws`](https://github.com/bjo163/rocksoul-aws) | LAW | Was it allowed? | TRACE THE LAW. |
 
-MFTL may describe **event reports, event claims, or events as narrated**, but canonical historical-event ownership belongs to LEGEND. Human actor/transmission ownership belongs to SUPERHERO. Exact scripture/text passages and their corpus provenance belong to RGBL.
+MFTL may describe **event reports, event claims, persons as narrated, quoted texts, or legal claims as narrative material**, but canonical ownership remains separated: EVENT → LEGEND, PERSON → SUPERHERO, exact TEXT → RGBL, LAW → AWS.
 
 [Read the interoperability contract →](docs/INTEROP.md)
 
@@ -80,7 +79,7 @@ LEGEND EVENT
 SUPERHERO PERSON
 ```
 
-Mark 13:2 supplies the exact textual prediction; MFTL owns the prediction narrative; LEGEND independently models the 70 CE destruction; SUPERHERO models Josephus as witness/recorder. **Text–event correspondence is preserved without silently becoming a supernatural-fulfillment verdict.**
+Mark 13:2 supplies the exact textual prediction; MFTL owns the prediction narrative; LEGEND independently models the 70 CE destruction; SUPERHERO models Josephus as witness/recorder. **Text–event correspondence is preserved without silently becoming a supernatural-fulfillment verdict.** AWS can consume the same cross-repository graph when a later legal question exists, without changing the four-way historical proof.
 
 [Read the shared case →](docs/cases/JERUSALEM-70-TEMPLE.md)
 
@@ -91,19 +90,15 @@ flowchart LR
     A["NARRATIVE / EVENT-CLAIM / CLAIM"] --> B["ENTITY + PRACTICE"]
     B --> C["SOURCE + PROVENANCE"]
     C --> D["EVIDENCE"]
-
     D --> E["SUPPORT"]
     D --> F["COUNTEREVIDENCE"]
     D --> G["ALTERNATIVE EXPLANATION"]
-
     E --> H["HISTORICITY"]
     F --> H
     G --> H
-
     H --> I["INTEGRITY"]
     I --> J["DEVIATION"]
     J --> K["OPTIONAL MIZAN"]
-
     K --> L["EXPLAINABLE RESULT"]
 ```
 
@@ -115,8 +110,6 @@ Every derived conclusion must remain traceable to claims, sources, evidence, unc
 
 </div>
 
----
-
 ## Four analytical layers
 
 | | Layer | Purpose |
@@ -125,8 +118,6 @@ Every derived conclusion must remain traceable to claims, sources, evidence, unc
 | **02** | **INTEGRITY** | Detect misinformation, disinformation, fabrication, false attribution, misleading context, propaganda, and related epistemic distortions. |
 | **03** | **DEVIATION** | Compare an observed text, teaching, practice, translation, or narrative against an explicit baseline. |
 | **04** | **MIZAN** | Optional explainable normative/theological assessment attached to explicit evidence—not to cultures or populations. |
-
----
 
 ## Corpus snapshot
 
@@ -164,49 +155,39 @@ empirically proven supernatural event
 
 The original discovery candidate is preserved as `merged`, so the path from discovery → research → canonicalization stays auditable.
 
----
-
 ## Research Queue
 
 Research discovered by **MFTL Steward** goes to GitHub Issues first. It does **not** automatically become corpus truth.
 
-```text
-BROWSE
-  ↓
-RESEARCH ISSUE
-  ↓
-REVIEW
-  ↓
-CANDIDATE / CANONICAL / MERGE / REJECT
+```mermaid
+flowchart LR
+    A["BROWSE"] --> B["RESEARCH ISSUE"]
+    B --> C["REVIEW"]
+    C --> D["CANDIDATE / CANONICAL / MERGE / REJECT"]
 ```
 
-**[View open research →](https://github.com/bjo163/rocksoul-mftl/issues?q=is%3Aissue+is%3Aopen+%22%5BRESEARCH%5D%22)** ·
-**[Create research issue →](https://github.com/bjo163/rocksoul-mftl/issues/new?template=research-data.md&title=%5BRESEARCH%5D+)**
+**[View open research →](https://github.com/bjo163/rocksoul-mftl/issues?q=is%3Aissue+is%3Aopen+%22%5BRESEARCH%5D%22)** · **[Create research issue →](https://github.com/bjo163/rocksoul-mftl/issues/new?template=research-data.md&title=%5BRESEARCH%5D+)**
 
 A research issue should contain only six things: **topic, region/tradition, summary, sources, uncertainty, and suggested next action**.
 
 ## More than a mythology database
 
-MFTL is designed around **18 record families**, including:
+MFTL is designed around **18 record families**:
 
 ```text
 NARRATIVE          ENTITY             CLAIM
 PRACTICE           BELIEF / DOCTRINE  TEXT / TRANSMISSION
-PROPHECY            PARANORMAL         PLACE / ARTIFACT
-EVENT-REPORT        INTEGRITY          DEVIATION
-PSEUDOKNOWLEDGE     MOVEMENT           SYMBOL / MOTIF
-SOURCE / EVIDENCE   COMPARISON         ASSESSMENT
+PROPHECY           PARANORMAL         PLACE / ARTIFACT
+EVENT-REPORT       INTEGRITY          DEVIATION
+PSEUDOKNOWLEDGE    MOVEMENT           SYMBOL / MOTIF
+SOURCE / EVIDENCE  COMPARISON         ASSESSMENT
 ```
 
 This allows the same graph model to investigate mythology, folklore, ritual, prophecy, textual drift, pseudohistory, hoaxes, manipulated narratives, and supernatural reports without forcing them into the same category.
 
----
-
 ## Evidence before certainty
 
 MFTL avoids a single rhetorical `truth_score`.
-
-Instead, the graph can preserve:
 
 ```text
 CLAIM
@@ -219,24 +200,12 @@ CLAIM
 
 Possible epistemic states include:
 
-`supported_as_textual_attestation` ·
-`supported_as_historical_attestation` ·
-`probable` ·
-`plausible` ·
-`unverified` ·
-`disputed` ·
-`contradicted` ·
-`fabricated` ·
-`indeterminate` ·
-`not_empirically_testable`
-
----
+`supported_as_textual_attestation` · `supported_as_historical_attestation` · `probable` · `plausible` · `unverified` · `disputed` · `contradicted` · `fabricated` · `indeterminate` · `not_empirically_testable`
 
 ## Repository atlas
 
 ```text
 rocksoul-mftl/
-│
 ├── data/
 │   ├── candidates/     discovery staging + merged provenance
 │   ├── records/        canonical myth / narrative records
@@ -246,7 +215,6 @@ rocksoul-mftl/
 │   ├── sources/        reusable provenance registry
 │   ├── evidence/       support / contradiction / alternatives
 │   └── indexes/        corpus coverage metadata
-│
 ├── schemas/            machine-valid JSON contracts
 ├── taxonomy/           record families + analytical taxonomies
 ├── docs/               research policy + architecture
@@ -254,8 +222,6 @@ rocksoul-mftl/
 ├── scripts/            validation + index generation
 └── .github/            CI + issue intake
 ```
-
----
 
 ## Research pipeline
 
@@ -275,8 +241,6 @@ flowchart LR
 This repository intentionally uses **`main` as the only working branch**.
 
 Automated research is **issue-first**: MFTL Steward browses, de-duplicates, and creates or updates a `[RESEARCH]` Issue. It does not directly add or canonicalize corpus research data. Small README/docs hygiene fixes may still be committed to `main` when useful and CI-safe.
-
----
 
 ## Research guardrails
 
@@ -298,8 +262,6 @@ The theological layer is optional and remains separate from academic classificat
 
 [Read the full research policy →](docs/RESEARCH_POLICY.md)
 
----
-
 ## Documentation
 
 | Document | What it defines |
@@ -309,11 +271,9 @@ The theological layer is optional and remains separate from academic classificat
 | **[Record Families](docs/RECORD_FAMILIES.md)** | 18 extensible intelligence families |
 | **[Narrative Integrity](docs/NARRATIVE_INTEGRITY.md)** | Hoax, fake-news, distortion, and deviation model |
 | **[Research Policy](docs/RESEARCH_POLICY.md)** | Source quality, uncertainty, provenance, and dignity rules |
-| **[Interoperability](docs/INTEROP.md)** | Ownership boundaries and links to LEGEND / SUPERHERO |
+| **[Interoperability](docs/INTEROP.md)** | Ownership boundaries across the Rocksoul research family |
 | **[Automation](docs/AUTOMATION.md)** | Main-only hourly research contract |
 | **[Roadmap](docs/ROADMAP.md)** | Current and future milestones |
-
----
 
 <details>
 <summary><strong>Local development</strong></summary>
@@ -324,29 +284,9 @@ The theological layer is optional and remains separate from academic classificat
 git clone https://github.com/bjo163/rocksoul-mftl.git
 cd rocksoul-mftl
 npm install
-```
-
-Validate all machine contracts:
-
-```bash
 npm run validate
-```
-
-Generate the corpus explorer index:
-
-```bash
 npm run index
-```
-
-Run the research UI:
-
-```bash
 npm run dev
-```
-
-Build everything:
-
-```bash
 npm run build
 ```
 
@@ -368,8 +308,6 @@ npm run build
 | Deviation assessment | `DEVIATION-...` |
 
 </details>
-
----
 
 ## Current horizon
 
@@ -395,6 +333,6 @@ See **[the roadmap](docs/ROADMAP.md)** for acceptance criteria and upcoming mile
 **Not a list of gods. Not a list of verdicts.  
 A traceable world evidence graph.**
 
-`MFTL / rocksoul research`
+`MFTL / MoonWitness · Rocksoul Research`
 
 </div>
