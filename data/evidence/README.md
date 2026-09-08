@@ -4,6 +4,10 @@
 
 Evidence records make support, contradiction, context, and alternative explanations explicit. Nothing gets to quietly disappear because it is inconvenient.
 
+> **/// CLAIMS TALK. EVIDENCE ANSWERS. ///**
+
+Evidence records make support, contradiction, context, and alternative explanations explicit. Nothing gets to quietly disappear because it is inconvenient.
+
 Evidence records connect a target claim/record to a source and state the relation explicitly.
 
 Supported stances:
