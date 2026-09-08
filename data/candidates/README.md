@@ -1,5 +1,9 @@
 # Discovery Candidates
 
+> **/// RAW LEADS. NOT TRUTH. ///**
+
+This is the messy edge of MFTL: useful leads, incomplete context, unresolved claims. A candidate earns promotion only when the receipts survive review.
+
 This directory is the staging area for automated research.
 
 A candidate is **not** a canonical MFTL fact record and must not be rendered as a verified public result.
