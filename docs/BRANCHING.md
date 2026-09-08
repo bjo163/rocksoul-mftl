@@ -1,20 +1,20 @@
 # Branching Contract
 
-MFTL uses a two-stage release flow:
+MFTL uses **`main` as its single working branch**.
 
 ```text
-dev   ← integration + autonomous research staging
-  ↓ validated fast-forward / reviewed PR
-main  ← stable + production + release source
-  ↓
-release/vX.Y.Z ← release snapshot
+research issue / small maintenance fix
+              ↓
+            main
+              ↓
+      validate / test / build
 ```
 
 ## Rules
 
-- New implementation and automatic Steward staging land on `dev`.
-- CI runs on both `dev` and `main`, plus pull requests targeting `main`.
-- `main` only receives state after `npm run ci` passes.
-- Autonomous research never force-pushes `main`; if main diverges, automatic promotion fails safely.
-- Release snapshots branch from the verified `main` commit.
+- All repository work lands on `main`; do not use `dev`, release working branches, or automated promotion branches.
+- CI runs on pushes to `main` and pull requests targeting `main`.
+- Research browsing creates or updates GitHub research Issues first; it does not directly write or canonicalize corpus records.
+- Small repository hygiene fixes may be committed only when low risk and when `npm run ci` remains healthy.
 - Discovery popularity is never sufficient for canonical corpus promotion.
+- Historical release tags may exist, but branch-based release snapshots are not part of the working model.
