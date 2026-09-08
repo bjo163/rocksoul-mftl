@@ -74,7 +74,8 @@ That separation is the foundation of MFTL.
 
 </div>
 
-- **`rocksoul-assets`** owns shared visual language, application shell, icons, dashboard components, data-viz, system states, and motion references.
+- **`rocksoul-assets`** owns the canonical visual language, brand, icons, graph/data-viz, system states, motion, and v1.3 asset packs.
+- **`@rocksoul/ui`** is the production React implementation consumed by the MFTL web explorer; MFTL does not fork the shared design system.
 - **`rocksoul-crayon`** is the operational console that exposes STORY resources beside EVENT, PERSON, TEXT, and LAW.
 - **MFTL remains canonical owner of STORY / narrative / belief intelligence.**
 
