@@ -160,3 +160,41 @@ LEGAL RESULT ≠ MIZAN
 ```
 
 The first five-domain proof remains Jerusalem 70 CE. The historical/textual four-way chain stays intact; AWS adds a separate applicability analysis.
+
+## Sixth research domain — JIZZ
+
+`rocksoul-jizz` owns **PERSPECTIVE / observation / framing**.
+
+```text
+MFTL       STORY         What was told?
+LEGEND     EVENT         What happened?
+SUPERHERO  PERSON        Who was involved?
+RGBL       TEXT          What does the exact source text say?
+AWS        LAW           Was it legally applicable?
+JIZZ       PERSPECTIVE   How is the record observed, framed, or situated?
+```
+
+JIZZ may reference MFTL records but must not become a second STORY owner. MFTL may record a source's narrative framing as STORY evidence, but a canonical ecosystem perspective record belongs to JIZZ.
+
+Qualified notation:
+
+```text
+jizz:PERSP-...
+```
+
+`PERSPECTIVE ≠ STORY` and `PERSPECTIVE ≠ VERDICT`.
+
+## Relationship layer — Correlation
+
+`rocksoul-correlation` owns reviewed **RELATIONSHIP** semantics between independently canonical records.
+
+```text
+correlation:CORR-...
+```
+
+MFTL-local links remain valid when they are necessary to preserve narrative graph integrity. They do not become a competing global relationship registry. Cross-domain reviewed relationships, explainability metadata, freshness, and re-analysis belong to Correlation.
+
+```text
+LOCAL GRAPH LINK ≠ GLOBAL RELATIONSHIP OWNERSHIP
+CORRELATION ≠ CAUSATION
+```
