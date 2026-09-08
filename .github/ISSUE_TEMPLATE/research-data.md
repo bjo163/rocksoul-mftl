@@ -1,48 +1,94 @@
 ---
-name: Research Lead
-about: Add a sourced mythology, folklore, conspiracy-narrative, supernatural-claim, or ritual research lead
-title: "[RESEARCH] "
+name: STORY Research Lead
+about: Open an issue-first STORY research lead for MFTL
+title: "[RESEARCH] STORY · "
 labels: ""
 assignees: ""
 ---
 
-## Topic
+![ROCKSOUL STORY research](https://raw.githubusercontent.com/bjo163/rocksoul-assets/main/moonwitness/cinematic-hero-pack/png/archive-room.png)
 
-<!-- Name of the myth, folklore, conspiracy narrative, rumor, claim, ritual, text, entity, or tradition. -->
+## Research Card
 
-## Region / tradition
+| Field | Value |
+|---|---|
+| Domain | **STORY** |
+| Canonical owner | `rocksoul-mftl` |
+| State | `discovered` |
+| Origin | `manual` |
+| Canonical branch | `main` |
 
-<!-- Country, region, community, historical tradition, or cultural context. -->
+## Research Question
 
-## Summary
+> **What was told?**
 
-<!-- What is worth investigating? Keep it concise and descriptive. -->
+<!-- State the narrative/myth/folklore/transmission question precisely. -->
 
-## Sources
+## Why This Matters
 
-<!-- Prefer primary, academic, museum, library, archive, or institutional sources. -->
+<!-- Why is this narrative lead worth research now? -->
 
-| Source | Type | Link / locator | What it supports |
-|---|---|---|---|
-| | | | |
+## Discovery Snapshot
 
-## Uncertainty
+- **Topic / title:**
+- **Region / tradition:**
+- **Language:**
+- **Time range:**
+- **Discovery context:**
 
-<!-- Conflicting versions, uncertain dating, disputed interpretation, source limitations, etc. -->
+## Source Candidates
 
-## Duplicate check
+| Source | Type | Date | Link / locator | What it may support |
+|---|---|---|---|---|
+| | | | | |
 
-<!-- Existing issue, candidate, canonical record, entity, or claim checked. -->
+## STORY Lens
 
-- [ ] No obvious duplicate found
+<!-- Narrative provenance, variants, motifs, transmission, retelling, claim framing. Keep EVENT truth separate. -->
 
-## Suggested next action
+## Counterevidence & Uncertainty
+
+<!-- Conflicting versions, uncertain dating, disputed interpretation, source limitations, alternative explanations. -->
+
+## Coverage Gaps / Missing Voices
+
+<!-- Missing traditions, languages, regions, primary sources, counter-narratives, or scholarly perspectives. -->
+
+## Duplicate Check
+
+- [ ] Existing research issues checked
+- [ ] Existing candidates checked
+- [ ] Existing STORY records checked
+
+## Cross-Domain Routing
+
+<!-- Optional foreign context only: EVENT/PERSON/TEXT/LAW/PERSPECTIVE refs or owner-repo issues. -->
+
+## Steward Gate
+
+- [ ] Issue exists before candidate/canonical work
+- [ ] Actual source content has been inspected
+- [ ] Discovery metadata is not being treated as evidence
+- [ ] STORY ownership boundary is preserved
+
+## Suggested Next Action
 
 - [ ] Keep as research lead
-- [ ] Draft discovery candidate
-- [ ] Strengthen existing candidate
-- [ ] Consider canonical review
+- [ ] Stage `needs_sources` candidate
+- [ ] Inspect source
+- [ ] Prepare reviewable STORY extraction
 - [ ] Merge with existing research
-- [ ] Reject / insufficient evidence
+- [ ] Reject / duplicate
 
-> Research issues are an inbox, not canonical truth. Academic description and optional theological assessment must remain separate.
+## Machine Metadata
+
+```text
+ROCKSOUL-RESEARCH-CONTRACT:v1
+ROCKSOUL-RESEARCH-DOMAIN:STORY
+ROCKSOUL-RESEARCH-OWNER:rocksoul-mftl
+ROCKSOUL-RESEARCH-ORIGIN:manual
+ROCKSOUL-RESEARCH-FP:manual
+ROCKSOUL-RESEARCH-STATE:discovered
+```
+
+> **ISSUE FIRST. SOURCE SECOND. CANON LAST.** This issue is an operational research envelope, not canonical truth.
