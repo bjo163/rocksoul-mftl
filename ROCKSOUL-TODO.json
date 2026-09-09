@@ -1,5 +1,14 @@
 {
   "schema": "rocksoul.todo.v1",
   "repository_id": "rocksoul-mftl",
-  "tasks": []
+  "tasks": [
+    {
+      "id": "MFTL-001",
+      "title": "Maintain repository control contract and local TODO",
+      "status": "NOT_STARTED",
+      "scope": "repository",
+      "github_issue": "https://github.com/bjo163/rocksoul-mftl/issues/32",
+      "evidence": []
+    }
+  ]
 }
