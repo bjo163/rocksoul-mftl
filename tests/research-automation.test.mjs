@@ -24,8 +24,8 @@ test("research is issue-first and does not auto-canonicalize",()=>{
   assert.match(automation,/authoritative primary, academic, museum, library, archive, or institutional sources/i);
 });
 
-test("workflow surface is validation only",()=>{
-  assert.deepEqual(workflowFiles,["validate.yml"]);
+test("workflow surface contains only repository validation workflows",()=>{
+  assert.deepEqual(workflowFiles,["rocksoul-contract.yml","validate.yml"]);
 });
 
 test("generic research issue lifecycle maps deterministic Steward decisions",()=>{
